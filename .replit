@@ -1,5 +1,6 @@
 modules = ["nodejs-22"]
-run = "npm run dev -- -H 0.0.0.0"
+# Bind to 0.0.0.0 and use Replit's $PORT when set (Agent Repls), else 3000.
+run = "npm run dev -- -H 0.0.0.0 -p ${PORT:-3000}"
 
 [[ports]]
 localPort = 3000
@@ -8,4 +9,5 @@ externalPort = 80
 [deployment]
 deploymentTarget = "autoscale"
 build = ["npm", "run", "build"]
-run = ["npm", "run", "start", "--", "-H", "0.0.0.0"]
+# next start honors the PORT env var that autoscale provides.
+run = "npm run start -- -H 0.0.0.0 -p ${PORT:-3000}"

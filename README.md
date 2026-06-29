@@ -12,6 +12,7 @@ Built against [`PRD.md`](./PRD.md); copy lives in [`website-content.md`](./websi
 - **shadcn/ui** foundation (`components.json`, `cn` util) — primitives added per phase
 - **next-themes** — light/dark, follows `prefers-color-scheme` + manual toggle
 - **MDX** (`@next/mdx`) — for long-form case studies (Phase 2)
+- **Fonts** via `next/font`: Space Grotesk (display) + Geist (body)
 - Deploys to **Vercel**
 
 ## Content model
@@ -21,14 +22,22 @@ All visitor-facing copy lives in data, never inline in components:
 - `src/content/site.ts` — typed structured content (hero, nav, links, SEO)
 - `src/content/work/*.mdx` — case studies (Phase 2)
 
-## Design tokens (PRD §10 — Yadegar palette)
+## Design tokens (PRD §10 — a builder's gallery, deliberately NOT Yadegar)
 
-Warm editorial minimalism, brand-cohesive with Mahdis's app Yadegar:
+Neutral chrome + one energetic signature accent, so each project's own colors
+carry the personality and the site signals *range*:
 
-- Parchment `#F3EAD7` · ink `#2B2722` · terracotta `#9A5B43` · gold `#D2A857`
-- Body **Inter**, headings **Fraunces**; dark mode = warm charcoal `#16140F`
+- Light base `#FAFAF8` · ink `#16161A` · muted `#6B6B70`
+- Dark base `#0E0E11` / cards `#141417` · text `#F4F4F2` · muted `#9A9AA2`
+- Signature accent: **electric indigo `#5A4BE3`** (used sparingly)
+- Display **Space Grotesk**, body **Geist** (General Sans's sanctioned alt)
 
-Tokens map to shadcn-style semantic CSS variables so future primitives inherit the brand.
+Tokens map to shadcn-style semantic CSS variables so future primitives inherit
+the system. `--indigo` is a single token if the exact accent hue is ever retuned.
+
+> Note: the spec names **General Sans** for body; it's a Fontshare font and
+> isn't reachable from this build environment, so Geist (the PRD's listed
+> alternate) is used. Swap in General Sans later by self-hosting its woff2.
 
 ## Scripts
 

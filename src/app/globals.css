@@ -6,79 +6,70 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Yadegar palette (PRD §10) — warm editorial minimalism, brand-cohesive
-  with the Yadegar app. Colors map to shadcn-style semantic tokens so
-  future primitives inherit the brand automatically.
+  Design system (PRD §10) — a confident builder's GALLERY, deliberately NOT
+  Yadegar. Neutral chrome so each project's own colors carry the personality,
+  plus ONE energetic signature accent: electric indigo. Colors map to
+  shadcn-style semantic tokens so future primitives inherit the system.
 */
 :root {
   --radius: 0.625rem;
 
-  /* Surfaces */
-  --background: #f3ead7; /* warm parchment */
-  --foreground: #2b2722; /* deep warm brown-black ink */
-  --card: #fbf8f3; /* near-white large surfaces */
-  --card-foreground: #2b2722;
-  --popover: #fbf8f3;
-  --popover-foreground: #2b2722;
+  /* Surfaces — warm-neutral near-white */
+  --background: #fafaf8;
+  --foreground: #16161a; /* ink */
+  --card: #ffffff;
+  --card-foreground: #16161a;
+  --popover: #ffffff;
+  --popover-foreground: #16161a;
 
-  /* Primary — earthy terracotta-brown */
-  --primary: #9a5b43;
-  --primary-foreground: #fbf8f3;
+  /* Signature accent — electric indigo (the one energetic color) */
+  --primary: #5a4be3;
+  --primary-foreground: #fafaf8;
 
-  /* Secondary / muted */
-  --secondary: #ece1c9;
-  --secondary-foreground: #2b2722;
-  --muted: #ece1c9;
-  --muted-foreground: #6b6256;
+  /* Neutral chrome */
+  --secondary: #f1f1ef;
+  --secondary-foreground: #16161a;
+  --muted: #f1f1ef;
+  --muted-foreground: #6b6b70;
+  --accent: #f1f1ef;
+  --accent-foreground: #16161a;
 
-  /* Accent — soft warm wash for hovers/highlights */
-  --accent: #e8dcc2;
-  --accent-foreground: #2b2722;
+  --destructive: #d4322a;
 
-  --destructive: #9a3b2e;
+  --border: #e6e6e3;
+  --input: #e6e6e3;
+  --ring: #5a4be3;
 
-  --border: #ddd0b8;
-  --input: #ddd0b8;
-  --ring: #9a5b43;
-
-  /* Brand accents — used sparingly (chips, rules, highlights) */
-  --gold: #d2a857;
-  --earth: #8a6f4d;
-  --sage: #8da174;
-  --dusty: #8aa0be;
-  --mauve: #9c8bb4;
+  /* Signature token — single source if the exact hue is ever retuned. */
+  --indigo: #5a4be3;
 }
 
 .dark {
-  --background: #16140f; /* deep warm charcoal */
-  --foreground: #f3ead7; /* parchment ink */
-  --card: #211e18;
-  --card-foreground: #f3ead7;
-  --popover: #211e18;
-  --popover-foreground: #f3ead7;
+  /* Rich near-black, gallery-like */
+  --background: #0e0e11;
+  --foreground: #f4f4f2;
+  --card: #141417;
+  --card-foreground: #f4f4f2;
+  --popover: #141417;
+  --popover-foreground: #f4f4f2;
 
-  --primary: #c07c5d; /* lifted terracotta for contrast on dark */
-  --primary-foreground: #16140f;
+  --primary: #6e5ff0; /* lifted indigo for contrast on near-black */
+  --primary-foreground: #0e0e11;
 
-  --secondary: #2a2620;
-  --secondary-foreground: #f3ead7;
-  --muted: #2a2620;
-  --muted-foreground: #b8ad9a;
+  --secondary: #1c1c20;
+  --secondary-foreground: #f4f4f2;
+  --muted: #1c1c20;
+  --muted-foreground: #9a9aa2;
+  --accent: #1c1c20;
+  --accent-foreground: #f4f4f2;
 
-  --accent: #322d25;
-  --accent-foreground: #f3ead7;
+  --destructive: #f0584e;
 
-  --destructive: #c4533f;
+  --border: #26262b;
+  --input: #26262b;
+  --ring: #6e5ff0;
 
-  --border: #322d25;
-  --input: #322d25;
-  --ring: #c07c5d;
-
-  --gold: #d2a857;
-  --earth: #b0935f;
-  --sage: #9fb088;
-  --dusty: #9db0c9;
-  --mauve: #ab9cbf;
+  --indigo: #6e5ff0;
 }
 
 @theme inline {
@@ -101,14 +92,13 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-gold: var(--gold);
-  --color-earth: var(--earth);
-  --color-sage: var(--sage);
-  --color-dusty: var(--dusty);
-  --color-mauve: var(--mauve);
+  --color-indigo: var(--indigo);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  /* Space Grotesk for display, Geist for body (PRD §10; General Sans's
+     sanctioned alt — Fontshare is unreachable in this environment). */
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-body), ui-sans-serif,
+    system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -126,6 +116,6 @@
     text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4 {
-    @apply font-serif;
+    @apply font-display tracking-tight;
   }
 }

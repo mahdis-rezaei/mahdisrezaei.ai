@@ -364,7 +364,8 @@ Designed and built with Claude Code. · © 2026 Mahdis Rezaei
   for trust and safety, and the solo builder of Yadegar, an AI journaling app. Product
   strategy and the ability to ship it.
 - **OG image text:** "Mahdis Rezaei — Product leader who builds" with a small line "Staff PM,
-  Meta · Builder of Yadegar." Use the parchment + earthy-gold brand.
+  Meta · Builder of Yadegar." Use the site's neutral gallery look + the signature accent — NOT
+  Yadegar's parchment palette.
 - **Per-page titles:** About — Mahdis Rezaei · Work — Mahdis Rezaei · Yadegar — Mahdis Rezaei.
 - **JSON-LD Person:** name "Mahdis Rezaei," jobTitle "Staff Product Manager," sameAs [LinkedIn,
   GitHub, Yadegar].

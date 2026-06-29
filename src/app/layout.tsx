@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/content/site";
 
-// Inter for body (matches Yadegar for brand cohesion), Fraunces for headings.
-const inter = Inter({
+// Space Grotesk for display headings, Geist for body (PRD §10 — a confident
+// builder's gallery; deliberately not Inter/serif, which read as Yadegar).
+const display = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-display",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const body = Geist({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -61,7 +62,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${fraunces.variable} h-full`}
+      className={`${display.variable} ${body.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider

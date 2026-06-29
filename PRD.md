@@ -100,9 +100,9 @@ people trust." · C. "PM by craft. Builder by instinct."
 - Shipped an AI product end to end (web + iOS), solo
 - Works AI-native — designs, prototypes, and builds with AI daily
 
-**Voice & tone:** warm, direct, human, quietly confident. No corporate-speak, no buzzword
-stacking. Every word earns its place (same bar as her writing style guide). Avoid "leverage,"
-"robust," "synergy," em-dash pile-ups.
+**Voice & tone:** warm, direct, human, energetic — a builder who genuinely loves the work and
+obsesses over users. Confident, not corporate. No buzzword stacking; every word earns its place
+(same bar as her writing style guide). Avoid "leverage," "robust," "synergy," em-dash pile-ups.
 
 ---
 
@@ -282,40 +282,44 @@ readable and Claude Code renders them with a shared layout.
 
 ## 10. Design system
 
-**Direction — CHOSEN: warm editorial minimalism, brand-cohesive with Yadegar.** Calm,
-confident, human, literary — a thoughtful product studio, not a developer terminal and not
-generic dark-tech. The deliberate move: **make the site echo Yadegar's actual brand** so
-Mahdis-the-builder and her product read as one story. This is what differentiates her from
-every other PM portfolio (which all look like the same dark template). *(The terminal/
-monospace look of the inspiration site is explicitly NOT chosen — it reads engineer, and she's
-a product leader.)*
+**Direction — CHOSEN: a confident builder's gallery. Deliberately NOT Yadegar.** Mahdis owns
+many products; the site must read as *her* — a versatile, energetic, user-obsessed product
+builder — not as an extension of one product's taste. So the site is a neutral, confident,
+energetic *frame*, and each project brings its own color through its screenshots. That is the
+literal solution to "I don't want people to think I have one taste": the chrome stays
+restrained; the work pops; range is the headline. The feel is modern, energetic, and warm —
+someone who genuinely loves building and obsesses over users — NOT a calm literary brand.
+(Yadegar is warm parchment + Inter + literary serif; this is the opposite end of the spectrum
+on purpose. Also not the terminal/monospace look — that reads engineer.)
 
-- **Color — pulled from Yadegar's real palette (verified from its live CSS):**
-  - Background: warm parchment `#F3EAD7` / `#F1EADD` (and a near-white `#FBF8F3` for large
-    surfaces).
-  - Ink: deep warm brown-black `#2B2722`; muted text `#6B6256`.
-  - Primary accent: Yadegar's earthy terracotta-brown `#9A5B43` / `#8A6F4D` for links,
-    buttons, rules.
-  - Secondary accent: warm gold `#D2A857` for small highlights (sparingly).
-  - Optional tertiary earth tones from Yadegar (sage `#8DA174`, dusty blue `#8AA0BE`, mauve
-    `#9C8BB4`) only for tags/category chips — keeps it warm, never loud.
-  - Dark mode: deep warm charcoal `#16140F` bg, parchment ink. Respect `prefers-color-scheme`
-    + a manual toggle.
-- **Typography:**
-  - Body: **Inter** — the exact face Yadegar uses, for instant brand cohesion.
-  - Display/headings: a refined warm serif (*Fraunces* or *Newsreader*) for editorial
-    authority and warmth — the "product leader with taste" signal. (Single serif + Inter; no
-    third family.)
-  - No monospace. (We're deliberately not doing the terminal look.)
-  - Big, generous type scale. Lots of line-height. This is an editorial site.
-- **Layout:** generous whitespace, single readable column for prose (max ~70ch), wider grids
-  for work cards. Strong vertical rhythm. Mobile-first.
-- **Components:** Nav (sticky, minimal), Hero, ProofChips, WorkCard, CaseStudyLayout,
-  ExperienceTimeline, YadegarFeature, ContactBand, Footer, ThemeToggle.
-- **Motion:** restrained. Subtle fade/slide on scroll-in (respect `prefers-reduced-motion`).
-  One small moment of delight is fine; no parallax circus.
-- **Imagery:** a warm, high-quality portrait (builds trust fast for recruiters) + clean
-  Yadegar screenshots. Optimize everything (next/image or equivalent).
+- **Color — neutral chrome + ONE energetic signature accent (NOT Yadegar's terracotta):**
+  - Light: near-white warm-neutral `#FAFAF8`; ink `#16161A`; muted `#6B6B70`.
+  - Dark (KEPT — gallery-like): rich near-black `#0E0E11` / `#141417`; text `#F4F4F2`; muted
+    `#9A9AA2`. Respect `prefers-color-scheme` + a manual toggle.
+  - **Signature accent — LOCKED: electric indigo `#5A4BE3`.** Energetic and creative but warm
+    when it leans violet — holds Mahdis's two halves (energetic builder + empathetic connector).
+    Modern/intelligent for an AI builder, distinctive (not default tech-blue), and unrelated to
+    Yadegar's terracotta or any product palette, so it signals *her*. (Still one token if she
+    ever wants to retune the exact hue, but treat indigo as the decision.)
+  - Let product screenshots / case visuals carry the color. Keep UI chrome neutral so range
+    shows and no single product's palette dominates the site.
+- **Typography (NOT Inter, NOT a literary serif — both read as Yadegar):**
+  - Display: a confident contemporary grotesk with character — **Space Grotesk** (alts: Clash
+    Display, General Sans). Energetic, geometric, modern.
+  - Body: a clean neutral sans that isn't Inter — **General Sans** (alt: Geist). Friendly, crisp.
+  - Bold, energetic type scale; tight confident headings.
+- **Layout:** gallery-forward — large, beautiful work cards and product visuals do the talking;
+  generous whitespace; single readable column (~70ch) for prose. Mobile-first.
+- **Energy & motion (this is where "energetic builder" shows):** purposeful motion — smooth
+  scroll-in, hover life on cards, a lively hero, one or two moments of delight/personality.
+  Always respect `prefers-reduced-motion`. Confident, not corporate; never a parallax circus.
+- **Components:** Nav (sticky, minimal), Hero, ProofChips, WorkCard (visual-forward),
+  CaseStudyLayout, ExperienceTimeline, ProductFeature (Yadegar), MoreWorkStrip, ContactBand,
+  Footer, ThemeToggle.
+- **Imagery:** a warm, high-energy professional portrait + crisp product screenshots, each in
+  its OWN colors (this is what proves range). Optimize everything (next/image or equivalent).
+- **Voice in the UI:** warm, energetic, human — show user-empathy and a love of building. Let
+  real personality through; this is a person who *loves* this work.
 
 ---
 
@@ -427,9 +431,12 @@ but these are the recommended defaults and the build should proceed on them.
 
 1. **Headline → "Product leader who builds."** Crisp identity over a paragraph, like every
    strong PM site. (§6)
-2. **Visual direction → warm editorial, brand-cohesive with Yadegar** (parchment + earthy
-   gold + Inter). NOT the terminal look. Makes you and your product one story and stands out
-   from cookie-cutter dark PM portfolios. (§10)
+2. **Visual direction → a confident builder's GALLERY, deliberately NOT Yadegar.** Neutral
+   chrome + one energetic signature accent + bold contemporary type (Space Grotesk / General
+   Sans, not Inter). Each product brings its own color, so the site signals *range and a
+   versatile, energetic builder* — not one product's taste. Dark mode kept. (§10)
+   *(Changed from the earlier "cohesive with Yadegar" call — Mahdis explicitly wants the site to
+   represent her range, not mirror a single product she built.)*
 3. **Domain → `mahdisrezaei.ai`** (the .com was taken; `.ai` is on-brand for an AI builder).
    Best for name-search SEO. (§15)
 4. **3rd case study → Enterprise identity (MMA).** Shows range beyond AI/integrity; the work
@@ -497,12 +504,13 @@ and a clear, jargon-free bio.
 5. One confident, branded aesthetic — and yours is differentiated by being **cohesive with
    Yadegar** rather than another dark template.
 
-### Yadegar brand facts (verified from its live site — match these for cohesion)
+### Yadegar brand facts (for reference — deliberately do NOT mirror these on the site)
+Yadegar's look is parchment `#F3EAD7`, earthy brown/gold accents, Inter, calm/literary. The
+personal site intentionally goes the OTHER way (neutral gallery + energetic accent + grotesk
+type) so Mahdis doesn't read as a one-product taste. On the site, Yadegar appears as one
+*exhibit* (screenshots in its own colors), not as the site's identity.
 - **Tagline:** "A companion to a lifelong journaling practice. It brings back one page worth
   returning to, in your own words."
-- **Palette:** parchment `#F3EAD7` / `#F1EADD`; earthy brown `#8A6F4D` / `#9A5B43`; gold
-  `#D2A857`; muted earth accents (sage `#8DA174`, dusty blue `#8AA0BE`, mauve `#9C8BB4`).
-- **Type:** Inter. **Feel:** warm, calm, literary, privacy-first.
 - **Live:** https://yadegarjournal.com — link to it from the site.
 
 ## 19. Appendix B — copy bank (drafts to start from)

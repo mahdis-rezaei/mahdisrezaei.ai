@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Dark mode is toggled by a `.dark` class on <html> (next-themes),
+   which also tracks the system `prefers-color-scheme`. */
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Yadegar palette (PRD §10) — warm editorial minimalism, brand-cohesive
+  with the Yadegar app. Colors map to shadcn-style semantic tokens so
+  future primitives inherit the brand automatically.
+*/
+:root {
+  --radius: 0.625rem;
+
+  /* Surfaces */
+  --background: #f3ead7; /* warm parchment */
+  --foreground: #2b2722; /* deep warm brown-black ink */
+  --card: #fbf8f3; /* near-white large surfaces */
+  --card-foreground: #2b2722;
+  --popover: #fbf8f3;
+  --popover-foreground: #2b2722;
+
+  /* Primary — earthy terracotta-brown */
+  --primary: #9a5b43;
+  --primary-foreground: #fbf8f3;
+
+  /* Secondary / muted */
+  --secondary: #ece1c9;
+  --secondary-foreground: #2b2722;
+  --muted: #ece1c9;
+  --muted-foreground: #6b6256;
+
+  /* Accent — soft warm wash for hovers/highlights */
+  --accent: #e8dcc2;
+  --accent-foreground: #2b2722;
+
+  --destructive: #9a3b2e;
+
+  --border: #ddd0b8;
+  --input: #ddd0b8;
+  --ring: #9a5b43;
+
+  /* Brand accents — used sparingly (chips, rules, highlights) */
+  --gold: #d2a857;
+  --earth: #8a6f4d;
+  --sage: #8da174;
+  --dusty: #8aa0be;
+  --mauve: #9c8bb4;
+}
+
+.dark {
+  --background: #16140f; /* deep warm charcoal */
+  --foreground: #f3ead7; /* parchment ink */
+  --card: #211e18;
+  --card-foreground: #f3ead7;
+  --popover: #211e18;
+  --popover-foreground: #f3ead7;
+
+  --primary: #c07c5d; /* lifted terracotta for contrast on dark */
+  --primary-foreground: #16140f;
+
+  --secondary: #2a2620;
+  --secondary-foreground: #f3ead7;
+  --muted: #2a2620;
+  --muted-foreground: #b8ad9a;
+
+  --accent: #322d25;
+  --accent-foreground: #f3ead7;
+
+  --destructive: #c4533f;
+
+  --border: #322d25;
+  --input: #322d25;
+  --ring: #c07c5d;
+
+  --gold: #d2a857;
+  --earth: #b0935f;
+  --sage: #9fb088;
+  --dusty: #9db0c9;
+  --mauve: #ab9cbf;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-earth: var(--earth);
+  --color-sage: var(--sage);
+  --color-dusty: var(--dusty);
+  --color-mauve: var(--mauve);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}

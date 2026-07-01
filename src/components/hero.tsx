@@ -1,21 +1,24 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 /**
  * Home hero (PRD §8.1). All copy comes from site.ts.
- * Warm editorial layout: serif headline, generous rhythm, two CTAs, proof chips.
+ * Confident builder's-gallery layout: big display headline, two CTAs (the
+ * primary in the signature indigo), proof chips, small location line.
  */
 export function Hero() {
   const { name, role, location } = site;
   const { headline, subhead, proofChips, ctas } = site.hero;
 
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 py-24 sm:py-32">
+    <section className="mx-auto w-full max-w-5xl animate-rise px-6 pb-8 pt-20 sm:pt-28">
       <p className="text-sm font-medium tracking-wide text-muted-foreground">
         {name} · {role}
       </p>
 
-      <h1 className="mt-6 text-balance text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+      <h1 className="mt-6 max-w-3xl text-balance text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
         {headline}
       </h1>
 
@@ -24,15 +27,12 @@ export function Hero() {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link
-          href={ctas.primary.href}
-          className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-        >
+        <Link href={ctas.primary.href} className={cn(buttonVariants())}>
           {ctas.primary.label}
         </Link>
         <Link
           href={ctas.secondary.href}
-          className="inline-flex h-11 items-center justify-center rounded-md border border-border bg-card px-6 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className={cn(buttonVariants({ variant: "outline" }))}
         >
           {ctas.secondary.label}
         </Link>

@@ -50,10 +50,14 @@ npm run lint    # ESLint
 
 ## Build phases (PRD §16)
 
-- **Phase 0 — scaffold + tokens + hero** ✅ (this commit)
-- Phase 1 — home sections, About, contact, nav, theme toggle, resume
-- Phase 2 — experience timeline, case studies, /building page
+- **Phase 0 — scaffold + tokens + hero** ✅
+- **Phase 1 — home sections, About page, contact, nav, theme toggle** ✅
+- Phase 2 — experience timeline, deep case studies (MDX), full /building page
 - Phase 3 — OG image, JSON-LD polish, sitemap/robots, analytics, a11y/perf pass
+
+Phase 1 leaves stubs for `/work/[slug]` and `/building` (filled in Phase 2), and
+the resume link is hidden until `public/resume.pdf` is added (`ready: false` in
+`site.ts`).
 
 ## Inputs still needed
 

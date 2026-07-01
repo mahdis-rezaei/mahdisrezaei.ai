@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { site } from "@/content/site";
 
 // Space Grotesk for display headings, Geist for body (PRD §10 — a confident
@@ -71,7 +73,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Nav />
           {children}
+          <Footer />
         </ThemeProvider>
         <script
           type="application/ld+json"

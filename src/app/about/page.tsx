@@ -4,8 +4,10 @@ import Image from "next/image";
 import { site } from "@/content/site";
 import { buttonVariants } from "@/components/ui/button";
 import { Journey } from "@/components/journey";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 import { SectionLabel } from "@/components/section-label";
 import { Reveal } from "@/components/reveal";
+import { Tabs } from "@/components/tabs";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -17,6 +19,50 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const { about } = site;
+
+  const personal = (
+    <div>
+      <div className="space-y-6 text-lg leading-relaxed">
+        {about.paragraphs.map((p, i) => (
+          <p key={i} className="text-pretty">
+            {p}
+          </p>
+        ))}
+      </div>
+
+      <Reveal>
+        <Journey />
+      </Reveal>
+
+      <Reveal as="section" className="mt-16">
+        <SectionLabel>{about.knownForHeading}</SectionLabel>
+        <ul className="mt-6 space-y-3">
+          {about.knownFor.map((item) => (
+            <li key={item} className="flex gap-3 text-lg leading-relaxed">
+              <span
+                aria-hidden
+                className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+              />
+              <span className="text-pretty">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+    </div>
+  );
+
+  const career = (
+    <div>
+      <SectionLabel>US career</SectionLabel>
+      <p className="mt-4 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+        A decade, six companies, one direction — from program management into
+        product, and toward the AI work I care most about.
+      </p>
+      <div className="mt-8">
+        <ExperienceTimeline />
+      </div>
+    </div>
+  );
 
   return (
     <main className="flex-1">
@@ -39,34 +85,17 @@ export default function AboutPage() {
           {about.lede}
         </p>
 
-        <div className="mt-10 space-y-6 text-lg leading-relaxed">
-          {about.paragraphs.map((p, i) => (
-            <p key={i} className="text-pretty">
-              {p}
-            </p>
-          ))}
+        <div className="mt-12">
+          <Tabs
+            label="About sections"
+            tabs={[
+              { id: "personal", label: "Personal", panel: personal },
+              { id: "career", label: "Career", panel: career },
+            ]}
+          />
         </div>
 
-        <Reveal>
-          <Journey />
-        </Reveal>
-
-        <Reveal as="section" className="mt-16">
-          <SectionLabel>{about.knownForHeading}</SectionLabel>
-          <ul className="mt-6 space-y-3">
-            {about.knownFor.map((item) => (
-              <li key={item} className="flex gap-3 text-lg leading-relaxed">
-                <span
-                  aria-hidden
-                  className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                />
-                <span className="text-pretty">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <section className="mt-14 rounded-2xl border border-border bg-card p-6 sm:p-8">
+        <section className="mt-16 rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="font-display text-xl font-semibold tracking-tight">
             {about.nowHeading}
           </h2>

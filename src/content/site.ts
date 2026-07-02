@@ -53,7 +53,17 @@ export type JourneyStop = {
   place: string;
   years: string;
   note: string;
-  /** Optional photo path (e.g. /journey/delhi.jpg); null shows a placeholder. */
+  /** Key into journeyImages, or null for no photo. */
+  image: string | null;
+};
+
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  summary: string;
+  /** Key into careerImages, or null until a photo is added. */
   image: string | null;
 };
 
@@ -81,6 +91,7 @@ export type Site = {
     href: string;
   };
   journey: JourneyStop[];
+  experience: ExperienceItem[];
   about: {
     teaser: string;
     teaserCta: Cta;
@@ -280,6 +291,65 @@ export const site: Site = {
       years: "2019 — now",
       note: "I moved west to be closer to family and the ocean. GoodRx, then Amazon — where I shipped subscription products for Ring — and then Meta, where I crossed fully into product and into the AI work I care most about.",
       image: "los-angeles",
+    },
+  ],
+
+  // US career (About → Career tab), most recent first. Meta generalized per
+  // PRD §13. Photos optional (fill careerImages when uploaded). Dates approx.
+  experience: [
+    {
+      company: "Meta",
+      role: "Staff Product Manager — Monetization, then Central Integrity",
+      period: "2022 — now",
+      location: "San Francisco / Remote",
+      summary:
+        "At Meta I crossed fully into product. In Monetization I built enterprise identity and single sign-on for advertisers — letting companies bring their own identity provider instead of sharing personal logins — and consumer sign-on across Meta's apps. Now, as a Staff PM in Central Integrity, I own the AI platform portfolio for high-stakes review: evaluation, investigation augmentation, and workflow automation.",
+      image: null,
+    },
+    {
+      company: "Amazon — Ring",
+      role: "Technical Program Manager, Subscriptions",
+      period: "2020 — 2022",
+      location: "Los Angeles",
+      summary:
+        "Owned subscriptions for Ring — launching new tiers, bringing Ring devices and plans onto amazon.com, and shaping pricing strategy and the P&L. Ring still ran like a startup inside Amazon, so I did real product work, often acting as PM for teams that didn't have one. It's where product management fully clicked for me.",
+      image: null,
+    },
+    {
+      company: "GoodRx",
+      role: "Technical Program Manager",
+      period: "2019 — 2020",
+      location: "Santa Monica",
+      summary:
+        "Worked across the app and website of a healthcare marketplace that helps people afford medication without insurance. Many of our users were older, so I obsessed over usability — a dead-simple path from searching a drug to a coupon they could hand to any pharmacy.",
+      image: null,
+    },
+    {
+      company: "GlobeTax",
+      role: "Senior Technical Program Manager",
+      period: "2017 — 2019",
+      location: "New York",
+      summary:
+        "Owned the internal platforms behind international tax filing — complex, regulated, multi-country software our operations teams relied on to file for global businesses. I got good at turning a tangle of rules into product people could actually use.",
+      image: null,
+    },
+    {
+      company: "Blue Apron",
+      role: "Technical Program Manager",
+      period: "2017",
+      location: "New York",
+      summary:
+        "Joined as the company prepared to go public and owned the internal software audit — evaluating every tool the company ran on and deciding what to keep and retire against a demanding IPO bar.",
+      image: null,
+    },
+    {
+      company: "Ground Control (now Imprivata)",
+      role: "Program Manager",
+      period: "2015 — 2017",
+      location: "New York",
+      summary:
+        "My first product role, at a fifteen-person startup building mobile device management for hospitals. I wore every hat — documenting the product, managing releases against each new Apple update, and helping decide what to build next. It taught me that at a small company, everyone's judgment counts.",
+      image: null,
     },
   ],
 

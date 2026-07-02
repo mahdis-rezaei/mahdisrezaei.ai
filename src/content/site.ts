@@ -102,7 +102,7 @@ export const site: Site = {
   role: "Staff Product Manager",
   location: "San Francisco · open to remote",
   openToWork: true,
-  portrait: null,
+  portrait: "/photo.jpg",
 
   hero: {
     headline: "Product leader who builds.",

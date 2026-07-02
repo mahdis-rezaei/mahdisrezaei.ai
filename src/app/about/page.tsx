@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/content/site";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -17,6 +18,17 @@ export default function AboutPage() {
   return (
     <main className="flex-1">
       <article className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-24">
+        {site.portrait && (
+          <div className="relative mb-8 h-28 w-28 overflow-hidden rounded-2xl border border-border">
+            <Image
+              src={site.portrait}
+              alt={`Portrait of ${site.name}`}
+              fill
+              sizes="112px"
+              className="object-cover"
+            />
+          </div>
+        )}
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           {about.title}
         </h1>

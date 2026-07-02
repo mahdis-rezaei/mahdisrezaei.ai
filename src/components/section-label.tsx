@@ -11,7 +11,7 @@ export function SectionLabel({
   tone = "default",
   className,
 }: {
-  index: string;
+  index?: string;
   children: React.ReactNode;
   tone?: "default" | "invert";
   className?: string;
@@ -24,14 +24,16 @@ export function SectionLabel({
         className,
       )}
     >
-      <span
-        className={cn(
-          "font-mono text-xs",
-          tone === "invert" ? "text-primary-foreground/90" : "text-primary",
-        )}
-      >
-        {index}
-      </span>
+      {index && (
+        <span
+          className={cn(
+            "font-mono text-xs",
+            tone === "invert" ? "text-primary-foreground/90" : "text-primary",
+          )}
+        >
+          {index}
+        </span>
+      )}
       <span
         aria-hidden
         className={cn(

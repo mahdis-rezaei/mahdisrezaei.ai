@@ -49,6 +49,14 @@ export type WorkGroup = {
   intro: string;
 };
 
+export type JourneyStop = {
+  place: string;
+  years: string;
+  note: string;
+  /** Optional photo path (e.g. /journey/delhi.jpg); null shows a placeholder. */
+  image: string | null;
+};
+
 export type Site = {
   name: string;
   role: string;
@@ -72,6 +80,7 @@ export type Site = {
     ctas: { primary: Cta; secondary: Cta };
     href: string;
   };
+  journey: JourneyStop[];
   about: {
     teaser: string;
     teaserCta: Cta;
@@ -234,6 +243,46 @@ export const site: Site = {
     href: "https://yadegarjournal.com",
   },
 
+  // Life-story roadmap (About page). Warm and professional; photos optional.
+  journey: [
+    {
+      place: "Esfarāyen, Iran",
+      years: "1987 — 2006",
+      note: "Born and raised in a small town in northeast Iran, in a family of builders. My parents had little formal schooling — my mother never learned to read — but they started business after business from nothing. I grew up watching them brainstorm at the kitchen table and bet on themselves, and I always knew I wanted more than the map I'd been handed.",
+      image: null,
+    },
+    {
+      place: "New Delhi, India",
+      years: "2006 — 2012",
+      note: "I left at eighteen with three months of English and a dictionary, and earned a bachelor's and a master's in computer science. I learned the language the way I'd later learn products — by paying close attention to how people actually talk and what they really need.",
+      image: null,
+    },
+    {
+      place: "Rome, Italy",
+      years: "2012 — 2014",
+      note: "An MBA on scholarship. I already knew how to build software; I went to Rome to learn the other half — business, strategy, and how a product finds the people it's for.",
+      image: null,
+    },
+    {
+      place: "London, UK",
+      years: "2014",
+      note: "A marketing internship and my first real taste of the working world in a global city. Six months that made me certain I wanted to build products, not just study them.",
+      image: null,
+    },
+    {
+      place: "New York, USA",
+      years: "2014 — 2019",
+      note: "I arrived with two degrees and almost no experience and built a career one hard thing at a time — a fifteen-person startup, a company through its IPO run, then platforms for international tax. New York is where I found product management and made it mine.",
+      image: null,
+    },
+    {
+      place: "Los Angeles, USA",
+      years: "2019 — now",
+      note: "I moved west to be closer to family and the ocean. GoodRx, then Amazon — where I shipped subscription products for Ring — and then Meta, where I crossed fully into product and into the AI work I care most about.",
+      image: null,
+    },
+  ],
+
   about: {
     teaser:
       "I build things — products, teams, and a life that took six countries to assemble. Today I'm a Staff PM at Meta working on AI and agentic systems, and on the side I built Yadegar end to end.",
@@ -242,7 +291,8 @@ export const site: Site = {
     lede: "Products, teams, and a life that took six countries to assemble.",
     paragraphs: [
       "I was born in a small town in northeast Iran and raised to fit inside lines someone else drew — my faith, my role, my future. Over twenty years I took those lines apart one at a time. I left at eighteen for India with three months of English and a dictionary, and earned a bachelor's and a master's in computer science. I did an MBA in Rome, interned in London, and landed in New York with two degrees and almost no work experience, figuring it out from scratch.",
-      "From there I built a career the same way I'd learned everything else — one hard thing at a time. A fifteen-person startup. Blue Apron the year it went public. Amazon, where I shipped subscription products for Ring. And then Meta, where I finally crossed from program management into product, and into the work I care most about.",
+      "I come by building honestly. My parents had almost no formal schooling — my mother never learned to read — but they were relentless entrepreneurs who started business after business from nothing: a farm, a jewelry shop, a factory. I grew up watching them brainstorm at the kitchen table and take risks without a net. It was the first product education I ever got.",
+      "From there I built a career the same way I'd learned everything else — one hard thing at a time. A fifteen-person startup. A company through its IPO run. Amazon, where I shipped subscription products for Ring. And then Meta, where I finally crossed from program management into product, and into the work I care most about.",
       "Today I'm a Staff PM in Meta's integrity organization, working on AI and agentic systems that help decide what's safe at the scale of billions of users. The problems are ambiguous and high-stakes, the kind where a confident wrong answer is worse than no answer — which is exactly the kind of problem I like.",
       "And on the side, I built Yadegar. I've kept a journal for twenty years, in three languages, through every one of those moves. When I finally went back and read them, I didn't find a list of events — I found a handful of things that kept being true. So I built the tool I wished I'd had: a private journaling app that reads across everything you've written and hands you back one page worth returning to. I designed it, wrote the code, and shipped it — web and iOS — on my own.",
       "The through-line, if there is one: I'm happiest turning something ambiguous and hard into something real that people can trust. That's the job. It's also the story.",

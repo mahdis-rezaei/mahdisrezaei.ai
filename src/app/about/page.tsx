@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/content/site";
 import { buttonVariants } from "@/components/ui/button";
+import { Journey } from "@/components/journey";
+import { SectionLabel } from "@/components/section-label";
+import { Reveal } from "@/components/reveal";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -44,13 +47,15 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <section className="mt-14">
-          <h2 className="font-display text-xl font-semibold tracking-tight">
-            {about.knownForHeading}
-          </h2>
-          <ul className="mt-4 space-y-3">
+        <Reveal>
+          <Journey />
+        </Reveal>
+
+        <Reveal as="section" className="mt-16">
+          <SectionLabel>{about.knownForHeading}</SectionLabel>
+          <ul className="mt-6 space-y-3">
             {about.knownFor.map((item) => (
-              <li key={item} className="flex gap-3 leading-relaxed">
+              <li key={item} className="flex gap-3 text-lg leading-relaxed">
                 <span
                   aria-hidden
                   className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
@@ -59,7 +64,7 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-        </section>
+        </Reveal>
 
         <section className="mt-14 rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="font-display text-xl font-semibold tracking-tight">

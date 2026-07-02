@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { site } from "@/content/site";
+import { journeyImages } from "@/content/journey-images";
 import { SectionLabel } from "@/components/section-label";
 
 /**
@@ -40,14 +41,14 @@ export function Journey() {
                 </span>
               </div>
 
-              {stop.image && (
-                <div className="relative mt-4 aspect-[16/10] w-full max-w-md overflow-hidden rounded-xl border border-border">
+              {stop.image && journeyImages[stop.image] && (
+                <div className="mt-4 w-full max-w-xs sm:max-w-sm">
                   <Image
-                    src={stop.image}
-                    alt={`${stop.place}`}
-                    fill
-                    sizes="(min-width: 768px) 28rem, 100vw"
-                    className="object-cover"
+                    src={journeyImages[stop.image]}
+                    alt={stop.place}
+                    placeholder="blur"
+                    sizes="(min-width: 640px) 24rem, 80vw"
+                    className="h-auto w-full rounded-xl border border-border"
                   />
                 </div>
               )}

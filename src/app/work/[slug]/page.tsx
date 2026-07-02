@@ -2,15 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { site } from "@/content/site";
+import { getWork, workWithPages } from "@/content/site";
 
-// Pre-render one page per selected-work slug.
+// Pre-render one page per work item that has a slug.
 export function generateStaticParams() {
-  return site.selectedWork.map((w) => ({ slug: w.slug }));
-}
-
-function getWork(slug: string) {
-  return site.selectedWork.find((w) => w.slug === slug);
+  return workWithPages.map((w) => ({ slug: w.slug }));
 }
 
 export async function generateMetadata({

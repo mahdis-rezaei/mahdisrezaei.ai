@@ -5,7 +5,7 @@ import { WorkCard } from "@/components/work-card";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected product work by Mahdis Rezaei — AI platforms, trust & safety, enterprise identity, and Yadegar, built end to end.",
+    "Selected product work by Mahdis Rezaei — AI platforms and trust & safety at Meta, enterprise identity, consumer products, and Yadegar, built end to end.",
   alternates: { canonical: "/work" },
 };
 
@@ -21,13 +21,32 @@ export default function WorkPage() {
           framed as problem, insight, decision, and impact.
         </p>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {site.selectedWork.map((work) => (
-            <WorkCard key={work.slug} work={work} />
-          ))}
+        <div className="mt-14 space-y-16">
+          {site.workGroups.map((group) => {
+            const items = site.work.filter((w) => w.group === group.key);
+            if (items.length === 0) return null;
+            return (
+              <div key={group.key}>
+                <p className="text-sm font-medium uppercase tracking-widest text-primary">
+                  {group.eyebrow}
+                </p>
+                <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                  {group.title}
+                </h2>
+                <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+                  {group.intro}
+                </p>
+                <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {items.map((work) => (
+                    <WorkCard key={work.title} work={work} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        <p className="mt-10 text-sm text-muted-foreground">
+        <p className="mt-16 text-sm text-muted-foreground">
           The full experience timeline and deep case studies are coming next.
         </p>
       </section>

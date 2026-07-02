@@ -15,12 +15,38 @@ export type SocialLink = {
   ready: boolean;
 };
 
-export type WorkCard = {
-  slug: string;
+/** Icon key for a work card's tile — mapped to a lucide icon in the UI. */
+export type WorkIcon =
+  | "notebook"
+  | "shield"
+  | "gauge"
+  | "radar"
+  | "key"
+  | "bell"
+  | "pulse";
+
+export type WorkItem = {
+  /** Present for items with a case-study page at /work/[slug]. */
+  slug?: string;
   title: string;
   outcome: string;
   tags: string[];
-  featured: boolean;
+  icon: WorkIcon;
+  /** Grouping key — must match a WorkGroup.key. */
+  group: string;
+  /** e.g. "Web · iOS" — shown on product-style cards. */
+  platform?: string;
+  /** External CTAs (e.g. "Visit Yadegar"). Internal links use `slug`. */
+  ctas?: Cta[];
+  /** Featured on the home "Selected work" section. */
+  featured?: boolean;
+};
+
+export type WorkGroup = {
+  key: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
 };
 
 export type Site = {
@@ -28,6 +54,8 @@ export type Site = {
   role: string;
   location: string;
   openToWork: boolean;
+  /** Portrait path once added at public/photo.jpg; null hides it. */
+  portrait: string | null;
   hero: {
     headline: string;
     subhead: string;
@@ -35,7 +63,8 @@ export type Site = {
     ctas: { primary: Cta; secondary: Cta };
   };
   nav: NavItem[];
-  selectedWork: WorkCard[];
+  workGroups: WorkGroup[];
+  work: WorkItem[];
   yadegar: {
     name: string;
     oneLiner: string;
@@ -73,6 +102,7 @@ export const site: Site = {
   role: "Staff Product Manager",
   location: "San Francisco · open to remote",
   openToWork: true,
+  portrait: null,
 
   hero: {
     headline: "Product leader who builds.",
@@ -97,23 +127,72 @@ export const site: Site = {
     { label: "Contact", href: "/contact" },
   ],
 
-  // Home-page featured set (PRD §8.4 default): CS1, Yadegar, CS3.
-  selectedWork: [
+  // Grouped, gallery-style portfolio (PRD §10). Chrome stays neutral; each
+  // group leads with an eyebrow + big title so range reads at a glance.
+  workGroups: [
+    {
+      key: "built-solo",
+      eyebrow: "Built solo",
+      title: "Yadegar",
+      intro:
+        "The AI product I designed, built, and shipped end to end — product, design, architecture, and code.",
+    },
+    {
+      key: "at-meta",
+      eyebrow: "At Meta",
+      title: "AI platforms for trust & safety",
+      intro:
+        "The systems, the calls I made, and the impact — generalized, without the internal names.",
+    },
+    {
+      key: "range",
+      eyebrow: "Platform & consumer",
+      title: "Range",
+      intro:
+        "Work beyond AI and integrity — enterprise platforms and consumer products at scale.",
+    },
+  ],
+
+  work: [
+    {
+      slug: "yadegar",
+      title: "Yadegar",
+      outcome:
+        "A private AI journaling app that hands you back one page worth returning to, in your own words — the thread that endured, not the noise of the day.",
+      tags: ["AI", "0→1", "Founder"],
+      icon: "notebook",
+      group: "built-solo",
+      platform: "Web · iOS",
+      ctas: [{ label: "Visit Yadegar", href: "https://yadegarjournal.com" }],
+      featured: true,
+    },
     {
       slug: "trusted-ai-review",
       title: "Scaling trusted AI review",
       outcome:
         "Moved high-stakes review from people to evaluated AI — without losing the trust those decisions depend on.",
       tags: ["AI platform", "Trust & Safety", "0→1"],
+      icon: "shield",
+      group: "at-meta",
       featured: true,
     },
     {
-      slug: "yadegar",
-      title: "Yadegar — an AI product, built end to end",
+      slug: "ai-eval-platform",
+      title: "The eval platform behind safe AI",
       outcome:
-        "Designed, built, and shipped a private AI journaling app, solo. Web and iOS.",
-      tags: ["AI", "0→1", "Founder"],
-      featured: true,
+        "Built the evaluation and deployment platform that proved, continuously, that a model was safe to put in the critical path.",
+      tags: ["Evaluation", "AI infra", "0→1"],
+      icon: "gauge",
+      group: "at-meta",
+    },
+    {
+      slug: "detection-at-scale",
+      title: "Detection at scale",
+      outcome:
+        "Turned fragmented, expert-driven investigation into a connected, AI-assisted, measurable detection system — faster and broader.",
+      tags: ["Detection", "ML", "Platform"],
+      icon: "radar",
+      group: "at-meta",
     },
     {
       slug: "enterprise-identity",
@@ -121,7 +200,25 @@ export const site: Site = {
       outcome:
         "Built a platform that secured enterprise access for one of the largest ad businesses in the world.",
       tags: ["Platform", "Enterprise", "0→1"],
+      icon: "key",
+      group: "range",
       featured: true,
+    },
+    {
+      title: "Ring Subscriptions",
+      outcome:
+        "Led Ring Protect as a recurring-revenue platform — billing infrastructure, Amazon channel, and subscription-tier launches across 20+ markets.",
+      tags: ["Consumer", "Subscriptions", "Platform"],
+      icon: "bell",
+      group: "range",
+    },
+    {
+      title: "GoodRx — Price Page",
+      outcome:
+        "Turned the most important page on a consumer healthcare marketplace into a canonical product system — balancing user trust, conversion, and SEO.",
+      tags: ["Consumer", "Marketplace", "Healthcare"],
+      icon: "pulse",
+      group: "range",
     },
   ],
 
@@ -192,3 +289,15 @@ export const site: Site = {
     ogImageAlt: "Mahdis Rezaei — Product leader who builds",
   },
 };
+
+/** Home-page featured subset, in a deliberate order (PRD §8.4 default). */
+export const featuredWork = site.work.filter((w) => w.featured);
+
+/** Items that have a dedicated case-study page. */
+export const workWithPages = site.work.filter(
+  (w): w is WorkItem & { slug: string } => Boolean(w.slug),
+);
+
+export function getWork(slug: string) {
+  return site.work.find((w) => w.slug === slug);
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Geist } from "next/font/google";
+import { Space_Grotesk, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
@@ -17,6 +17,14 @@ const display = Space_Grotesk({
 const body = Geist({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
+});
+
+// Mono is used ONLY on tiny labels (section numbers, eyebrows) — a crafted
+// technical detail, not the terminal aesthetic the PRD rules out.
+const mono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -64,7 +72,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${display.variable} ${body.variable} h-full`}
+      className={`${display.variable} ${body.variable} ${mono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
 import { WorkCard } from "@/components/work-card";
+import { SectionLabel } from "@/components/section-label";
+import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -21,16 +23,16 @@ export default function WorkPage() {
           framed as problem, insight, decision, and impact.
         </p>
 
-        <div className="mt-14 space-y-16">
-          {site.workGroups.map((group) => {
+        <div className="mt-16 space-y-20">
+          {site.workGroups.map((group, i) => {
             const items = site.work.filter((w) => w.group === group.key);
             if (items.length === 0) return null;
             return (
-              <div key={group.key}>
-                <p className="text-sm font-medium uppercase tracking-widest text-primary">
+              <Reveal key={group.key}>
+                <SectionLabel index={String(i + 1).padStart(2, "0")}>
                   {group.eyebrow}
-                </p>
-                <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                </SectionLabel>
+                <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
                   {group.title}
                 </h2>
                 <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
@@ -41,7 +43,7 @@ export default function WorkPage() {
                     <WorkCard key={work.title} work={work} />
                   ))}
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

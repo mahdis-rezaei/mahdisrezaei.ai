@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { SectionLabel } from "@/components/section-label";
+import { Reveal } from "@/components/reveal";
 
 export function AboutTeaser() {
   const { about } = site;
 
   return (
-    <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
-      <p className="text-balance font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
+    <Reveal
+      as="section"
+      className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-24"
+    >
+      <SectionLabel index="03">About</SectionLabel>
+      <p className="mt-6 text-balance font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
         {about.teaser}
       </p>
       <Link
@@ -15,6 +21,6 @@ export function AboutTeaser() {
       >
         {about.teaserCta.label} →
       </Link>
-    </section>
+    </Reveal>
   );
 }

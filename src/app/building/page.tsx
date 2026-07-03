@@ -4,9 +4,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Building — Yadegar",
+  title: "Building · Yadegar",
   description:
-    "Yadegar — a private AI journaling app Mahdis Rezaei designed, built, and shipped end to end, web and iOS.",
+    "Yadegar, a private AI journaling app Mahdis Rezaei designed, built, and shipped end to end, web and iOS.",
   alternates: { canonical: "/building" },
 };
 
@@ -37,8 +37,8 @@ export default function BuildingPage() {
         </a>
 
         <div className="mt-12 rounded-2xl border border-border bg-card p-6 text-muted-foreground sm:p-8">
-          The full build write-up — why I built it, the architecture, and the
-          principles it&apos;s built on — is coming in the next pass.
+          The full build write-up, covering why I built it, the architecture,
+          and the principles it&apos;s built on, is coming in the next pass.
         </div>
       </section>
     </main>

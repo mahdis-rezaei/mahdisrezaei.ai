@@ -28,7 +28,7 @@ export function BeliefsBand() {
           “{b.closer}”
         </p>
         <cite className="mt-3 block font-mono text-[0.62rem] uppercase not-italic tracking-widest text-primary">
-          — {b.closerCite}
+          {b.closerCite}
         </cite>
       </blockquote>
     </section>

@@ -62,8 +62,8 @@ export default async function CaseStudyPage({
         </ul>
 
         <div className="mt-12 rounded-2xl border border-border bg-card p-6 text-muted-foreground sm:p-8">
-          The full case study — context, the call I made, what I did, and the
-          impact — is coming in the next pass.
+          The full case study, covering context, the call I made, what I did,
+          and the impact, is coming in the next pass.
         </div>
       </article>
     </main>

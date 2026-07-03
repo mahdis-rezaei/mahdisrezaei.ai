@@ -8,7 +8,7 @@ import { Reveal } from "@/components/reveal";
 export const metadata: Metadata = {
   title: "Professional",
   description:
-    "The professional work of Mahdis Rezaei — building trusted AI at scale at Meta, plus enterprise platforms, consumer products, and Yadegar, built end to end.",
+    "The professional work of Mahdis Rezaei: building trusted AI at scale at Meta, plus enterprise platforms, consumer products, and Yadegar, built end to end.",
   alternates: { canonical: "/work" },
 };
 
@@ -25,7 +25,7 @@ export default function ProfessionalPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
           A decade turning ambiguous, high-stakes problems into products people
-          rely on — most recently, evaluated AI systems at Meta&apos;s scale.
+          rely on, most recently evaluated AI systems at Meta&apos;s scale.
         </p>
 
         <div className="mt-16">

@@ -10,7 +10,7 @@ import { Tabs } from "@/components/tabs";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Mahdis Rezaei — six countries, one through-line: turning ambiguous, high-trust problems into products people rely on. Staff PM at Meta and the solo builder of Yadegar.",
+    "Mahdis Rezaei: six countries, one through-line. Turning ambiguous, high-trust problems into products people rely on. Staff PM at Meta and the solo builder of Yadegar.",
   alternates: { canonical: "/about" },
 };
 

@@ -141,10 +141,11 @@ export const site: Site = {
   },
 
   // Sticky global nav (PRD §7): 4 items + a "Get in touch" CTA.
+  // Personal → life (/about); Professional → merged work + career (/work).
   nav: [
-    { label: "Work", href: "/work" },
+    { label: "Personal", href: "/about" },
+    { label: "Professional", href: "/work" },
     { label: "Building", href: "/building" },
-    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
 

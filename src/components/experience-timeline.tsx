@@ -56,6 +56,23 @@ export function ExperienceTimeline() {
               <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
                 {job.summary}
               </p>
+
+              {job.highlights && job.highlights.length > 0 && (
+                <ul className="mt-4 space-y-2">
+                  {job.highlights.map((h, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
+                      />
+                      <span className="text-pretty">{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </article>
         );

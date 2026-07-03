@@ -63,6 +63,7 @@ export type ExperienceItem = {
   period: string;
   location: string;
   summary: string;
+  highlights?: string[];
   /** Key into careerImages, or null until a photo is added. */
   image: string | null;
 };
@@ -120,7 +121,7 @@ export type Site = {
 export const site: Site = {
   name: "Mahdis Rezaei",
   role: "Staff Product Manager",
-  location: "San Francisco · open to remote",
+  location: "Los Angeles · open to remote",
   openToWork: true,
   portrait: "/photo.jpg",
 
@@ -299,56 +300,83 @@ export const site: Site = {
   experience: [
     {
       company: "Meta",
-      role: "Staff Product Manager — Monetization, then Central Integrity",
-      period: "2022 — now",
-      location: "San Francisco / Remote",
+      role: "Staff Product Manager · Central Integrity",
+      period: "Jun 2022 — now",
+      location: "Los Angeles · Remote",
       summary:
-        "At Meta I crossed fully into product. In Monetization I built enterprise identity and single sign-on for advertisers — letting companies bring their own identity provider instead of sharing personal logins — and consumer sign-on across Meta's apps. Now, as a Staff PM in Central Integrity, I own the AI platform portfolio for high-stakes review: evaluation, investigation augmentation, and workflow automation.",
+        "I crossed fully into product at Meta and was promoted to Staff. Today I own the AI platform portfolio for integrity — turning the enforcement decisions that keep billions of people safe into evaluated, AI-first systems. Before that, in Monetization, I built the enterprise identity and single sign-on platform behind Meta's ads business.",
+      highlights: [
+        "Own the LLM evaluation and deployment lifecycle for integrity enforcement — from offline hill-climbing through shadow mode to production — cutting scaled human review by roughly a quarter while holding enforcement quality flat, across dozens of violation areas.",
+        "Built Meta's flagship multi-agent investigation platform: a natural-language interface that returns evidence-backed reasoning and recommended actions. It reached above-human-expert accuracy, with a thousand-plus weekly users running thousands of AI-led investigations a day.",
+        "Shipped an agentic workflow-automation platform that encodes human playbooks into governed workflows across thousands of escalation types — with explicit control over where AI acts, recommends, or stays out — cutting triage time by roughly two-thirds and freeing hundreds of thousands of human hours a year.",
+        "Earlier, in Monetization: took Meta's enterprise identity/SSO platform from pre-beta to general availability, migrating billions of users and securing a large share of ad revenue.",
+      ],
       image: null,
     },
     {
-      company: "Amazon — Ring",
-      role: "Technical Program Manager, Subscriptions",
-      period: "2020 — 2022",
-      location: "Los Angeles",
+      company: "Amazon",
+      role: "Principal Technical Program Manager · Ring",
+      period: "Oct 2019 — Jun 2022",
+      location: "Santa Monica",
       summary:
-        "Owned subscriptions for Ring — launching new tiers, bringing Ring devices and plans onto amazon.com, and shaping pricing strategy and the P&L. Ring still ran like a startup inside Amazon, so I did real product work, often acting as PM for teams that didn't have one. It's where product management fully clicked for me.",
+        "Owned product strategy, roadmap, and P&L for Ring's subscription business — 14M+ customers across 20+ markets — spanning pricing, the subscription platform, and device-service integrations.",
+      highlights: [
+        "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first multi-tenant offering on Amazon's Devices subscription platform.",
+        "Led a global price increase worth tens of millions in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
+        "Drove the first hardware-plus-subscription integration of the Amazon Astro robot with Ring Protect, as product lead across two organizations.",
+      ],
       image: null,
     },
     {
       company: "GoodRx",
-      role: "Technical Program Manager",
-      period: "2019 — 2020",
+      role: "Senior Technical Program Manager",
+      period: "Apr 2019 — Oct 2019",
       location: "Santa Monica",
       summary:
-        "Worked across the app and website of a healthcare marketplace that helps people afford medication without insurance. Many of our users were older, so I obsessed over usability — a dead-simple path from searching a drug to a coupon they could hand to any pharmacy.",
+        "Led cross-functional delivery for web, iOS, and Android on a healthcare marketplace that helps people afford medication without insurance — obsessing over usability for older users.",
+      highlights: [
+        "Led eight scrum teams across engineering, DevOps, and delivery, improving sprint velocity by 30% and cutting release times by 40%.",
+        "Ran A/B testing across web and mobile with product and analytics, lifting engagement by 25%.",
+      ],
       image: null,
     },
     {
       company: "GlobeTax",
       role: "Senior Technical Program Manager",
-      period: "2017 — 2019",
+      period: "Nov 2017 — Apr 2019",
       location: "New York",
       summary:
-        "Owned the internal platforms behind international tax filing — complex, regulated, multi-country software our operations teams relied on to file for global businesses. I got good at turning a tangle of rules into product people could actually use.",
+        "Led digital transformation for fintech tax platforms — complex, regulated, multi-country software — modernizing delivery, mobile, and release governance.",
+      highlights: [
+        "Directed a React Native mobile app with architects, designers, and engineers, lifting mobile engagement by 15%.",
+        "Led an Agile transformation and release governance across product and engineering, cutting delivery time by 50% and improving release reliability by 20%.",
+      ],
       image: null,
     },
     {
       company: "Blue Apron",
       role: "Technical Program Manager",
-      period: "2017",
+      period: "Feb 2017 — Nov 2017",
       location: "New York",
       summary:
-        "Joined as the company prepared to go public and owned the internal software audit — evaluating every tool the company ran on and deciding what to keep and retire against a demanding IPO bar.",
+        "Led product delivery and cross-functional execution for e-commerce platform teams during a period of rapid growth and IPO preparation.",
+      highlights: [
+        "Moved three teams from siloed execution to cross-functional delivery, increasing delivery speed by 25% and reducing backlogs by 30%.",
+        "Improved defect tracking and release-readiness for global deployments, cutting post-release issues by 20%.",
+      ],
       image: null,
     },
     {
-      company: "Ground Control (now Imprivata)",
-      role: "Program Manager",
-      period: "2015 — 2017",
+      company: "Imprivata (formerly Ground Control)",
+      role: "Technical Program Manager",
+      period: "Feb 2015 — Feb 2017",
       location: "New York",
       summary:
-        "My first product role, at a fifteen-person startup building mobile device management for hospitals. I wore every hat — documenting the product, managing releases against each new Apple update, and helping decide what to build next. It taught me that at a small company, everyone's judgment counts.",
+        "My first product role, at a startup building enterprise mobility products for healthcare — mobile device management that let hospitals provision and reset iPads in minutes instead of by hand.",
+      highlights: [
+        "Led in-house and offshore teams to build an enterprise provisioning and control product for iOS devices, increasing deployment efficiency by 30%.",
+        "Improved customer-issue resolution and release execution, contributing to a 15% lift in customer retention.",
+      ],
       image: null,
     },
   ],

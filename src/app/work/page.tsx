@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { workStudies } from "@/content/work-studies";
 import { CareerCards } from "@/components/career-cards";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { SectionLabel } from "@/components/section-label";
@@ -29,6 +32,33 @@ export default function ProfessionalPage() {
         <div className="mt-16">
           <CareerCards />
         </div>
+
+        <Reveal as="section" className="mt-20">
+          <SectionLabel>Selected case studies</SectionLabel>
+          <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+            The longer reads
+          </h2>
+          <ul className="mt-8 divide-y divide-border border-y border-border">
+            {Object.entries(workStudies).map(([slug, study]) => (
+              <li key={slug}>
+                <Link
+                  href={`/work/${slug}`}
+                  className="group flex items-start justify-between gap-6 py-5 transition-colors hover:text-primary"
+                >
+                  <div>
+                    <h3 className="font-display text-lg font-semibold tracking-tight">
+                      {study.title}
+                    </h3>
+                    <p className="mt-1 text-pretty leading-relaxed text-muted-foreground">
+                      {study.tagline}
+                    </p>
+                  </div>
+                  <ArrowRight className="mt-1.5 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-primary" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
         <Reveal as="section" className="mt-20">
           <SectionLabel>Career history</SectionLabel>

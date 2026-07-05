@@ -47,15 +47,23 @@ function renderBlock(block: Block, i: number) {
   }
 }
 
-export function CaseStudy({ study }: { study: CaseStudyType }) {
+export function CaseStudy({
+  study,
+  backHref = "/building",
+  backLabel = "Building",
+}: {
+  study: CaseStudyType;
+  backHref?: string;
+  backLabel?: string;
+}) {
   return (
     <main className="flex-1">
       <article className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-24">
         <Link
-          href="/building"
+          href={backHref}
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
-          <ArrowLeft className="h-4 w-4" /> Building
+          <ArrowLeft className="h-4 w-4" /> {backLabel}
         </Link>
 
         <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">

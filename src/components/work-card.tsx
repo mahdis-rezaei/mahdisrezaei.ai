@@ -26,7 +26,7 @@ const ICONS: Record<WorkIcon, LucideIcon> = {
 
 export function WorkCard({ work }: { work: WorkItem }) {
   const Icon = ICONS[work.icon];
-  const caseHref = work.slug ? `/work/${work.slug}` : undefined;
+  const caseHref = work.caseHref ?? (work.slug ? `/work/${work.slug}` : undefined);
   const caseLabel =
     work.group === "built-solo" ? "See how I built it" : "Read the case study";
 

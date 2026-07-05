@@ -38,6 +38,8 @@ export type WorkItem = {
   platform?: string;
   /** External CTAs (e.g. "Visit Yadegar"). Internal links use `slug`. */
   ctas?: Cta[];
+  /** Overrides the case-study link (else /work/[slug] when a slug exists). */
+  caseHref?: string;
   /** Featured on the home "Selected work" section. */
   featured?: boolean;
 };
@@ -163,7 +165,6 @@ export const site: Site = {
 
   work: [
     {
-      slug: "yadegar",
       title: "Yadegar",
       outcome:
         "A private AI journaling app that hands you back one page worth returning to, in your own words: the thread that endured, not the noise of the day.",
@@ -171,6 +172,7 @@ export const site: Site = {
       icon: "notebook",
       group: "built-solo",
       platform: "Web · iOS",
+      caseHref: "/building/yadegar",
       ctas: [{ label: "Visit Yadegar", href: "https://yadegarjournal.com" }],
       featured: true,
     },
@@ -236,7 +238,7 @@ export const site: Site = {
       "A private AI journaling app that hands you back one page worth returning to, in your own words: the thread that endured, not the noise of the day.",
     meaning: "Yadegar means “keepsake” in Persian.",
     ctas: {
-      primary: { label: "See how I built it", href: "/building" },
+      primary: { label: "See how I built it", href: "/building/yadegar" },
       secondary: { label: "Visit Yadegar", href: "https://yadegarjournal.com" },
     },
     href: "https://yadegarjournal.com",

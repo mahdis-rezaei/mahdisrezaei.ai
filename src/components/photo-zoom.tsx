@@ -13,10 +13,12 @@ import { cn } from "@/lib/utils";
 export function PhotoZoom({
   image,
   alt,
+  caption,
   className,
 }: {
   image: StaticImageData;
   alt: string;
+  caption?: string;
   className?: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -54,6 +56,13 @@ export function PhotoZoom({
           sizes="(min-width: 640px) 18rem, 100vw"
           className="h-auto w-full transition-transform duration-300 group-hover/photo:scale-[1.03]"
         />
+        {caption && (
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-2.5 pt-8 text-left">
+            <span className="font-mono text-[0.62rem] uppercase tracking-widest text-white/90">
+              {caption}
+            </span>
+          </span>
+        )}
         <span
           aria-hidden
           className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover/photo:bg-black/25 group-hover/photo:opacity-100"
@@ -79,13 +88,19 @@ export function PhotoZoom({
           >
             <X className="h-5 w-5" />
           </button>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={image.src}
-            alt={alt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-[88vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
-          />
+          <figure onClick={(e) => e.stopPropagation()} className="m-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={image.src}
+              alt={alt}
+              className="mx-auto max-h-[85vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
+            />
+            {caption && (
+              <figcaption className="mt-3 text-center font-mono text-[0.62rem] uppercase tracking-widest text-white/70">
+                {caption}
+              </figcaption>
+            )}
+          </figure>
         </div>
       )}
     </>

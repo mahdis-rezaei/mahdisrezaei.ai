@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { aboutPage } from "@/content/about";
 import { journeyImages } from "@/content/journey-images";
 import { SectionLabel } from "@/components/section-label";
+import { PhotoZoom } from "@/components/photo-zoom";
 
 /**
  * Personal tab — "Six countries, one through-line" timeline. Numbered nodes on
@@ -49,20 +49,14 @@ export function AboutTimeline() {
                 </div>
 
                 {img && (
-                  <figure className="relative mt-4 w-full max-w-sm overflow-hidden rounded-lg border border-border shadow-lg shadow-black/5">
-                    <Image
-                      src={img}
+                  <div className="mt-4 w-full max-w-sm">
+                    <PhotoZoom
+                      image={img}
                       alt={c.place}
-                      placeholder="blur"
-                      sizes="(min-width: 640px) 24rem, 90vw"
-                      className="h-auto w-full"
+                      caption={c.caption}
+                      className="shadow-lg shadow-black/5"
                     />
-                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-2.5 pt-8">
-                      <span className="font-mono text-[0.62rem] uppercase tracking-widest text-white/90">
-                        {c.caption}
-                      </span>
-                    </figcaption>
-                  </figure>
+                  </div>
                 )}
 
                 <div className="mt-4 space-y-3">

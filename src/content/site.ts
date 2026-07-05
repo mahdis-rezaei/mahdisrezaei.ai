@@ -258,7 +258,7 @@ export const site: Site = {
         "Own the LLM evaluation and deployment lifecycle for integrity enforcement, from offline hill-climbing through shadow mode to production, cutting scaled human review by roughly a quarter while holding enforcement quality flat, across dozens of violation areas.",
         "Built Meta's flagship multi-agent investigation platform: a natural-language interface that returns evidence-backed reasoning and recommended actions. It reached above-human-expert accuracy, with a thousand-plus weekly users running thousands of AI-led investigations a day.",
         "Shipped an agentic workflow-automation platform that encodes human playbooks into governed workflows across thousands of escalation types, with explicit control over where AI acts, recommends, or stays out, cutting triage time by roughly two-thirds and freeing hundreds of thousands of human hours a year.",
-        "Earlier, in Monetization: took Meta's enterprise identity and SSO platform from pre-beta to general availability, migrating billions of users and securing a large share of ad revenue.",
+        "Earlier, in Monetization: took Meta's enterprise identity and SSO platform from pre-beta to general availability, migrating a huge, dependent advertiser ecosystem without breaking it, closing a real account-takeover gap, and securing a large share of ad revenue.",
       ],
       image: "meta",
     },
@@ -268,11 +268,12 @@ export const site: Site = {
       period: "Oct 2019 to Jun 2022",
       location: "Santa Monica",
       summary:
-        "Owned product strategy, roadmap, and P&L for Ring's subscription business: 14M+ customers across 20+ markets, spanning pricing, the subscription platform, and device-service integrations.",
+        "Ring is Amazon's home-security business, known for the video doorbell, on a mission to make neighborhoods safer and smart security affordable. I owned Ring Protect, the subscription behind the hardware, which is less a pricing page than a recurring-revenue platform: billing and payments, tax, the Amazon sales channel, and a portfolio of tiers. I held the P&L and roadmap for 14M+ customers across 20+ markets.",
       highlights: [
-        "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first multi-tenant offering on Amazon's Devices subscription platform.",
+        "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first subscription on Amazon's own devices platform.",
         "Led a global price increase worth tens of millions in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
-        "Drove the first hardware-plus-subscription integration of the Amazon Astro robot with Ring Protect, as product lead across two organizations.",
+        "Drove the first hardware-plus-subscription integration of the Amazon Astro robot with Ring Protect, including a trial that needed no credit card, a design that saved months of engineering.",
+        "Rebuilt the subscription purchase and management flows to work across regions and currencies.",
       ],
       image: "ring",
     },
@@ -282,10 +283,10 @@ export const site: Site = {
       period: "Apr 2019 to Oct 2019",
       location: "Santa Monica",
       summary:
-        "Led cross-functional delivery for web, iOS, and Android on a healthcare marketplace that helps people afford medication without insurance, obsessing over usability for older users.",
+        "GoodRx is a consumer healthcare marketplace for prescription savings: search a medication, compare prices across pharmacies, and get a coupon that can cut the cost dramatically. Customers loved it, at a 90+ NPS. I owned the desktop price page, the most important page on the site, which looks simple (a drug, a list of prices, a coupon) and is anything but underneath.",
       highlights: [
-        "Led eight scrum teams across engineering, DevOps, and delivery, improving sprint velocity by 30% and cutting release times by 40%.",
-        "Ran A/B testing across web and mobile with product and analytics, lifting engagement by 25%.",
+        "Turned the price page from a pile of historically-evolved special cases into a canonical product system: a clear taxonomy of drug and row types, documented behavior for each, and a QA matrix.",
+        "Framed every decision around the tension that actually mattered, user trust, conversion, and SEO crawlability, which pull against each other more than you'd expect.",
       ],
       image: "goodrx",
     },
@@ -295,10 +296,10 @@ export const site: Site = {
       period: "Nov 2017 to Apr 2019",
       location: "New York",
       summary:
-        "Led digital transformation for fintech tax platforms: complex, regulated, multi-country software, modernizing delivery, mobile, and release governance.",
+        "GlobeTax builds software for international withholding tax, the rules that govern how cross-border investment income gets taxed and reclaimed: a genuinely complex, heavily regulated, multi-country domain. I owned eCerts, a self-service tool that walked financial institutions' clients through generating and managing their IRS tax-certification forms, the W-8 and W-9 paperwork that determines treaty benefits.",
       highlights: [
-        "Directed a React Native mobile app with architects, designers, and engineers, lifting mobile engagement by 15%.",
-        "Led an Agile transformation and release governance across product and engineering, cutting delivery time by 50% and improving release reliability by 20%.",
+        "Took something dense and error-prone and made it something a person could actually complete correctly.",
+        "A deliberate stretch from consumer products to internal business users, a different way to think about feedback and testing; I learned to hold a complicated, regulated product in my head and explain it plainly.",
       ],
       image: "globetax",
     },
@@ -308,10 +309,10 @@ export const site: Site = {
       period: "Feb 2017 to Nov 2017",
       location: "New York",
       summary:
-        "Led product delivery and cross-functional execution for e-commerce platform teams during a period of rapid growth and IPO preparation.",
+        "Blue Apron is the meal-kit service: recipes and pre-portioned ingredients delivered to your door. I joined at around a thousand people, right as it prepared to go public, and it IPO'd that June while I was there. I worked inside the company, on the information systems that every department, marketing, sales, finance, and engineering, ran on.",
       highlights: [
-        "Moved three teams from siloed execution to cross-functional delivery, increasing delivery speed by 25% and reducing backlogs by 30%.",
-        "Improved defect tracking and release-readiness for global deployments, cutting post-release issues by 20%.",
+        "Brought real Agile practice to a team that didn't have it yet: made the case to leadership, reconfigured JIRA around how the team actually worked, and got everyone, across locations, onto weekly sprints.",
+        "Rolled out a new company-wide help-desk system, and watched a company grow and go public up close.",
       ],
       image: "blueapron",
     },
@@ -321,10 +322,10 @@ export const site: Site = {
       period: "Feb 2015 to Feb 2017",
       location: "New York",
       summary:
-        "My first product role, at a startup building enterprise mobility products for healthcare: mobile device management that let hospitals provision and reset iPads in minutes instead of by hand.",
+        "A fifteen-person SaaS startup in New York, and my first full-time job in the US; the product lives on today inside Imprivata as Mobile Access Management. GroundControl was deployment-automation software for fleets of shared Apple devices: organizations were configuring tens of thousands of iPhones and iPads by hand (Macy's alone ran more than 5,000 across its stores), and our software imaged, configured, backed up, restored, and wiped them automatically.",
       highlights: [
-        "Led in-house and offshore teams to build an enterprise provisioning and control product for iOS devices, increasing deployment efficiency by 30%.",
-        "Improved customer-issue resolution and release execution, contributing to a 15% lift in customer retention.",
+        "Ran the engineering team as project manager and scrum master, with in-house and offshore developers, owning sprint planning, standups, releases, and QA at once, because a startup that size doesn't have separate people for those.",
+        "It's where I learned to ship, and where I learned that I was fast at it.",
       ],
       image: "imprivata",
     },

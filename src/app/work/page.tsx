@@ -19,8 +19,11 @@ export default function ProfessionalPage() {
           Professional
         </h1>
         <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-          A decade turning ambiguous, high-stakes problems into products people
-          rely on, most recently evaluated AI systems at Meta&apos;s scale.
+          I&apos;ve built for more than a decade across startups and some of the
+          largest platforms in the world: consumer, enterprise, and now AI. The
+          titles changed as I went, but the job never really did. Take something
+          ambiguous and high-stakes, and turn it into something real that people
+          can trust.
         </p>
 
         <div className="mt-16">

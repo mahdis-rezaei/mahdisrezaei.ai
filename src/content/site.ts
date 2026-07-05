@@ -258,7 +258,7 @@ export const site: Site = {
         "Shipped an agentic workflow-automation platform that encodes human playbooks into governed workflows across thousands of escalation types, with explicit control over where AI acts, recommends, or stays out, cutting triage time by roughly two-thirds and freeing hundreds of thousands of human hours a year.",
         "Earlier, in Monetization: took Meta's enterprise identity and SSO platform from pre-beta to general availability, migrating billions of users and securing a large share of ad revenue.",
       ],
-      image: null,
+      image: "meta",
     },
     {
       company: "Amazon",
@@ -272,7 +272,7 @@ export const site: Site = {
         "Led a global price increase worth tens of millions in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
         "Drove the first hardware-plus-subscription integration of the Amazon Astro robot with Ring Protect, as product lead across two organizations.",
       ],
-      image: null,
+      image: "ring",
     },
     {
       company: "GoodRx",
@@ -285,7 +285,7 @@ export const site: Site = {
         "Led eight scrum teams across engineering, DevOps, and delivery, improving sprint velocity by 30% and cutting release times by 40%.",
         "Ran A/B testing across web and mobile with product and analytics, lifting engagement by 25%.",
       ],
-      image: null,
+      image: "goodrx",
     },
     {
       company: "GlobeTax",
@@ -298,7 +298,7 @@ export const site: Site = {
         "Directed a React Native mobile app with architects, designers, and engineers, lifting mobile engagement by 15%.",
         "Led an Agile transformation and release governance across product and engineering, cutting delivery time by 50% and improving release reliability by 20%.",
       ],
-      image: null,
+      image: "globetax",
     },
     {
       company: "Blue Apron",
@@ -311,7 +311,7 @@ export const site: Site = {
         "Moved three teams from siloed execution to cross-functional delivery, increasing delivery speed by 25% and reducing backlogs by 30%.",
         "Improved defect tracking and release-readiness for global deployments, cutting post-release issues by 20%.",
       ],
-      image: null,
+      image: "blueapron",
     },
     {
       company: "Imprivata (formerly Ground Control)",
@@ -324,7 +324,7 @@ export const site: Site = {
         "Led in-house and offshore teams to build an enterprise provisioning and control product for iOS devices, increasing deployment efficiency by 30%.",
         "Improved customer-issue resolution and release execution, contributing to a 15% lift in customer retention.",
       ],
-      image: null,
+      image: "imprivata",
     },
   ],
 

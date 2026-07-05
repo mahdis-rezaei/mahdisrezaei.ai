@@ -33,13 +33,13 @@ export type CareerCard = {
 export type Principle = {
   title: string;
   body: string;
-  quote: string;
-  cite: string;
 };
 
 export type Practice = { title: string; body: string; why: string };
 
 export type Belief = { lead: string; rest: string };
+
+export type Testimonial = { quote: string; cite: string };
 
 export const aboutPage = {
   personal: {
@@ -168,50 +168,33 @@ export const aboutPage = {
 
   howIWork: {
     eyebrow: "How I work",
-    title: "Principles, and the people who'll vouch for them",
-    lede: "Each principle is mine. Each quote is real, from a former colleague, anonymized to their role.",
+    title: "The principles I work by",
+    lede: "Six rules I've earned the hard way, building high-stakes systems where a confident wrong answer is worse than none.",
     principles: [
       {
         title: "Trust is the product.",
         body: "In high-stakes systems, the model or the feature isn't what I'm really shipping. The trust around it is. I spend most of my time on the part nobody claps for: the ground truth, the gates, the way a wrong answer gets caught before it matters.",
-        quote:
-          "An exceptional partner who consistently delivers results and earns my full trust.",
-        cite: "Engineering Manager",
       },
       {
         title:
           "I'd rather kill the wrong approach than ship a confident wrong answer.",
         body: "The most useful thing I do some weeks is stop something, and say so early, out loud, before it's expensive.",
-        quote:
-          "She doesn't shy away from the elephant in the room. She asks the hard questions and holds everyone accountable, and brings an energy no one else can.",
-        cite: "Engineering Manager",
       },
       {
         title: "The engineers have to want to build it.",
         body: "I don't hand down specs. I bring skeptical engineers along until it's their idea too, and I earn that room by understanding the system, not just the roadmap.",
-        quote:
-          "She goes deep in technically hairy areas. I'm comfortable sending her in with partners to get to an aligned technical plan, instead of an engineer.",
-        cite: "Senior Engineering Leader",
       },
       {
         title: "Start from what people actually need, not what they ask for.",
         body: "I learned a language at eighteen by listening for the meaning under the words. I've built products the same way ever since: find the real gap first.",
-        quote:
-          "She brought a much-needed rigor and the ability to connect people, process, and technical capability to the product. She spots gaps almost immediately.",
-        cite: "Product Marketing Lead",
       },
       {
         title: "I write it down with a date, and then I go collect it.",
         body: "I make the goal a promise with a deadline: a title, a launch, a platform. And I keep it. That record is why I trust myself with ambiguous, high-stakes work, and it's how I operated above my level long before the title caught up.",
-        quote:
-          "She consistently demonstrated skills that exceeded a high-performing TPM, and often ventured into PM territory.",
-        cite: "Product Marketing Lead",
       },
       {
         title: "I build with AI. I don't just manage people who do.",
         body: "I shipped Yadegar end to end, design and code, web and iOS, on my own, with AI as my team. I know where these tools are sharp and where they quietly lie, because I use them to make real things.",
-        quote: "Yadegar, live on web, in the App Store. Built solo.",
-        cite: "Proof, not a quote",
       },
     ] satisfies Principle[],
   },
@@ -269,8 +252,43 @@ export const aboutPage = {
         rest: "I stopped waiting for someone to hand me the plan a long time ago. I'd rather build the thing than wait for permission.",
       },
     ] satisfies Belief[],
-    closer:
-      "Mahdis is one of the best things that happened to this program. We felt the gap when she left. I hope she comes back.",
-    closerCite: "Senior Engineer",
+  },
+
+  testimonials: {
+    eyebrow: "In their words",
+    title: "What the people I've built with say",
+    lede: "Real feedback from engineers, managers, and partners I've shipped with, anonymized to their role.",
+    items: [
+      {
+        quote:
+          "She goes deep in technically hairy areas. I'm comfortable sending her in with partners to get to an aligned technical plan, instead of an engineer.",
+        cite: "Senior Engineering Leader",
+      },
+      {
+        quote:
+          "She brought a much-needed rigor and the ability to connect people, process, and technical capability to the product. She spots gaps almost immediately.",
+        cite: "Product Marketing Lead",
+      },
+      {
+        quote:
+          "She doesn't shy away from the elephant in the room. She asks the hard questions and holds everyone accountable, and brings an energy no one else can.",
+        cite: "Engineering Manager",
+      },
+      {
+        quote:
+          "She consistently demonstrated skills that exceeded a high-performing TPM, and often ventured into PM territory.",
+        cite: "Product Marketing Lead",
+      },
+      {
+        quote:
+          "An exceptional partner who consistently delivers results and earns my full trust.",
+        cite: "Engineering Manager",
+      },
+      {
+        quote:
+          "Mahdis is one of the best things that happened to this program. We felt the gap when she left. I hope she comes back.",
+        cite: "Senior Engineer",
+      },
+    ] satisfies Testimonial[],
   },
 };

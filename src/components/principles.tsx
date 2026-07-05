@@ -1,7 +1,7 @@
 import { aboutPage } from "@/content/about";
 import { SectionLabel } from "@/components/section-label";
 
-/** How I work tab — principles, each with a real, role-anonymized proof quote. */
+/** How I work tab — the principles Mahdis works by. */
 export function Principles() {
   const w = aboutPage.howIWork;
 
@@ -24,14 +24,6 @@ export function Principles() {
             <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
               {p.body}
             </p>
-            <blockquote className="mt-4 border-l-2 border-primary pl-4">
-              <p className="text-pretty leading-relaxed">
-                {p.cite === "Proof, not a quote" ? p.quote : `“${p.quote}”`}
-              </p>
-              <cite className="mt-2 block font-mono text-[0.62rem] uppercase not-italic tracking-widest text-primary">
-                {p.cite}
-              </cite>
-            </blockquote>
           </div>
         ))}
       </div>

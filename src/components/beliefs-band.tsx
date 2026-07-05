@@ -1,7 +1,7 @@
 import { aboutPage } from "@/content/about";
 import { SectionLabel } from "@/components/section-label";
 
-/** Closing band — "What I believe" + an emotional closer. Shown under every tab. */
+/** Closing band — "What I believe". Shown under every tab. */
 export function BeliefsBand() {
   const b = aboutPage.beliefs;
 
@@ -22,15 +22,6 @@ export function BeliefsBand() {
           </p>
         ))}
       </div>
-
-      <blockquote className="mt-10 border-t border-border pt-8">
-        <p className="text-balance text-xl leading-snug italic sm:text-2xl">
-          “{b.closer}”
-        </p>
-        <cite className="mt-3 block font-mono text-[0.62rem] uppercase not-italic tracking-widest text-primary">
-          {b.closerCite}
-        </cite>
-      </blockquote>
     </section>
   );
 }

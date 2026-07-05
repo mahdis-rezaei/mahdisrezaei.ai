@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { site } from "@/content/site";
 import { careerImages } from "@/content/career-images";
+import { PhotoZoom } from "@/components/photo-zoom";
 
 function monogram(company: string) {
   const letters = company.replace(/[^A-Za-z]/g, "");
@@ -21,15 +21,9 @@ export function ExperienceTimeline() {
             key={`${job.company}-${job.period}`}
             className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-5 sm:flex-row sm:items-start sm:p-6"
           >
-            <div className="shrink-0 sm:w-44">
+            <div className="shrink-0 sm:w-72">
               {img ? (
-                <Image
-                  src={img}
-                  alt={job.company}
-                  placeholder="blur"
-                  sizes="(min-width: 640px) 11rem, 100vw"
-                  className="h-auto w-full rounded-xl border border-border"
-                />
+                <PhotoZoom image={img} alt={`${job.company}, ${job.role}`} />
               ) : (
                 <div
                   aria-hidden

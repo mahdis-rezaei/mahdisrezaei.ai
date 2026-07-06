@@ -257,7 +257,7 @@ export const aboutPage = {
   testimonials: {
     eyebrow: "In their words",
     title: "What the people I've built with say",
-    lede: "Real feedback from engineers, managers, and partners I've shipped with, anonymized to their role.",
+    lede: "Real feedback from the engineers, managers, and partners I've shipped with, anonymized to their role.",
     items: [
       {
         quote:
@@ -265,14 +265,18 @@ export const aboutPage = {
         cite: "Senior Engineering Leader",
       },
       {
-        quote:
-          "She brought a much-needed rigor and the ability to connect people, process, and technical capability to the product. She spots gaps almost immediately.",
-        cite: "Product Marketing Lead",
+        quote: "One of the most technical PMs I've worked with.",
+        cite: "Software Engineer",
       },
       {
         quote:
-          "She doesn't shy away from the elephant in the room. She asks the hard questions and holds everyone accountable, and brings an energy no one else can.",
-        cite: "Engineering Manager",
+          "She always has good insight into which technical components might go wrong. Very impressive for a non-engineering role.",
+        cite: "Software Engineer",
+      },
+      {
+        quote:
+          "She started with plans she was only twenty percent sure of, and kept driving toward clarity until it was there. She shined throughout.",
+        cite: "Software Engineer",
       },
       {
         quote:
@@ -281,8 +285,33 @@ export const aboutPage = {
       },
       {
         quote:
+          "She brought a much-needed rigor and the ability to connect people, process, and technical capability to the product. She spots gaps almost immediately.",
+        cite: "Product Marketing Lead",
+      },
+      {
+        quote:
+          "This would not have been feasible with just the engineering team.",
+        cite: "Director of Engineering",
+      },
+      {
+        quote:
+          "Her leadership in rallying every stakeholder had an outsized impact.",
+        cite: "Software Engineer",
+      },
+      {
+        quote:
           "An exceptional partner who consistently delivers results and earns my full trust.",
         cite: "Engineering Manager",
+      },
+      {
+        quote:
+          "She doesn't shy away from the elephant in the room. She asks the hard questions and holds everyone accountable, and brings an energy no one else can.",
+        cite: "Engineering Manager",
+      },
+      {
+        quote:
+          "Her documentation cut our testing time to half a day and let my team get back to building.",
+        cite: "Web Engineering Manager",
       },
       {
         quote:

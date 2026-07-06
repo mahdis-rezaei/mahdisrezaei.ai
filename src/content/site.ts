@@ -190,9 +190,9 @@ export const site: Site = {
     },
     {
       slug: "ai-investigation",
-      title: "An AI investigation platform people trust",
+      title: "Agentic Investigation Platform for Integrity Teams",
       outcome:
-        "Led a multi-agent investigation platform to above-human-expert accuracy, by refusing to build a chatbot.",
+        "A trusted multi-agent investigation platform that turns fragmented integrity tools, signals, runbooks, and agents into one evidence-backed investigation surface.",
       tags: ["Agentic AI", "Trust & Safety", "0→1"],
       icon: "scan",
       group: "at-meta",

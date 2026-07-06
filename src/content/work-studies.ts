@@ -86,47 +86,93 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "ai-investigation": {
-    title: "An AI investigation platform people actually trust",
+    title: "Agentic Investigation Platform for Integrity Teams",
     tagline:
-      "I led a multi-agent investigation platform that reached above-human-expert accuracy, by refusing to build a chatbot.",
+      "Built a trusted multi-agent investigation platform that turned fragmented integrity tools, signals, runbooks, and specialized agents into one evidence-backed investigation experience.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
-      { label: "Focus", value: "Agentic AI · Trust & Safety · 0 to 1" },
+      {
+        label: "Focus",
+        value:
+          "Agentic AI · Investigation platform · Multi-agent orchestration · Trust & Safety",
+      },
     ],
     links: [],
     blocks: [
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "Specialized teams (investigations, policy, enforcement) did careful, judgment-heavy work spread across a dozen tools. Leadership wanted “AI for this,” and every team was about to build its own agent.",
+        text: "I owned the product strategy and execution for Meta's agentic investigation platform for integrity teams.",
+      },
+      {
+        type: "p",
+        text: "The platform gave reviewers, investigators, policy teams, enforcement teams, and cross-functional partners a single investigation surface. Instead of forcing users to know which case tool, signal dashboard, runbook, source-of-truth system, or specialized agent to use, it let them start from a natural-language question and receive evidence-backed reasoning, summaries, recommendations, and next steps.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "The easy answer was an AI copilot that answers questions. I argued against it. In high-stakes investigation, a fluent answer is worse than useless if it isn't grounded. It has to be evidence-backed, auditable, and safe to act on, with a human owning the decision.",
+        text: "Integrity investigations were highly fragmented. Investigators had to inspect cases and objects, extract IDs, look up enforcement history, interpret signals, follow workflow-specific runbooks, query specialized tools, draft notes, write responses, and maintain evidence trails. This created too much tool-hopping, too much reliance on tribal knowledge, and inconsistent investigation quality.",
+      },
+      {
+        type: "p",
+        text: "At the same time, many teams were building specialized AI agents for narrow domains. That created a new platform risk: agent sprawl. Users still had to know which agent to use, what input it needed, whether its output was authoritative, and how to combine results across systems.",
+      },
+      {
+        type: "p",
+        text: "This was not just an investigation-speed problem. It was a trust, orchestration, and platform-governance problem.",
+      },
+      { type: "h2", text: "The insight" },
+      {
+        type: "p",
+        text: "The opportunity was not to build a generic investigation chatbot. It was to build the orchestration layer for agentic integrity work. Open-ended investigations need augmentation, not blind automation. The system had to understand intent, extract entities, identify the right capability, invoke source-of-truth systems where required, synthesize evidence, support follow-up questions, and preserve human control.",
+      },
+      {
+        type: "p",
+        text: "The second insight was that agentic investigation work has multiple modes. Some work should remain human-owned. Some should be agent-assisted. Some can become procedural runbook execution. Some can eventually become autonomous where the risk is low and the evidence is strong. That product distinction shaped the platform, the user experience, evaluation, launch model, and metrics.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "I defined the product as an evidence-grounded investigation layer, not a general assistant: a person starts from a natural-language question, and the system handles intent, entity extraction, case-context retrieval, source-of-truth invocation, specialized agent orchestration, and evidence synthesis, then drafts a valid, workflow-ready recommendation the human confirms. I set the trust bar deliberately high: source-backed reasoning, human confirmation, safe failure, and clear lines between where AI recommends and where a person stays accountable.",
+        text: "I defined the product as an agentic investigation platform, not a chatbot.",
       },
       {
-        type: "quote",
-        text: "She turned a complex, ambiguous agentic AI opportunity into a trusted investigation platform with measurable adoption, accuracy, and operational leverage.",
-        cite: "Her manager",
+        type: "p",
+        text: "I built the core investigation experience: natural-language intake, intent understanding, entity extraction, object inspection, case and asset lookup, signal summarization, runbook loading, source-of-truth invocation, evidence synthesis, follow-up questions, investigation summaries, draft notes, draft responses, recommendations, and safe failure behavior when the system lacked enough evidence.",
+      },
+      {
+        type: "p",
+        text: "I also defined it as the orchestration layer for the broader integrity AI ecosystem. Instead of replacing specialized agents, the platform routed to them. I shaped the model for agent registration, input and output contracts, capability routing, multi-agent planning, evidence aggregation, quality tiers, ownership, monitoring, and governance. The operating principle was simple: domain teams own the expertise; the platform owns orchestration, routing, user experience, governance, and the end-to-end investigation experience.",
+      },
+      {
+        type: "p",
+        text: "For the first hero workflow, I helped reframe an account-compromise investigation from open-ended AI chat into procedural investigation support. The system needed to follow runbooks, resolve entities, detect duplicates, classify issues, check compromise signals, distinguish recommend from execute, ask for clarification when identifiers conflicted, and stop safely when evidence was incomplete.",
+      },
+      {
+        type: "p",
+        text: "I also shaped the measurement model. Instead of optimizing only for usage, I pushed the team toward metrics that reflected the actual product vision: human-only investigations, human-plus-agent investigations, autonomous investigations, investigation accuracy, task completion, routing quality, reliability, usefulness, and whether the system helped investigators complete work faster with stronger evidence.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Reached above-human-expert investigation accuracy.",
-          "Scaled to a thousand-plus weekly reviewers running thousands of AI-led investigations a day.",
+          "Reached 94% investigation accuracy, above human-expert performance, with 1,000+ weekly active users and 7,000+ AI-led investigations a day.",
+          "Reduced investigation friction by giving teams one place to ask questions, inspect evidence, understand signals, invoke specialized capabilities, and draft next steps.",
+          "Created the platform model for trusted agentic investigation: intent understanding, entity extraction, capability routing, source-of-truth integration, evidence synthesis, human confirmation, evaluation, monitoring, and governance.",
+          "Moved the platform from a single-use-case investigation assistant toward an investigation operating system, where specialized agents could keep improving independently while users experienced one coherent investigation surface.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "The interface is not the product. Because people worked through this conversationally, a chat surface felt right, but the contract underneath had to be grounded and auditable, or the trust collapses the first time the system is confidently wrong.",
+        text: "In high-trust investigation workflows, fluency is not enough. The product has to know what workflow it is in, what evidence is required, which source system is authoritative, what it is allowed to recommend, when it needs human confirmation, and when it must stop.",
+      },
+      {
+        type: "p",
+        text: "Agentic products need clear product contracts. An investigation copilot, a runbook executor, and an automation engine can all use AI, but they should not be designed, measured, or launched the same way.",
+      },
+      {
+        type: "p",
+        text: "Platform governance is product quality. If an agent is unsupported, poorly evaluated, or unclear about its limitations, users blame the platform. For agentic systems to scale, quality has to be earned through evidence, ownership, monitoring, and clear boundaries.",
       },
     ],
   },

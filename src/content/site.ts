@@ -202,7 +202,7 @@ export const site: Site = {
       slug: "workflow-automation",
       title: "Automating the operational first mile",
       outcome:
-        "Turned thousands of fragmented, manual workflows into a governed automation platform, and kept humans exactly where the risk was.",
+        "Turned the messy first mile of integrity operations into a governed automation platform, and kept humans exactly where the judgment lives.",
       tags: ["Automation", "Platform", "Scale"],
       icon: "workflow",
       group: "at-meta",

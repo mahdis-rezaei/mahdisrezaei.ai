@@ -134,7 +134,7 @@ export const workStudies: Record<string, CaseStudy> = {
   "workflow-automation": {
     title: "Automating the operational first mile",
     tagline:
-      "I turned thousands of fragmented, manual integrity workflows into a governed automation platform, and kept humans exactly where the risk was.",
+      "I turned the messy first mile of integrity operations into a governed automation platform, and kept humans exactly where the judgment lives.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       { label: "Focus", value: "Workflow automation · Platform · Scale" },
@@ -144,35 +144,72 @@ export const workStudies: Record<string, CaseStudy> = {
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "A huge amount of integrity operations was repetitive, manual, and spread across one-off scripts: routing, deduplication, summarization, prioritization, case creation. Slow, hard to measure, and impossible to scale with the threat.",
+        text: "I owned the product strategy and execution for workflow automation across Meta's global integrity escalation workflows. The work started with the central triage workflow, the front door for many high-priority escalations, and expanded from triage into investigation, enforcement, response, and case closure.",
+      },
+      {
+        type: "p",
+        text: "Over time, it became a broader automation platform where operations teams could build, manage, monitor, and improve workflows through a governed lifecycle.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "“Add AI to operations” was the wrong frame. The real job was to encode human playbooks into something reusable and safe: auto-action the high-precision cases, route intelligently, and keep people in the loop wherever risk or ambiguity remained.",
+        text: "Integrity escalation volume was growing faster than operational capacity. Analysts were manually reading incoming cases, filling structured fields, determining priority, routing cases to downstream teams, investigating across fragmented tools, coordinating handoffs, taking enforcement action, updating cases, sending responses, and closing the loop.",
+      },
+      {
+        type: "p",
+        text: "This work was repetitive, time-sensitive, and difficult to scale. For the front-door triage workflow it was especially acute, because it required fast triage, around-the-clock coverage, and consistent intake quality for high-priority escalations. This was not just a workflow-efficiency problem. It was an operational scale, quality, and risk-management problem.",
+      },
+      { type: "h2", text: "The insight" },
+      {
+        type: "p",
+        text: "The opportunity was not to automate one workflow at a time. It was to turn a messy operational universe into a product portfolio. The global integrity operations org had thousands of escalation workflows, but they varied widely in ownership, volume, maturity, policy complexity, tooling, risk, and automation readiness. A large workflow surface did not automatically create a clear automation roadmap.",
+      },
+      {
+        type: "p",
+        text: "We needed a way to identify which workflows were high-value, automatable, safe, and repeatable, then move them through a lifecycle of scoping, building, testing, shadow mode, human oversight, and operational monitoring.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "Instead of letting teams build disconnected agents, I defined reusable workflow primitives: triggers, workflow context, branching logic, tool invocation, source-of-truth binding, modular capabilities, audit logs, monitoring, exception handling, and launch governance. High-volume, low-risk steps became deterministic modules; higher-risk workflows kept human-in-the-loop and human-on-the-loop controls, gated by staged rollout and benchmarks.",
+        text: "I worked with the global integrity operations org to prioritize the highest-value workflows based on volume, business criticality, risk, and feasibility.",
       },
       {
-        type: "quote",
-        text: "Her product judgment was strongest in distinguishing where AI should act, where it should recommend, and where it should stay out.",
-        cite: "Her manager",
+        type: "p",
+        text: "I first focused on the central triage workflow, building automation for repeatable intake work: custom field filling, routing, duplicate detection, subcase updates, case summaries, and reviewer context. The system documented what it did and why directly in the case, creating an auditable trail for reviewers, operations teams, and quality measurement.",
+      },
+      {
+        type: "p",
+        text: "I then expanded the product from triage to end-to-end workflow automation across investigation, enforcement, response generation, and closure. This required orchestrating multiple systems so that low-risk, high-precision work could be automated while judgment-heavy work stayed with humans.",
+      },
+      {
+        type: "p",
+        text: "To scale beyond bespoke builds, I drove the creation of a workflow inventory and prioritization model across the broader workflow surface, then ran an eight-week co-location sprint with operations owners and forward-deployed engineers to convert priority workflows into reusable automation patterns.",
+      },
+      {
+        type: "p",
+        text: "I also shaped the self-serve automation hub: a central place to register workflows, track lifecycle phase, test cases safely, run shadow mode, manage launch approval, monitor human oversight, graduate workflows to live operation, and track portfolio-level health, failures, alerts, and automation opportunities.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Built to span thousands of escalation workflows across every harm type, auto-actioning the high-precision cases with broader automation still expanding.",
-          "Cut triage and investigation time by roughly two-thirds and freed hundreds of thousands of human hours a year, with a path toward a million-plus.",
+          "Launched triage automation for the central intake workflows, automating the first mile of case handling and cutting repetitive manual intake work. Early launches triaged thousands of cases and opened a path to expand automation across a much larger escalation surface.",
+          "Expanded from triage to end-to-end automation for high-volume workflows across investigation, enforcement, response, and closure. One sprint launched end-to-end automation for 20 high-volume workflows, projected to save 1.4M content reviews, 140K cases, and 95K hours a year.",
+          "Helped shift integrity operations from fragmented manual execution to governed automation, where workflows can be built, tested, launched, monitored, and improved through a repeatable lifecycle.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "The leverage was in the primitives, not the individual automations. A platform of reusable, governed parts scales; a pile of clever one-off scripts doesn't. And the judgment that mattered most was knowing where not to automate.",
+        text: "Workflow automation is not just about replacing manual steps. It is about understanding where judgment, risk, policy, and operational context sit inside a process.",
+      },
+      {
+        type: "p",
+        text: "The hardest part of automation is often not the agent or the workflow builder. It is turning undocumented human behavior into structured, measurable, auditable systems that teams can trust.",
+      },
+      {
+        type: "p",
+        text: "A durable automation platform needs more than one successful launch. It needs prioritization, reusable patterns, launch gates, quality guardrails, monitoring, ownership, and a way for workflow owners to keep improving without depending on custom engineering every time.",
       },
     ],
   },

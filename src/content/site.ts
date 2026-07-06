@@ -182,7 +182,7 @@ export const site: Site = {
       slug: "llm-lifecycle",
       title: "Deploying AI into high-stakes decisions",
       outcome:
-        "Built the lifecycle that lets AI take over high-stakes enforcement decisions, and keeps proving, continuously, that it's safe to.",
+        "The end-to-end lifecycle that moved integrity enforcement from scaled human review to evaluated LLMs, without degrading quality.",
       tags: ["LLM lifecycle", "Evaluation", "0→1"],
       icon: "shield",
       group: "at-meta",
@@ -214,15 +214,6 @@ export const site: Site = {
         "Built the benchmark and eval platform that made every AI product provably safe to ship, and to keep proving in production.",
       tags: ["Evaluation", "AI infra", "Platform"],
       icon: "gauge",
-      group: "at-meta",
-    },
-    {
-      slug: "detection-at-scale",
-      title: "Detection at scale",
-      outcome:
-        "Turned fragmented, expert-driven investigation into a connected, AI-assisted, measurable detection system: faster and broader.",
-      tags: ["Detection", "ML", "Platform"],
-      icon: "radar",
       group: "at-meta",
     },
     {

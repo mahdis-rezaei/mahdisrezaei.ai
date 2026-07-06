@@ -13,7 +13,7 @@ export const workStudies: Record<string, CaseStudy> = {
   "llm-lifecycle": {
     title: "Deploying AI into high-stakes decisions",
     tagline:
-      "I built the lifecycle that lets AI take over high-stakes enforcement decisions, and keeps proving, continuously, that it's safe to.",
+      "The end-to-end lifecycle for moving integrity enforcement from scaled human review to evaluated LLMs, safely and without degrading quality.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       { label: "Focus", value: "LLM lifecycle · Evaluation · 0 to 1" },
@@ -23,17 +23,46 @@ export const workStudies: Record<string, CaseStudy> = {
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "A large platform wanted to move most of its high-volume human review onto AI. The prize was enormous. The risk was that a model can look excellent offline and still fail in the real world, and in enforcement a quiet drop in quality does real harm to real people.",
+        text: "I owned Meta's end-to-end LLM development and deployment lifecycle for integrity enforcement. The mandate was to safely move decisions from scaled human review to evaluated LLMs without degrading enforcement quality.",
+      },
+      {
+        type: "p",
+        text: "The product covered the full path from model development to production: offline hill-climbing, trusted ground truth, online shadow testing, experimentation, reverse shadow, production graduation, and post-launch monitoring.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "The tempting framing was “train a better model and certify it once.” That's the wrong mental model. Deploying AI into decisions this consequential can't be a one-time gate, it has to be a lifecycle. And the product isn't the model. It's the system around it: the labels you judge it by, the proof it's ready, and the measurement that never stops.",
+        text: "Integrity enforcement is a high-stakes decision system. Every automated decision has to balance accuracy, policy nuance, user impact, regulatory risk, and operational scale.",
+      },
+      {
+        type: "p",
+        text: "The existing path from model development to production was not reliable enough for broad automation. Offline certification could create false confidence, because real-world edge cases, distribution shifts, policy nuance, and adversarial behavior often only appeared in production. At the same time, spreadsheet-driven labeling made ground truth hard to govern: labels could become stale, policy changes were difficult to track, reviewer disagreement was hard to escalate, and teams risked reusing examples incorrectly across training, testing, and evaluation.",
+      },
+      {
+        type: "p",
+        text: "This was not just a model-quality problem. It was a trust, measurement, and governance problem.",
+      },
+      { type: "h2", text: "The insight" },
+      {
+        type: "p",
+        text: "LLM automation could not be treated as a one-time launch. It needed to be treated as a governed product lifecycle. A model should not move directly from offline testing to production enforcement. It needs to earn trust through staged confidence-building: offline hill-climbing, online shadow mode, controlled experimentation, reverse shadow, production graduation, and continuous monitoring. Each stage answers a different risk question before humans are removed from the decision path.",
+      },
+      {
+        type: "p",
+        text: "The second insight was that model quality is only as strong as the ground truth system behind it. To evaluate LLMs reliably, humans, models, and evaluators needed to reason over the same facts, using current, auditable, policy-aligned labels and stable data snapshots.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "I built the end-to-end path a model travels before it's allowed to act: offline hill-climbing, shadow evaluation on live traffic, experimentation, reverse shadow, and production graduation, advancing only on evidence, never on optimism. Underneath it I replaced spreadsheet labeling with governed ground truth: dataset versioning, staleness detection, reviewer-disagreement escalation, train/test/eval reuse controls, and health analytics. That foundation is what stops teams from optimizing against stale, inconsistent, or unauditable labels.",
+        text: "I defined the end-to-end product lifecycle for moving integrity LLMs from development to production. I led the product strategy across offline hill-climbing, online shadow evaluation, A/B testing, reverse shadow, full production deployment, and post-deployment lifecycle management.",
+      },
+      {
+        type: "p",
+        text: "I also architected the centralized ground-truth platform that replaced spreadsheet-driven labeling with governed infrastructure. The platform introduced label versioning, staleness detection, reviewer-disagreement escalation, authority and expert label workflows, train/test/eval reuse controls, health analytics, and mechanisms to ensure models were evaluated against trustworthy and current ground truth.",
+      },
+      {
+        type: "p",
+        text: "Beyond the core lifecycle, I helped define how LLM evaluation should work in complex integrity contexts, including multilingual performance, cultural nuance, market-level risk, disagreement analysis, escalation to policy experts, and launch holds for markets where model performance was not safe enough.",
       },
       {
         type: "quote",
@@ -44,14 +73,19 @@ export const workStudies: Record<string, CaseStudy> = {
       {
         type: "list",
         items: [
-          "Moved the right decisions from people to evaluated models while holding reliability flat, and cut scaled human review by about a quarter across dozens of violation areas.",
-          "Turned one-off model launches into a repeatable, governed path other teams could reuse.",
+          "Enabled Meta to shift a meaningful share of scaled integrity decisions from humans to evaluated LLMs while keeping enforcement quality flat.",
+          "Delivered a reliability-neutral reduction of roughly 27% in scaled human review across dozens of violation areas.",
+          "Created the operating model for safe LLM enforcement: trusted labels, production-first evaluation, staged rollout, rollback paths, post-launch monitoring, and clear criteria for when humans could move from decision-makers to oversight.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "The hardest part wasn't the model, it was holding the line that you cut human review after quality is proven, not before, even under pressure to bank the savings sooner. And evaluation is only as honest as its inputs: models and people looked like they disagreed until I made freezing the data a precondition for every comparison.",
+        text: "In high-stakes AI products, the model is only one part of the product. The real product is the trust system around it: ground truth, evaluation, monitoring, escalation, governance, rollback, and human oversight.",
+      },
+      {
+        type: "p",
+        text: "I learned that safe automation requires more than strong model performance. It requires a lifecycle that helps teams understand when a model is ready, where it is still risky, how quality will be measured, and what humans should continue to own. The hardest part was building enough confidence across policy, operations, engineering, and leadership that automation could scale without weakening enforcement quality.",
       },
     ],
   },
@@ -193,53 +227,6 @@ export const workStudies: Record<string, CaseStudy> = {
       },
     ],
   },
-
-  "detection-at-scale": {
-    title: "Detection at scale",
-    tagline:
-      "I helped turn fragmented, expert-driven threat investigation into a connected, AI-assisted, measurable detection system: faster, broader, and governed.",
-    meta: [
-      { label: "Where", value: "Meta · Central Integrity" },
-      { label: "Focus", value: "Detection · ML · Platform" },
-    ],
-    links: [],
-    blocks: [
-      { type: "h2", text: "Context" },
-      {
-        type: "p",
-        text: "At a large platform, finding emerging abuse (coordinated networks, impersonation, inauthentic behavior) leaned on expert investigators and a pile of one-off tools. It was slow, hard to measure, and didn't scale with the threat.",
-      },
-      { type: "h2", text: "The problem" },
-      {
-        type: "p",
-        text: "Find more of the problem, faster, without drowning the investigators who have to act on it, and do it responsibly, not “AI because we can.”",
-      },
-      { type: "h2", text: "The insight" },
-      {
-        type: "p",
-        text: "Increase recall first, then rank and triage, so broader coverage doesn't overwhelm already saturated teams. And match the level of automation to the stakes: full automation where it's safe, humans firmly in the loop where the action is high-risk.",
-      },
-      { type: "h2", text: "What I did" },
-      {
-        type: "p",
-        text: "Shipped AI-assisted detection and labeling infrastructure: LLM-based labeling and scoring that investigators could call from across their tools, near-real-time monitoring, and workflow automation that turned expert investigation playbooks into scheduled, measurable detection.",
-      },
-      { type: "h2", text: "Impact" },
-      {
-        type: "list",
-        items: [
-          "Cut investigation triage time by roughly two-thirds and multiplied the volume of assets a team could review.",
-          "Drove automated detection at high precision, and surfaced large amounts of additional violating content from a handful of intelligence reports.",
-        ],
-      },
-      { type: "h2", text: "What I learned" },
-      {
-        type: "p",
-        text: "Detection only matters if it connects to action: a better signal that no one acts on is worth nothing. And responsible AI means having the discipline to know when not to use a model. The goal is faster, safer, higher-quality detection, not AI adoption for its own sake.",
-      },
-    ],
-  },
-
   "enterprise-identity": {
     title: "Enterprise identity from scratch",
     tagline:

@@ -261,50 +261,93 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "ai-eval-platform": {
-    title: "The evaluation platform behind all of it",
+    title: "Evaluation Platform for Trustworthy AI Agents",
     tagline:
-      "None of it ships safely without evaluation, so I built the benchmark and eval platform that made it trustworthy to scale.",
+      "Built the benchmark and evaluation platform that made high-stakes agentic AI systems measurable, governable, and safe to scale.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
-      { label: "Focus", value: "Evaluation · AI infra · Platform" },
+      {
+        label: "Focus",
+        value:
+          "AI evaluation · Benchmarking · Agent quality · Trust infrastructure",
+      },
     ],
     links: [],
     blocks: [
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "LLMs, agents, and automated workflows all shared one dependency: you cannot scale high-stakes AI on demos, anecdotes, or final-answer accuracy. They need real evaluation infrastructure.",
+        text: "I owned the product strategy for a generalized benchmark and evaluation platform for internal AI agents, starting with integrity investigation agents.",
+      },
+      {
+        type: "p",
+        text: "The platform was designed to help teams create reusable benchmarks, evaluate agents, compare versions, detect regressions, analyze failures, and enforce quality gates before and after launch. The long-term vision was to become the CI/CD system for AI quality: a shared way to measure whether agents could be trusted in production, not just whether they could answer prompts.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "“Better evals” is vague, and most evaluation stops at whether the model's answer looks right. That misses how the system behaves, and in high-stakes AI, the system is what fails.",
+        text: "Agent evaluation was fragmented and manual. Teams were creating benchmarks through spreadsheets, custom scripts, one-off graders, manually collected examples, and agent-specific execution workflows. That made evaluation expensive, inconsistent, hard to reproduce, and difficult to compare across teams.",
+      },
+      {
+        type: "p",
+        text: "For high-stakes integrity work, this was especially risky. A single general agent could sound fluent while hallucinating, skipping required evidence, using the wrong source system, or producing an answer that looked plausible but was not safe to rely on. This was not just a testing problem. It was a trust infrastructure problem.",
+      },
+      { type: "h2", text: "The insight" },
+      {
+        type: "p",
+        text: "The core insight was that benchmarks had to become reusable product assets, not one-off test runs. A good evaluation system needed versioned datasets, explicit rubrics, trusted golden examples, repeatable execution, failure analysis, benchmark health, and governance. It also needed to evaluate more than final-answer accuracy. For agents, the platform had to measure tool use, reasoning quality, source grounding, hallucination, robustness, latency, and whether the agent followed the right path to the answer.",
+      },
+      {
+        type: "p",
+        text: "The second insight was that evaluation could not be a final pre-launch checkbox. It had to be part of the product lifecycle: used during development, before launch, during regression testing, and eventually as part of deployment gates and continuous monitoring.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "I expanded evaluation from answer quality to end-to-end system behavior. For enforcement models, that meant judging against healthy, current, auditable ground truth. For the investigation platform, whether answers were grounded, complete, useful, safe, and source-backed. For automation, node-level behavior, path efficiency, tool use, evidence usage, human confirmation, and safe failure, not just the final outcome. I turned a vague ask into concrete primitives: benchmark creation and versioning, golden sets, partial-credit rubrics, AI-judge scoring, result inspection, regression alerting, data freezing and time travel, and reviewer-disagreement handling. Evaluation became a launch gate, a monitoring system, and a trust mechanism.",
+        text: "I defined the product vision for a generalized agent evaluation platform: a centralized place where teams could create benchmarks, manage datapoints, write rubrics, version datasets, run evaluations, compare agent versions, and analyze failures.",
       },
       {
-        type: "quote",
-        text: "She translated a vague need for better evals into concrete platform primitives and production requirements.",
-        cite: "Her manager",
+        type: "p",
+        text: "I personally created the first golden dataset and rubric for the integrity investigation use case, turning real investigator questions into structured benchmark cases with expected answers, grading criteria, and failure modes. That became the template other agent teams could follow.",
+      },
+      {
+        type: "p",
+        text: "I shaped the core platform model around reusable objects: agents, benchmarks, benchmark versions, datapoints, rubrics, runs, graders, results, and trust dimensions. Each benchmark could measure one or more dimensions such as hallucination, robustness, bias and fairness, UX trust, and latency and performance.",
+      },
+      {
+        type: "p",
+        text: "I also defined the evaluation workflow: select an agent, attach a benchmark, run it through a shared execution engine, grade outputs with deterministic or LLM-based rubrics, inspect failed examples, compare results across versions, and convert production failures back into benchmark cases over time.",
+      },
+      {
+        type: "p",
+        text: "Finally, I pushed the product from raw eval outputs toward a product-facing quality system: dashboards, score breakdowns, regression alerts, failure clustering, category performance, benchmark health, ownership, review status, and approval gates that PMs, engineers, and safety teams could actually use.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Gave every AI product a shared, reusable way to prove it was safe to ship, and to keep proving it in production.",
-          "Made the jump from prototype to production, and from human-in-the-loop to human-on-the-loop, a decision teams could make on evidence.",
+          "Created the evaluation foundation that made high-stakes agent launches defensible: teams could measure quality through versioned benchmarks, explicit rubrics, reproducible runs, and actionable failure analysis instead of relying on anecdotes or ad hoc testing.",
+          "Established a reusable benchmark framework for investigation agents, with a path to broader AI-agent evaluation across Meta.",
+          "Helped teams move faster without silently breaking trust by making regressions visible, benchmark quality trackable, and agent performance comparable across versions.",
+          "Turned evaluation from a fragmented engineering task into a shared product system for agent quality, governance, and launch confidence.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "In high-stakes AI, the product is the system that proves the model is right and keeps it right. Evaluation isn't a step before launch, it's the backbone of every rollout decision.",
+        text: "Evaluation is not just a quality gate. It is the product infrastructure that determines whether an AI system can be trusted.",
+      },
+      {
+        type: "p",
+        text: "A benchmark is only useful if the ground truth is current, the rubric is explicit, the inputs are stable, and failures are explainable. A single score can hide the most important issues; teams need to know whether a failure came from hallucination, missing evidence, wrong tool use, bad grounding, rubric ambiguity, or dataset drift.",
+      },
+      {
+        type: "p",
+        text: "Agent evaluation is harder than model evaluation because the path matters. A final answer may be correct, but the agent may have used the wrong tool, skipped a required source, taken an unsafe action, or relied on evidence it should not have trusted. For agentic systems, evaluation has to measure the trajectory, not just the response.",
       },
     ],
   },
+
   "enterprise-identity": {
     title: "Enterprise identity from scratch",
     tagline:

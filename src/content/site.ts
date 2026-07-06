@@ -209,9 +209,9 @@ export const site: Site = {
     },
     {
       slug: "ai-eval-platform",
-      title: "The evaluation platform behind all of it",
+      title: "Evaluation Platform for Trustworthy AI Agents",
       outcome:
-        "Built the benchmark and eval platform that made every AI product provably safe to ship, and to keep proving in production.",
+        "The benchmark and evaluation platform that made high-stakes agentic AI systems measurable, governable, and safe to scale.",
       tags: ["Evaluation", "AI infra", "Platform"],
       icon: "gauge",
       group: "at-meta",

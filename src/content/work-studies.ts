@@ -2,99 +2,174 @@
  * Deep case studies for the Meta work, rendered at /work/[slug].
  * Meta is generalized per PRD §13: no internal codenames, rounded/qualitative
  * impact. Copy is dash-free to match the rest of the site.
+ *
+ * The four AI studies are the granular version of the integrity AI work: four
+ * distinct products (LLM lifecycle, investigation platform, workflow
+ * automation, evaluation platform) rather than one blended story.
  */
 import type { CaseStudy } from "@/content/building";
 
 export const workStudies: Record<string, CaseStudy> = {
-  "trusted-ai-review": {
-    title: "Scaling trusted AI review",
+  "llm-lifecycle": {
+    title: "Deploying AI into high-stakes decisions",
     tagline:
-      "I led product for an AI platform that shifted high-stakes review from people to evaluated AI, without losing the trust those decisions depend on.",
+      "I built the lifecycle that lets AI take over high-stakes enforcement decisions, and keeps proving, continuously, that it's safe to.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
-      { label: "Focus", value: "AI platform · Trust & Safety · 0 to 1" },
+      { label: "Focus", value: "LLM lifecycle · Evaluation · 0 to 1" },
     ],
     links: [],
     blocks: [
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "At a large social platform, the teams that investigate and enforce against abuse were doing careful, judgment-heavy work spread across a dozen tools. The work was slow, and a lot of it was repetitive. Leadership wanted “AI for this,” and every team was about to build its own agent.",
+        text: "A large platform wanted to move most of its high-volume human review onto AI. The prize was enormous. The risk was that a model can look excellent offline and still fail in the real world, and in enforcement a quiet drop in quality does real harm to real people.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "The tempting answer was “build an AI copilot.” I argued against it. The real problem was that this kind of work isn't one kind of work, so a single AI product would serve none of it well. Some of it is open-ended judgment where a human has to stay accountable. Some of it is repetitive, rule-bound steps a system can run on its own. Treat them the same and you erode trust the first time the system is confidently wrong.",
-      },
-      { type: "h2", text: "The insight" },
-      {
-        type: "p",
-        text: "The useful distinction wasn't “automation versus augmentation,” because both use automation. It was trigger and user experience. Work that's triggered by a case and runs headless should be automated. Work a person starts and reasons through, interactively, should be augmented, with the human owning the decision. Same technology, opposite contracts.",
+        text: "The tempting framing was “train a better model and certify it once.” That's the wrong mental model. Deploying AI into decisions this consequential can't be a one-time gate, it has to be a lifecycle. And the product isn't the model. It's the system around it: the labels you judge it by, the proof it's ready, and the measurement that never stops.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "I defined that product taxonomy and built two surfaces on a shared foundation: an automation layer for the repetitive first-mile work, and an investigation-augmentation layer for the judgment work. I launched on a ladder, read-only, then draft, then shadow, then partial automation, so trust was earned one rung at a time. And I built the layer underneath that made it scalable: turning thousands of messy, half-documented workflows into something structured enough to automate safely.",
+        text: "I built the end-to-end path a model travels before it's allowed to act: offline hill-climbing, shadow evaluation on live traffic, experimentation, reverse shadow, and production graduation, advancing only on evidence, never on optimism. Underneath it I replaced spreadsheet labeling with governed ground truth: dataset versioning, staleness detection, reviewer-disagreement escalation, train/test/eval reuse controls, and health analytics. That foundation is what stops teams from optimizing against stale, inconsistent, or unauditable labels.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Cut scaled human review by roughly a quarter while holding enforcement quality flat.",
-          "The investigation assistant reached above-human-expert accuracy and was used by a thousand-plus reviewers, running thousands of AI-led investigations a day.",
-          "The automation layer took the highest-volume workflows end to end and multiplied throughput several times over.",
+          "Moved the right decisions from people to evaluated models while holding reliability flat, and cut scaled human review by about a quarter across dozens of violation areas.",
+          "Turned one-off model launches into a repeatable, governed path other teams could reuse.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "The hardest lesson came from a workflow I scoped wrong. I built it as a free-form chat assistant because people worked through it conversationally, but it was actually a strict procedure with a right answer. The evaluation caught it before it shipped broadly, and I rebuilt it as a procedure with a checklist and safe failure. The lesson stuck: a conversational interface is not a conversational product. In high-trust work, the product contract matters more than how smart the model sounds.",
+        text: "The hardest part wasn't the model, it was holding the line that you cut human review after quality is proven, not before, even under pressure to bank the savings sooner. And evaluation is only as honest as its inputs: models and people looked like they disagreed until I made freezing the data a precondition for every comparison.",
+      },
+    ],
+  },
+
+  "ai-investigation": {
+    title: "An AI investigation platform people actually trust",
+    tagline:
+      "I led a multi-agent investigation platform that reached above-human-expert accuracy, by refusing to build a chatbot.",
+    meta: [
+      { label: "Where", value: "Meta · Central Integrity" },
+      { label: "Focus", value: "Agentic AI · Trust & Safety · 0 to 1" },
+    ],
+    links: [],
+    blocks: [
+      { type: "h2", text: "Context" },
+      {
+        type: "p",
+        text: "Specialized teams (investigations, policy, enforcement) did careful, judgment-heavy work spread across a dozen tools. Leadership wanted “AI for this,” and every team was about to build its own agent.",
+      },
+      { type: "h2", text: "The problem" },
+      {
+        type: "p",
+        text: "The easy answer was an AI copilot that answers questions. I argued against it. In high-stakes investigation, a fluent answer is worse than useless if it isn't grounded. It has to be evidence-backed, auditable, and safe to act on, with a human owning the decision.",
+      },
+      { type: "h2", text: "What I did" },
+      {
+        type: "p",
+        text: "I defined the product as an evidence-grounded investigation layer, not a general assistant: a person starts from a natural-language question, and the system handles intent, entity extraction, case-context retrieval, source-of-truth invocation, specialized agent orchestration, and evidence synthesis, then drafts a valid, workflow-ready recommendation the human confirms. I set the trust bar deliberately high: source-backed reasoning, human confirmation, safe failure, and clear lines between where AI recommends and where a person stays accountable.",
+      },
+      { type: "h2", text: "Impact" },
+      {
+        type: "list",
+        items: [
+          "Reached above-human-expert investigation accuracy.",
+          "Scaled to a thousand-plus weekly reviewers running thousands of AI-led investigations a day.",
+        ],
+      },
+      { type: "h2", text: "What I learned" },
+      {
+        type: "p",
+        text: "The interface is not the product. Because people worked through this conversationally, a chat surface felt right, but the contract underneath had to be grounded and auditable, or the trust collapses the first time the system is confidently wrong.",
+      },
+    ],
+  },
+
+  "workflow-automation": {
+    title: "Automating the operational first mile",
+    tagline:
+      "I turned thousands of fragmented, manual integrity workflows into a governed automation platform, and kept humans exactly where the risk was.",
+    meta: [
+      { label: "Where", value: "Meta · Central Integrity" },
+      { label: "Focus", value: "Workflow automation · Platform · Scale" },
+    ],
+    links: [],
+    blocks: [
+      { type: "h2", text: "Context" },
+      {
+        type: "p",
+        text: "A huge amount of integrity operations was repetitive, manual, and spread across one-off scripts: routing, deduplication, summarization, prioritization, case creation. Slow, hard to measure, and impossible to scale with the threat.",
+      },
+      { type: "h2", text: "The problem" },
+      {
+        type: "p",
+        text: "“Add AI to operations” was the wrong frame. The real job was to encode human playbooks into something reusable and safe: auto-action the high-precision cases, route intelligently, and keep people in the loop wherever risk or ambiguity remained.",
+      },
+      { type: "h2", text: "What I did" },
+      {
+        type: "p",
+        text: "Instead of letting teams build disconnected agents, I defined reusable workflow primitives: triggers, workflow context, branching logic, tool invocation, source-of-truth binding, modular capabilities, audit logs, monitoring, exception handling, and launch governance. High-volume, low-risk steps became deterministic modules; higher-risk workflows kept human-in-the-loop and human-on-the-loop controls, gated by staged rollout and benchmarks.",
+      },
+      { type: "h2", text: "Impact" },
+      {
+        type: "list",
+        items: [
+          "Scaled to thousands of escalation workflows spanning every harm type.",
+          "Cut triage and investigation time by roughly two-thirds and freed hundreds of thousands of human hours a year, with a path toward a million-plus.",
+        ],
+      },
+      { type: "h2", text: "What I learned" },
+      {
+        type: "p",
+        text: "The leverage was in the primitives, not the individual automations. A platform of reusable, governed parts scales; a pile of clever one-off scripts doesn't. And the judgment that mattered most was knowing where not to automate.",
       },
     ],
   },
 
   "ai-eval-platform": {
-    title: "The eval platform behind safe AI",
+    title: "The evaluation platform behind all of it",
     tagline:
-      "I built the evaluation and deployment platform that let a large platform move high-stakes review from people to AI, and prove, continuously, that it was safe to.",
+      "None of it ships safely without evaluation, so I built the benchmark and eval platform that made it trustworthy to scale.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
-      { label: "Focus", value: "Evaluation · AI infra · 0 to 1" },
+      { label: "Focus", value: "Evaluation · AI infra · Platform" },
     ],
     links: [],
     blocks: [
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "A large platform wanted to shift most of its high-volume human review to AI models. The prize was huge; the risk was that a model can look excellent on a benchmark and still fail in the real world, and in high-stakes review, a quiet drop in quality does real harm.",
+        text: "LLMs, agents, and automated workflows all shared one dependency: you cannot scale high-stakes AI on demos, anecdotes, or final-answer accuracy. They need real evaluation infrastructure.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "The tempting answer was “train a better model and certify it once.” That's the wrong mental model. Offline benchmarks don't predict live behavior: the real world has edge cases, shifting content, and policy nuance a static test never sees. The actual problem was trust: how do you prove a model is safe to put in the critical path, and keep proving it?",
-      },
-      { type: "h2", text: "The insight" },
-      {
-        type: "p",
-        text: "Deploying AI into high-stakes decisions has to be a lifecycle, not a one-time gate. And the product isn't the model, it's the system around it: the labels you judge it by, making sure people and models evaluate the same facts, a way to debug why it was wrong, and measurement that never stops.",
+        text: "“Better evals” is vague, and most evaluation stops at whether the model's answer looks right. That misses how the system behaves, and in high-stakes AI, the system is what fails.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "I defined a staged rollout where a model earns trust one step at a time: running silently on live traffic first, then affecting a small slice, then becoming primary while people watch, then full production, advancing only on evidence. Underneath it I built the trust infrastructure: governed, versioned ground truth instead of spreadsheets; frozen data snapshots so people and models judge identical facts; a surface to inspect a model's reasoning and classify why it failed; and continuous, calibrated measurement as the backbone of every rollout decision.",
+        text: "I expanded evaluation from answer quality to end-to-end system behavior. For enforcement models, that meant judging against healthy, current, auditable ground truth. For the investigation platform, whether answers were grounded, complete, useful, safe, and source-backed. For automation, node-level behavior, path efficiency, tool use, evidence usage, human confirmation, and safe failure, not just the final outcome. I turned a vague ask into concrete primitives: benchmark creation and versioning, golden sets, partial-credit rubrics, AI-judge scoring, result inspection, regression alerting, data freezing and time travel, and reviewer-disagreement handling. Evaluation became a launch gate, a monitoring system, and a trust mechanism.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Moved roughly a quarter of scaled human review to evaluated models early on, while holding quality flat, a reliability-neutral reduction.",
-          "Turned one-off model launches into a repeatable path many teams could reuse.",
+          "Gave every AI product a shared, reusable way to prove it was safe to ship, and to keep proving it in production.",
+          "Made the jump from prototype to production, and from human-in-the-loop to human-on-the-loop, a decision teams could make on evidence.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "Two things. The hardest part wasn't the model; it was holding the line that you cut human review after quality is proven, not before, even under pressure to capture the savings sooner. And evaluation is only as honest as its inputs: for a while, models and people looked like they disagreed when they'd actually seen different facts, until I made freezing the data a precondition for every comparison. In high-stakes AI, the product is the system that proves the model is right and keeps it right.",
+        text: "In high-stakes AI, the product is the system that proves the model is right and keeps it right. Evaluation isn't a step before launch, it's the backbone of every rollout decision.",
       },
     ],
   },

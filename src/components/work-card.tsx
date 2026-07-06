@@ -8,7 +8,9 @@ import {
   KeyRound,
   NotebookPen,
   Radar,
+  ScanSearch,
   ShieldCheck,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 import type { WorkIcon, WorkItem } from "@/content/site";
@@ -19,6 +21,8 @@ const ICONS: Record<WorkIcon, LucideIcon> = {
   shield: ShieldCheck,
   gauge: Gauge,
   radar: Radar,
+  scan: ScanSearch,
+  workflow: Workflow,
   key: KeyRound,
   bell: Bell,
   pulse: HeartPulse,

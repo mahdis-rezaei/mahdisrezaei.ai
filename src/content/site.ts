@@ -21,6 +21,8 @@ export type WorkIcon =
   | "shield"
   | "gauge"
   | "radar"
+  | "scan"
+  | "workflow"
   | "key"
   | "bell"
   | "pulse";
@@ -177,21 +179,40 @@ export const site: Site = {
       featured: true,
     },
     {
-      slug: "trusted-ai-review",
-      title: "Scaling trusted AI review",
+      slug: "llm-lifecycle",
+      title: "Deploying AI into high-stakes decisions",
       outcome:
-        "Moved high-stakes review from people to evaluated AI, without losing the trust those decisions depend on.",
-      tags: ["AI platform", "Trust & Safety", "0→1"],
+        "Built the lifecycle that lets AI take over high-stakes enforcement decisions, and keeps proving, continuously, that it's safe to.",
+      tags: ["LLM lifecycle", "Evaluation", "0→1"],
       icon: "shield",
       group: "at-meta",
       featured: true,
     },
     {
-      slug: "ai-eval-platform",
-      title: "The eval platform behind safe AI",
+      slug: "ai-investigation",
+      title: "An AI investigation platform people trust",
       outcome:
-        "Built the evaluation and deployment platform that proved, continuously, that a model was safe to put in the critical path.",
-      tags: ["Evaluation", "AI infra", "0→1"],
+        "Led a multi-agent investigation platform to above-human-expert accuracy, by refusing to build a chatbot.",
+      tags: ["Agentic AI", "Trust & Safety", "0→1"],
+      icon: "scan",
+      group: "at-meta",
+      featured: true,
+    },
+    {
+      slug: "workflow-automation",
+      title: "Automating the operational first mile",
+      outcome:
+        "Turned thousands of fragmented, manual workflows into a governed automation platform, and kept humans exactly where the risk was.",
+      tags: ["Automation", "Platform", "Scale"],
+      icon: "workflow",
+      group: "at-meta",
+    },
+    {
+      slug: "ai-eval-platform",
+      title: "The evaluation platform behind all of it",
+      outcome:
+        "Built the benchmark and eval platform that made every AI product provably safe to ship, and to keep proving in production.",
+      tags: ["Evaluation", "AI infra", "Platform"],
       icon: "gauge",
       group: "at-meta",
     },
@@ -212,7 +233,6 @@ export const site: Site = {
       tags: ["Platform", "Enterprise", "0→1"],
       icon: "key",
       group: "range",
-      featured: true,
     },
     {
       title: "Ring Subscriptions",

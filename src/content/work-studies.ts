@@ -11,9 +11,9 @@ import type { CaseStudy } from "@/content/building";
 
 export const workStudies: Record<string, CaseStudy> = {
   "llm-lifecycle": {
-    title: "Deploying AI into high-stakes decisions",
+    title: "Safe LLM Deployment for Integrity Enforcement",
     tagline:
-      "The end-to-end lifecycle for moving integrity enforcement from scaled human review to evaluated LLMs, safely and without degrading quality.",
+      "Built the end-to-end lifecycle for moving integrity enforcement from scaled human review to evaluated LLMs through hill-climbing, shadow mode, experimentation, reverse shadow, and production monitoring.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       { label: "Focus", value: "LLM lifecycle · Evaluation · 0 to 1" },
@@ -88,7 +88,7 @@ export const workStudies: Record<string, CaseStudy> = {
   "ai-investigation": {
     title: "Agentic Investigation Platform for Integrity Teams",
     tagline:
-      "Built a trusted multi-agent investigation platform that turned fragmented integrity tools, signals, runbooks, and specialized agents into one evidence-backed investigation experience.",
+      "Built a trusted multi-agent investigation platform that turned fragmented cases, signals, runbooks, and specialized agents into one evidence-backed investigation experience.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       {
@@ -178,9 +178,9 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "workflow-automation": {
-    title: "Agentic Workflow Automation for Integrity Operations",
+    title: "Agentic Workflow Automation for Integrity Escalations",
     tagline:
-      "Built a governed agentic automation platform for integrity escalations, turning manual playbooks into automated, auditable workflows that triage, investigate, recommend or take action, respond, and close cases end to end.",
+      "Built a governed agentic automation platform that turned manual escalation playbooks into automated, auditable workflows for triage, investigation, enforcement, response, and closure.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       { label: "Focus", value: "Workflow automation · Platform · Scale" },
@@ -263,7 +263,7 @@ export const workStudies: Record<string, CaseStudy> = {
   "ai-eval-platform": {
     title: "Evaluation Platform for Trustworthy AI Agents",
     tagline:
-      "Built the benchmark and evaluation platform that made high-stakes agentic AI systems measurable, governable, and safe to scale.",
+      "Built the benchmark and evaluation platform that made high-stakes AI agents measurable, governable, and safe to scale through reusable benchmarks, rubrics, regression detection, and launch gates.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       {
@@ -349,9 +349,9 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "enterprise-identity": {
-    title: "Enterprise identity from scratch",
+    title: "Enterprise Identity Platform for Meta Business Tools",
     tagline:
-      "A 0 to 1 enterprise identity and trust platform: I took Managed Meta Accounts from ideation through Closed Beta launch and GA-readiness planning.",
+      "Built a 0 to 1 enterprise identity platform that replaced personal-account-based access with secure, admin-managed identity for enterprise advertisers, agencies, IT teams, and business admins.",
     meta: [
       { label: "Where", value: "Meta · Monetization" },
       { label: "Focus", value: "Enterprise identity · Platform · 0 to 1" },

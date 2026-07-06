@@ -180,9 +180,9 @@ export const site: Site = {
     },
     {
       slug: "llm-lifecycle",
-      title: "Deploying AI into high-stakes decisions",
+      title: "Safe LLM Deployment for Integrity Enforcement",
       outcome:
-        "The end-to-end lifecycle that moved integrity enforcement from scaled human review to evaluated LLMs, without degrading quality.",
+        "Built the end-to-end lifecycle for moving integrity enforcement from scaled human review to evaluated LLMs through hill-climbing, shadow mode, experimentation, reverse shadow, and production monitoring.",
       tags: ["LLM lifecycle", "Evaluation", "0→1"],
       icon: "shield",
       group: "at-meta",
@@ -192,7 +192,7 @@ export const site: Site = {
       slug: "ai-investigation",
       title: "Agentic Investigation Platform for Integrity Teams",
       outcome:
-        "A trusted multi-agent investigation platform that turns fragmented integrity tools, signals, runbooks, and agents into one evidence-backed investigation surface.",
+        "Built a trusted multi-agent investigation platform that turned fragmented cases, signals, runbooks, and specialized agents into one evidence-backed investigation experience.",
       tags: ["Agentic AI", "Trust & Safety", "0→1"],
       icon: "scan",
       group: "at-meta",
@@ -200,9 +200,9 @@ export const site: Site = {
     },
     {
       slug: "workflow-automation",
-      title: "Agentic Workflow Automation for Integrity Operations",
+      title: "Agentic Workflow Automation for Integrity Escalations",
       outcome:
-        "A governed agentic automation platform for integrity escalations: manual playbooks turned into automated, auditable workflows that triage, investigate, act, respond, and close cases end to end.",
+        "Built a governed agentic automation platform that turned manual escalation playbooks into automated, auditable workflows for triage, investigation, enforcement, response, and closure.",
       tags: ["Automation", "Platform", "Scale"],
       icon: "workflow",
       group: "at-meta",
@@ -211,16 +211,16 @@ export const site: Site = {
       slug: "ai-eval-platform",
       title: "Evaluation Platform for Trustworthy AI Agents",
       outcome:
-        "The benchmark and evaluation platform that made high-stakes agentic AI systems measurable, governable, and safe to scale.",
+        "Built the benchmark and evaluation platform that made high-stakes AI agents measurable, governable, and safe to scale through reusable benchmarks, rubrics, regression detection, and launch gates.",
       tags: ["Evaluation", "AI infra", "Platform"],
       icon: "gauge",
       group: "at-meta",
     },
     {
       slug: "enterprise-identity",
-      title: "Enterprise identity from scratch",
+      title: "Enterprise Identity Platform for Meta Business Tools",
       outcome:
-        "A 0→1 enterprise identity and trust platform: managed, admin-controlled access that replaced fragile personal-account logins for business tools.",
+        "Built a 0 to 1 enterprise identity platform that replaced personal-account-based access with secure, admin-managed identity for enterprise advertisers, agencies, IT teams, and business admins.",
       tags: ["Platform", "Enterprise", "0→1"],
       icon: "key",
       group: "range",

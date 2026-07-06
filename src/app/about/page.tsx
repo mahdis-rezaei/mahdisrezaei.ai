@@ -44,13 +44,22 @@ export default function AboutPage() {
             label="About sections"
             tabs={[
               { id: "journey", label: "Journey", panel: <AboutTimeline /> },
-              { id: "work", label: "How I work", panel: <Principles /> },
+              {
+                id: "work",
+                label: "How I work",
+                panel: (
+                  <>
+                    <BeliefsBand />
+                    <div className="mt-16">
+                      <Principles />
+                    </div>
+                  </>
+                ),
+              },
               { id: "clock", label: "Off the clock", panel: <Practices /> },
             ]}
           />
         </div>
-
-        <BeliefsBand />
 
         <Testimonials />
       </article>

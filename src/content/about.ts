@@ -276,7 +276,7 @@ export const aboutPage = {
       },
       {
         quote:
-          "She consistently demonstrated skills that exceeded a high-performing TPM, and often ventured into PM territory.",
+          "She consistently demonstrated skills that exceeded a high-performing PM.",
         cite: "Product Marketing Lead",
       },
       {

@@ -30,17 +30,9 @@ function CareerHighlights() {
 
         {/* Meta: the case studies, clickable */}
         <div className="mt-10">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <h3 className="font-display text-2xl font-bold tracking-tight">
-              Meta
-            </h3>
-            <span className="font-mono text-[0.7rem] uppercase tracking-widest text-primary">
-              Product leader · Integrity and Monetization
-            </span>
-            <span className="ml-auto font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">
-              2022 to now
-            </span>
-          </div>
+          <h3 className="font-display text-2xl font-bold tracking-tight">
+            Meta
+          </h3>
           <ul className="mt-5 divide-y divide-border border-y border-border">
             {Object.entries(workStudies).map(([slug, study]) => (
               <li key={slug}>
@@ -70,24 +62,13 @@ function CareerHighlights() {
           </p>
           <ul className="mt-5 divide-y divide-border border-y border-border">
             {careerEarlier.map((c) => (
-              <li
-                key={c.company}
-                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4"
-              >
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-baseline gap-x-2.5">
-                    <span className="font-display text-lg font-semibold tracking-tight">
-                      {c.company}
-                    </span>
-                    <span className="text-sm text-primary">{c.role}</span>
-                  </div>
-                  <p className="mt-1 text-pretty text-sm leading-relaxed text-muted-foreground">
-                    {c.note}
-                  </p>
-                </div>
-                <span className="font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">
-                  {c.period}
+              <li key={c.company} className="py-4">
+                <span className="font-display text-lg font-semibold tracking-tight">
+                  {c.company}
                 </span>
+                <p className="mt-1 text-pretty text-sm leading-relaxed text-muted-foreground">
+                  {c.note}
+                </p>
               </li>
             ))}
           </ul>

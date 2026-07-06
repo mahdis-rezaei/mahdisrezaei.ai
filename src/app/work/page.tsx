@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import { workStudies } from "@/content/work-studies";
 import { CareerCards } from "@/components/career-cards";
 import { ExperienceTimeline } from "@/components/experience-timeline";
-import { TestimonialWall } from "@/components/testimonial-wall";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { SectionLabel } from "@/components/section-label";
 import { Tabs } from "@/components/tabs";
 
@@ -112,7 +112,7 @@ export default function ProfessionalPage() {
               {
                 id: "feedback",
                 label: "What others say",
-                panel: <TestimonialWall />,
+                panel: <TestimonialCarousel />,
               },
             ]}
           />

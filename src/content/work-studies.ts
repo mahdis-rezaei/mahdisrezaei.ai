@@ -241,42 +241,64 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "enterprise-identity": {
-    title: "Enterprise identity from scratch",
+    title: "Managed Meta Accounts for Business Tools",
     tagline:
-      "I built a platform that let enterprises securely access one of the world's largest ad businesses, and closed a real security and revenue gap doing it.",
+      "A 0 to 1 enterprise identity and trust platform: I took Managed Meta Accounts from ideation through Closed Beta launch and GA-readiness planning.",
     meta: [
       { label: "Where", value: "Meta · Monetization" },
-      { label: "Focus", value: "Platform · Enterprise · 0 to 1" },
+      { label: "Focus", value: "Enterprise identity · Platform · 0 to 1" },
     ],
     links: [],
     blocks: [
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "Large advertisers were running their business on personal accounts, a single person's login shared around a company. It was a privacy and security problem, and when those accounts got compromised, it was an expensive one. Every other major platform already had a proper enterprise tier. We didn't.",
+        text: "I owned Managed Meta Accounts (MMA) from ideation through Closed Beta launch and GA-readiness planning. The product replaced fragile, personal-account-based business access with a managed, secure, admin-controlled identity model for enterprise advertisers, agencies, IT admins, and business admins.",
       },
       { type: "h2", text: "The problem" },
       {
         type: "p",
-        text: "Build the enterprise identity layer that lets a company bring its own identity provider and single sign-on, provision and de-provision access cleanly, the way enterprise software is supposed to work, without breaking the advertiser ecosystem that depended on the old way.",
+        text: "Enterprise customers were running critical business operations on Meta, but the identity model did not meet enterprise expectations. Access depended too heavily on personal accounts, fragmented admin workflows, and limited top-down security controls.",
+      },
+      {
+        type: "p",
+        text: "For large advertisers and agencies, this created real business risk: account compromise, operational disruption, brand damage, client escalation, and declining trust in Meta as an enterprise platform. This was not just an account-management problem. It was a trust problem.",
+      },
+      { type: "h2", text: "The insight" },
+      {
+        type: "p",
+        text: "Enterprise customers were not asking for another login system. They were asking for confidence. IT and security leaders needed single sign-on, two-factor authentication, identity-provider integration, lifecycle controls, visibility, and access governance. Business admins needed a safer way to manage users and business assets. Agencies needed support for complex cross-company collaboration.",
+      },
+      {
+        type: "p",
+        text: "Closed Beta also revealed that the migration model was too manual to scale. Early onboarding required heavy support, long lead times, and frequent engineering involvement. To reach GA, we needed to move from white-glove onboarding to a productized, repeatable enterprise platform.",
       },
       { type: "h2", text: "What I did" },
       {
         type: "p",
-        text: "I took this from pre-beta to general availability: mapped the first-party and third-party dependencies, worked with the developer-platform teams so partners kept working through the migration, and sequenced a rollout that didn't strand existing advertisers. The hard part wasn't the auth flow. It was the migration and the trust, across a lot of teams that each owned a piece.",
+        text: "I defined MMA as an enterprise identity platform, not a standalone account feature. I led the product strategy, roadmap, launch sequencing, and cross-functional execution across identity, security, privacy, legal, engineering, product marketing, enterprise support, and go-to-market teams. The scope included Admin Center setup, migration flows, single sign-on and two-factor authentication, identity-provider integration, business-account claiming, agency and external-user support, compatibility with existing business tools, and operational readiness for scale.",
+      },
+      {
+        type: "p",
+        text: "I also built the launch operating model: Closed Beta waves, customer feedback loops, GA-readiness criteria, documentation, monitoring, support processes, resourcing asks, and metrics across adoption, trust, risk reduction, onboarding friction, and revenue protection.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Shipped enterprise identity and SSO that secured access for major advertisers and closed a significant fraud and account-takeover gap.",
-          "Protected a large, ongoing share of ad revenue that depended on those accounts staying safe.",
+          "Launched to Closed Beta with enterprise advertisers and agencies, laying the foundation for a broader managed identity rollout across Meta business tools.",
+          "Helped shift the enterprise story from reactive account recovery to proactive, admin-managed identity control, with a clearer path to scale adoption, reduce compromise risk, and protect high-value business relationships.",
+          "Turned an ambiguous customer-trust problem into a concrete platform roadmap, launch motion, and measurable path to GA.",
         ],
       },
       { type: "h2", text: "What I learned" },
       {
         type: "p",
-        text: "Platform work from scratch is mostly dependency-mapping and trust-building, not the core build. The teams who own the pieces you need have their own roadmaps; you move them by making the shared win legible, not by escalating.",
+        text: "Enterprise trust is not created by one feature. It comes from the full system: product controls, migration experience, admin visibility, security posture, support model, documentation, monitoring, and go-to-market readiness.",
+      },
+      {
+        type: "p",
+        text: "I also learned that Staff PM impact is about creating clarity in ambiguity. The hardest part was not identifying the need for managed accounts. It was aligning customer pain, platform constraints, privacy and security requirements, legacy systems, resourcing, and business outcomes into one coherent product strategy.",
       },
     ],
   },

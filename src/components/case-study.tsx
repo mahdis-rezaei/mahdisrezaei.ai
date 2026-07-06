@@ -17,11 +17,15 @@ function renderBlock(block: Block, i: number) {
       );
     case "quote":
       return (
-        <blockquote
-          key={i}
-          className="my-8 border-l-2 border-primary pl-5 font-display text-xl font-medium italic leading-snug tracking-tight text-balance sm:text-2xl"
-        >
-          {block.text}
+        <blockquote key={i} className="my-8 border-l-2 border-primary pl-5">
+          <p className="font-display text-xl font-medium italic leading-snug tracking-tight text-balance sm:text-2xl">
+            {block.text}
+          </p>
+          {block.cite && (
+            <cite className="mt-3 block font-mono text-[0.62rem] uppercase not-italic tracking-widest text-primary">
+              {block.cite}
+            </cite>
+          )}
         </blockquote>
       );
     case "list":

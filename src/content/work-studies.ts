@@ -35,6 +35,11 @@ export const workStudies: Record<string, CaseStudy> = {
         type: "p",
         text: "I built the end-to-end path a model travels before it's allowed to act: offline hill-climbing, shadow evaluation on live traffic, experimentation, reverse shadow, and production graduation, advancing only on evidence, never on optimism. Underneath it I replaced spreadsheet labeling with governed ground truth: dataset versioning, staleness detection, reviewer-disagreement escalation, train/test/eval reuse controls, and health analytics. That foundation is what stops teams from optimizing against stale, inconsistent, or unauditable labels.",
       },
+      {
+        type: "quote",
+        text: "She knew when AI was ready to act, when it needed human oversight, and what evidence was required before production.",
+        cite: "Her manager",
+      },
       { type: "h2", text: "Impact" },
       {
         type: "list",
@@ -75,6 +80,11 @@ export const workStudies: Record<string, CaseStudy> = {
       {
         type: "p",
         text: "I defined the product as an evidence-grounded investigation layer, not a general assistant: a person starts from a natural-language question, and the system handles intent, entity extraction, case-context retrieval, source-of-truth invocation, specialized agent orchestration, and evidence synthesis, then drafts a valid, workflow-ready recommendation the human confirms. I set the trust bar deliberately high: source-backed reasoning, human confirmation, safe failure, and clear lines between where AI recommends and where a person stays accountable.",
+      },
+      {
+        type: "quote",
+        text: "She turned a complex, ambiguous agentic AI opportunity into a trusted investigation platform with measurable adoption, accuracy, and operational leverage.",
+        cite: "Her manager",
       },
       { type: "h2", text: "Impact" },
       {
@@ -117,6 +127,11 @@ export const workStudies: Record<string, CaseStudy> = {
         type: "p",
         text: "Instead of letting teams build disconnected agents, I defined reusable workflow primitives: triggers, workflow context, branching logic, tool invocation, source-of-truth binding, modular capabilities, audit logs, monitoring, exception handling, and launch governance. High-volume, low-risk steps became deterministic modules; higher-risk workflows kept human-in-the-loop and human-on-the-loop controls, gated by staged rollout and benchmarks.",
       },
+      {
+        type: "quote",
+        text: "Her product judgment was strongest in distinguishing where AI should act, where it should recommend, and where it should stay out.",
+        cite: "Her manager",
+      },
       { type: "h2", text: "Impact" },
       {
         type: "list",
@@ -157,6 +172,11 @@ export const workStudies: Record<string, CaseStudy> = {
       {
         type: "p",
         text: "I expanded evaluation from answer quality to end-to-end system behavior. For enforcement models, that meant judging against healthy, current, auditable ground truth. For the investigation platform, whether answers were grounded, complete, useful, safe, and source-backed. For automation, node-level behavior, path efficiency, tool use, evidence usage, human confirmation, and safe failure, not just the final outcome. I turned a vague ask into concrete primitives: benchmark creation and versioning, golden sets, partial-credit rubrics, AI-judge scoring, result inspection, regression alerting, data freezing and time travel, and reviewer-disagreement handling. Evaluation became a launch gate, a monitoring system, and a trust mechanism.",
+      },
+      {
+        type: "quote",
+        text: "She translated a vague need for better evals into concrete platform primitives and production requirements.",
+        cite: "Her manager",
       },
       { type: "h2", text: "Impact" },
       {

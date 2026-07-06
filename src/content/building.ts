@@ -19,7 +19,7 @@ export type BuildApp = {
 export type Block =
   | { type: "h2"; text: string }
   | { type: "p"; text: string }
-  | { type: "quote"; text: string }
+  | { type: "quote"; text: string; cite?: string }
   | { type: "list"; items: string[] };
 
 export type CaseStudy = {

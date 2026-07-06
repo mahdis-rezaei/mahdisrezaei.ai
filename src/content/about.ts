@@ -129,10 +129,6 @@ export const aboutPage = {
         value: "65%",
         label: "faster triage, and roughly 300,000 human hours freed a year",
       },
-      {
-        value: "2,000+",
-        label: "escalation workflows automated safely",
-      },
     ] satisfies Metric[],
   },
 

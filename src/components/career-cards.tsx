@@ -18,7 +18,7 @@ export function CareerCards() {
         {c.lede}
       </p>
 
-      <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+      <dl className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
         {c.metrics.map((m) => (
           <div key={m.value} className="bg-card p-5 sm:p-6">
             <dt className="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl">

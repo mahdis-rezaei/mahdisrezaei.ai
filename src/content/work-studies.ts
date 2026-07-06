@@ -165,7 +165,7 @@ export const workStudies: Record<string, CaseStudy> = {
       {
         type: "list",
         items: [
-          "Scaled to thousands of escalation workflows spanning every harm type.",
+          "Built to span thousands of escalation workflows across every harm type, auto-actioning the high-precision cases with broader automation still expanding.",
           "Cut triage and investigation time by roughly two-thirds and freed hundreds of thousands of human hours a year, with a path toward a million-plus.",
         ],
       },

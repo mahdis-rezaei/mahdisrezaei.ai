@@ -234,6 +234,8 @@ export const aboutPage = {
 
   beliefs: {
     eyebrow: "What I believe",
+    title: "A few things I hold to be true",
+    lede: "Not slogans. These are the beliefs that quietly shape how I plan, how I debug, and how I treat the people I build with.",
     items: [
       {
         lead: "Think bigger, as policy, not a poster.",

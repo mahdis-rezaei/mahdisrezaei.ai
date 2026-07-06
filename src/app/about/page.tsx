@@ -5,7 +5,6 @@ import { AboutTimeline } from "@/components/about-timeline";
 import { Principles } from "@/components/principles";
 import { Practices } from "@/components/practices";
 import { BeliefsBand } from "@/components/beliefs-band";
-import { Testimonials } from "@/components/testimonials";
 import { Tabs } from "@/components/tabs";
 
 export const metadata: Metadata = {
@@ -60,8 +59,6 @@ export default function AboutPage() {
             ]}
           />
         </div>
-
-        <Testimonials />
       </article>
     </main>
   );

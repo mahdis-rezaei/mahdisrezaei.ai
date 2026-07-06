@@ -39,8 +39,6 @@ export type Practice = { title: string; body: string; why: string };
 
 export type Belief = { lead: string; rest: string };
 
-export type Testimonial = { quote: string; cite: string };
-
 export const aboutPage = {
   personal: {
     eyebrow: "The journey",
@@ -254,72 +252,5 @@ export const aboutPage = {
         rest: "I stopped waiting for someone to hand me the plan a long time ago. I'd rather build the thing than wait for permission.",
       },
     ] satisfies Belief[],
-  },
-
-  testimonials: {
-    eyebrow: "In their words",
-    title: "What the people I've built with say",
-    lede: "Real feedback from the engineers, managers, and partners I've shipped with, anonymized to their role.",
-    items: [
-      {
-        quote:
-          "She goes deep in technically hairy areas. I'm comfortable sending her in with partners to get to an aligned technical plan, instead of an engineer.",
-        cite: "Senior Engineering Leader",
-      },
-      {
-        quote: "One of the most technical PMs I've worked with.",
-        cite: "Software Engineer",
-      },
-      {
-        quote:
-          "She always has good insight into which technical components might go wrong. Very impressive for a non-engineering role.",
-        cite: "Software Engineer",
-      },
-      {
-        quote:
-          "She started with plans she was only twenty percent sure of, and kept driving toward clarity until it was there. She shined throughout.",
-        cite: "Software Engineer",
-      },
-      {
-        quote:
-          "She consistently demonstrated skills that exceeded a high-performing PM.",
-        cite: "Product Marketing Lead",
-      },
-      {
-        quote:
-          "She brought a much-needed rigor and the ability to connect people, process, and technical capability to the product. She spots gaps almost immediately.",
-        cite: "Product Marketing Lead",
-      },
-      {
-        quote:
-          "This would not have been feasible with just the engineering team.",
-        cite: "Director of Engineering",
-      },
-      {
-        quote:
-          "Her leadership in rallying every stakeholder had an outsized impact.",
-        cite: "Software Engineer",
-      },
-      {
-        quote:
-          "An exceptional partner who consistently delivers results and earns my full trust.",
-        cite: "Engineering Manager",
-      },
-      {
-        quote:
-          "She doesn't shy away from the elephant in the room. She asks the hard questions and holds everyone accountable, and brings an energy no one else can.",
-        cite: "Engineering Manager",
-      },
-      {
-        quote:
-          "Her documentation cut our testing time to half a day and let my team get back to building.",
-        cite: "Web Engineering Manager",
-      },
-      {
-        quote:
-          "Mahdis is one of the best things that happened to this program. We felt the gap when she left. I hope she comes back.",
-        cite: "Senior Engineer",
-      },
-    ] satisfies Testimonial[],
   },
 };

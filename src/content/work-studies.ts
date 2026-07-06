@@ -132,9 +132,9 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "workflow-automation": {
-    title: "Automating the operational first mile",
+    title: "Agentic Workflow Automation for Integrity Operations",
     tagline:
-      "I turned the messy first mile of integrity operations into a governed automation platform, and kept humans exactly where the judgment lives.",
+      "Built a governed agentic automation platform for integrity escalations, turning manual playbooks into automated, auditable workflows that triage, investigate, recommend or take action, respond, and close cases end to end.",
     meta: [
       { label: "Where", value: "Meta · Central Integrity" },
       { label: "Focus", value: "Workflow automation · Platform · Scale" },

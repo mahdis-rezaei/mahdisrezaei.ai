@@ -200,9 +200,9 @@ export const site: Site = {
     },
     {
       slug: "workflow-automation",
-      title: "Automating the operational first mile",
+      title: "Agentic Workflow Automation for Integrity Operations",
       outcome:
-        "Turned the messy first mile of integrity operations into a governed automation platform, and kept humans exactly where the judgment lives.",
+        "A governed agentic automation platform for integrity escalations: manual playbooks turned into automated, auditable workflows that triage, investigate, act, respond, and close cases end to end.",
       tags: ["Automation", "Platform", "Scale"],
       icon: "workflow",
       group: "at-meta",

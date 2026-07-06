@@ -1,12 +1,12 @@
 import { aboutPage } from "@/content/about";
 import { SectionLabel } from "@/components/section-label";
 
-/** Closing band — "What I believe". Shown under every tab. */
-export function BeliefsBand() {
+/** "What I believe" — a plain section that closes the Off the clock tab. */
+export function Beliefs() {
   const b = aboutPage.beliefs;
 
   return (
-    <section className="rounded-2xl border border-border bg-secondary px-6 py-12 sm:px-12 sm:py-14">
+    <div>
       <SectionLabel>{b.eyebrow}</SectionLabel>
       <h2 className="mt-5 text-balance font-display text-3xl font-bold tracking-tight sm:text-4xl">
         {b.title}
@@ -28,6 +28,6 @@ export function BeliefsBand() {
           </p>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

@@ -369,7 +369,7 @@ export const workStudies: Record<string, CaseStudy> = {
       { type: "h2", text: "Context" },
       {
         type: "p",
-        text: "I owned the enterprise identity platform for Meta business tools from ideation through Closed Beta launch and GA-readiness planning.",
+        text: "I owned the enterprise identity platform for Meta business tools from ideation through general availability.",
       },
       {
         type: "p",
@@ -395,7 +395,7 @@ export const workStudies: Record<string, CaseStudy> = {
       },
       {
         type: "p",
-        text: "Closed Beta also revealed that the migration model was too manual to scale. Early onboarding required heavy support, long lead times, and frequent engineering involvement. To reach GA, we needed to move from white-glove onboarding to a productized, repeatable enterprise platform.",
+        text: "Early beta also revealed that the migration model was too manual to scale. Onboarding required heavy support, long lead times, and frequent engineering involvement. To reach general availability, we moved from white-glove onboarding to a productized, repeatable enterprise platform.",
       },
       { type: "h2", text: "What I did" },
       {
@@ -412,15 +412,15 @@ export const workStudies: Record<string, CaseStudy> = {
       },
       {
         type: "p",
-        text: "I also built the launch operating model: Closed Beta waves, customer feedback loops, GA-readiness criteria, documentation, monitoring, support processes, resourcing asks, and metrics across adoption, trust, risk reduction, onboarding friction, and revenue protection.",
+        text: "I also built the launch operating model: staged beta waves, customer feedback loops, GA criteria, documentation, monitoring, support processes, resourcing asks, and metrics across adoption, trust, risk reduction, onboarding friction, and revenue protection.",
       },
       { type: "h2", text: "Impact" },
       {
         type: "list",
         items: [
-          "Launched to Closed Beta with enterprise advertisers and agencies, proving the path from personal-account-based access to managed enterprise identity.",
+          "Took the platform from pre-beta to general availability, migrating billions of users and aligning every internal Meta system behind the new enterprise account type.",
+          "Scaled to secure roughly $11.5B in ad revenue running on the platform, closing a real enterprise identity and account-takeover gap.",
           "Shifted the customer conversation from reactive account recovery to proactive admin control, giving Meta a stronger enterprise trust story for business tools.",
-          "Turned a fragmented trust, security, and migration problem into a platform roadmap and GA-readiness plan across identity, privacy, security, legal, support, go-to-market, and engineering.",
         ],
       },
       { type: "h2", text: "What I learned" },

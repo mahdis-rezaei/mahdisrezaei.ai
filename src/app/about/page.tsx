@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 import { AboutTimeline } from "@/components/about-timeline";
 import { Principles } from "@/components/principles";
 import { Practices } from "@/components/practices";
-import { BeliefsBand } from "@/components/beliefs-band";
+import { Beliefs } from "@/components/beliefs";
 import { Tabs } from "@/components/tabs";
 
 export const metadata: Metadata = {
@@ -43,19 +43,19 @@ export default function AboutPage() {
             label="About sections"
             tabs={[
               { id: "journey", label: "Journey", panel: <AboutTimeline /> },
+              { id: "work", label: "How I work", panel: <Principles /> },
               {
-                id: "work",
-                label: "How I work",
+                id: "clock",
+                label: "Off the clock",
                 panel: (
                   <>
-                    <BeliefsBand />
-                    <div className="mt-16">
-                      <Principles />
+                    <Practices />
+                    <div className="mt-16 border-t border-border pt-14">
+                      <Beliefs />
                     </div>
                   </>
                 ),
               },
-              { id: "clock", label: "Off the clock", panel: <Practices /> },
             ]}
           />
         </div>

@@ -64,11 +64,6 @@ export const workStudies: Record<string, CaseStudy> = {
         type: "p",
         text: "Beyond the core lifecycle, I helped define how LLM evaluation should work in complex integrity contexts, including multilingual performance, cultural nuance, market-level risk, disagreement analysis, escalation to policy experts, and launch holds for markets where model performance was not safe enough.",
       },
-      {
-        type: "quote",
-        text: "She knew when AI was ready to act, when it needed human oversight, and what evidence was required before production.",
-        cite: "Her manager",
-      },
       { type: "h2", text: "Impact" },
       {
         type: "list",

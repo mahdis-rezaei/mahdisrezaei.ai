@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { site } from "@/content/site";
 import { workStudies } from "@/content/work-studies";
-import { careerEarlier } from "@/content/site";
 import { CareerCards } from "@/components/career-cards";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { TestimonialWall } from "@/components/testimonial-wall";
@@ -16,69 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/work" },
 };
 
-/** Tab 1 — the marquee AI work, plus the deep case-study index. */
-function CareerHighlights() {
-  return (
-    <div>
-      <CareerCards />
-
-      <section className="mt-20">
-        <SectionLabel>Selected work</SectionLabel>
-        <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-          By company
-        </h2>
-
-        {/* Meta: the case studies, clickable */}
-        <div className="mt-10">
-          <h3 className="font-display text-2xl font-bold tracking-tight">
-            Meta
-          </h3>
-          <ul className="mt-5 divide-y divide-border border-y border-border">
-            {Object.entries(workStudies).map(([slug, study]) => (
-              <li key={slug}>
-                <Link
-                  href={`/work/${slug}`}
-                  className="group flex items-start justify-between gap-6 py-4 transition-colors hover:text-primary"
-                >
-                  <div>
-                    <h4 className="font-display text-lg font-semibold tracking-tight">
-                      {study.title}
-                    </h4>
-                    <p className="mt-1 text-pretty leading-relaxed text-muted-foreground">
-                      {study.tagline}
-                    </p>
-                  </div>
-                  <ArrowRight className="mt-1.5 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-primary" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Before Meta: a compact career arc */}
-        <div className="mt-12">
-          <p className="font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">
-            Before Meta
-          </p>
-          <ul className="mt-5 divide-y divide-border border-y border-border">
-            {careerEarlier.map((c) => (
-              <li key={c.company} className="py-4">
-                <span className="font-display text-lg font-semibold tracking-tight">
-                  {c.company}
-                </span>
-                <p className="mt-1 text-pretty text-sm leading-relaxed text-muted-foreground">
-                  {c.note}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-/** Tab 2 — the chronological career, company by company. */
+/** The chronological career, company by company. */
 function CareerHistory() {
   return (
     <div>
@@ -97,10 +36,54 @@ function CareerHistory() {
   );
 }
 
+/** Impact metrics, then the case studies. Kept simple. */
+function CareerHighlights() {
+  return (
+    <div>
+      <CareerCards />
+
+      <section className="mt-16">
+        <SectionLabel>Selected case studies</SectionLabel>
+        <ul className="mt-6 divide-y divide-border border-y border-border">
+          {Object.entries(workStudies).map(([slug, study]) => (
+            <li key={slug}>
+              <Link
+                href={`/work/${slug}`}
+                className="group flex items-start justify-between gap-6 py-5 transition-colors hover:text-primary"
+              >
+                <div>
+                  <h3 className="font-display text-lg font-semibold tracking-tight">
+                    {study.title}
+                  </h3>
+                  <p className="mt-1 text-pretty leading-relaxed text-muted-foreground">
+                    {study.tagline}
+                  </p>
+                </div>
+                <ArrowRight className="mt-1.5 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-primary" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
+}
+
 export default function ProfessionalPage() {
   return (
     <main className="flex-1">
       <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:py-24">
+        {site.portrait && (
+          <div className="group relative mb-7 h-24 w-24 overflow-hidden rounded-2xl border border-border shadow-lg shadow-primary/10">
+            <Image
+              src={site.portrait}
+              alt={`Portrait of ${site.name}`}
+              fill
+              sizes="96px"
+              className="object-cover grayscale-[0.85] contrast-[0.97] transition-[filter] duration-500 ease-out group-hover:grayscale-0"
+            />
+          </div>
+        )}
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           Professional
         </h1>
@@ -117,14 +100,14 @@ export default function ProfessionalPage() {
             label="Professional sections"
             tabs={[
               {
-                id: "highlights",
-                label: "Career highlights",
-                panel: <CareerHighlights />,
-              },
-              {
                 id: "history",
                 label: "Career history",
                 panel: <CareerHistory />,
+              },
+              {
+                id: "highlights",
+                label: "Career highlights",
+                panel: <CareerHighlights />,
               },
               {
                 id: "feedback",

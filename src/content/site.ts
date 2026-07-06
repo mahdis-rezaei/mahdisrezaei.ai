@@ -273,7 +273,7 @@ export const site: Site = {
       period: "Jun 2022 to now",
       location: "Los Angeles · Remote",
       summary:
-        "I crossed fully into product at Meta and was promoted to Staff. Today I own the AI platform portfolio for integrity, turning the enforcement decisions that keep billions of people safe into evaluated, AI-first systems. Before that, in Monetization, I built the enterprise identity and single sign-on platform behind Meta's ads business.",
+        "Meta runs the largest social platforms in the world, and Central Integrity is the organization that keeps them safe, deciding at the scale of billions of people what stays up and what comes down. I crossed fully into product here and was promoted to Staff, and I own the AI platform portfolio for that work: turning high-stakes enforcement decisions into evaluated, AI-first systems. Earlier, in Monetization, I built the enterprise identity and single sign-on platform behind Meta's ads business.",
       highlights: [
         "Own the LLM evaluation and deployment lifecycle for integrity enforcement, from offline hill-climbing through shadow mode to production, cutting scaled human review by roughly a quarter while holding enforcement quality flat, across dozens of violation areas.",
         "Built Meta's flagship multi-agent investigation platform: a natural-language interface that returns evidence-backed reasoning and recommended actions. It reached above-human-expert accuracy, with a thousand-plus weekly users running thousands of AI-led investigations a day.",
@@ -342,7 +342,7 @@ export const site: Site = {
       period: "Feb 2015 to Feb 2017",
       location: "New York",
       summary:
-        "A fifteen-person SaaS startup in New York, and my first full-time job in the US; the product lives on today inside Imprivata as Mobile Access Management. GroundControl was deployment-automation software for fleets of shared Apple devices: organizations were configuring tens of thousands of iPhones and iPads by hand (Macy's alone ran more than 5,000 across its stores), and our software imaged, configured, backed up, restored, and wiped them automatically.",
+        "GroundControl was a fifteen-person SaaS startup in New York, building deployment-automation software for fleets of shared Apple devices: organizations were configuring tens of thousands of iPhones and iPads by hand, and the product imaged, configured, backed up, restored, and wiped them automatically at scale (Macy's alone ran more than 5,000 across its stores). It was my first full-time job in the US, and the product lives on today inside Imprivata as Mobile Access Management.",
       highlights: [
         "Ran the engineering team as project manager and scrum master, with in-house and offshore developers, owning sprint planning, standups, releases, and QA at once, because a startup that size doesn't have separate people for those.",
         "It's where I learned to ship, and where I learned that I was fast at it.",

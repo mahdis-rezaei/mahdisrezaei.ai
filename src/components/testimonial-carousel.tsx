@@ -1,24 +1,51 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, Pause, Play, Quote } from "lucide-react";
 import { testimonials } from "@/content/testimonials";
 import { SectionLabel } from "@/components/section-label";
 import { cn } from "@/lib/utils";
+
+const ADVANCE_MS = 6500;
 
 /**
  * "What others say" — a swappable carousel of real, role-anonymized peer
  * feedback. One quote at a time (all in the DOM for SEO, cross-faded), with
  * prev/next, keyboard arrows, a position counter, and a row of theme chips that
- * lets a reader jump straight to a strength. The chip row also shows, at a
- * glance, how many distinct strengths people vouch for.
+ * lets a reader jump straight to a strength.
+ *
+ * Gentle auto-advance: it moves on its own, but pauses on hover or keyboard
+ * focus, offers an explicit pause/play control, and never auto-advances for
+ * visitors who prefer reduced motion.
  */
 export function TestimonialCarousel() {
   const t = testimonials;
   const items = t.items;
   const n = items.length;
+
   const [i, setI] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [reduced, setReduced] = useState(false);
+
   const go = (next: number) => setI((next + n) % n);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduced(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!playing || hovered || focused || reduced) return;
+    const id = setTimeout(() => setI((p) => (p + 1) % n), ADVANCE_MS);
+    return () => clearTimeout(id);
+  }, [playing, hovered, focused, reduced, i, n]);
+
+  const autoOn = !reduced;
 
   return (
     <div>
@@ -39,11 +66,22 @@ export function TestimonialCarousel() {
           if (e.key === "ArrowLeft") go(i - 1);
           if (e.key === "ArrowRight") go(i + 1);
         }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onFocusCapture={() => setFocused(true)}
+        onBlurCapture={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+            setFocused(false);
+          }
+        }}
         className="mt-10 rounded-2xl border border-border bg-secondary px-6 py-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-12 sm:py-12"
       >
         <Quote aria-hidden className="h-9 w-9 fill-primary/15 text-primary" />
 
-        <div className="relative mt-6 min-h-[10rem] sm:min-h-[9rem]">
+        <div
+          aria-live="polite"
+          className="relative mt-6 min-h-[10rem] sm:min-h-[9rem]"
+        >
           {items.map((item, idx) => (
             <figure
               key={item.quote}
@@ -68,7 +106,7 @@ export function TestimonialCarousel() {
           ))}
         </div>
 
-        {/* Controls: position + progress + prev/next */}
+        {/* Controls: position + progress + play/pause + prev/next */}
         <div className="mt-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs tabular-nums text-muted-foreground">
@@ -87,7 +125,22 @@ export function TestimonialCarousel() {
             </span>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
+            {autoOn && (
+              <button
+                type="button"
+                aria-label={playing ? "Pause auto-advance" : "Play auto-advance"}
+                aria-pressed={!playing}
+                onClick={() => setPlaying((p) => !p)}
+                className="mr-1 rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+              >
+                {playing ? (
+                  <Pause className="h-4 w-4" />
+                ) : (
+                  <Play className="h-4 w-4" />
+                )}
+              </button>
+            )}
             <button
               type="button"
               aria-label="Previous quote"

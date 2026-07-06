@@ -285,7 +285,7 @@ export const workStudies: Record<string, CaseStudy> = {
       },
       {
         type: "p",
-        text: "I also learned that Staff PM impact is about creating clarity in ambiguity. The hardest part was not identifying the need for managed accounts. It was aligning customer pain, platform constraints, privacy and security requirements, legacy systems, resourcing, and business outcomes into one coherent product strategy.",
+        text: "I learned that enterprise platform work requires turning many disconnected problems into one coherent product system. The hardest part was not identifying that customers needed managed accounts or single sign-on. It was aligning customer pain, legacy product surfaces, privacy and security requirements, migration complexity, resourcing, and launch sequencing into a path that customers and internal teams could trust.",
       },
     ],
   },

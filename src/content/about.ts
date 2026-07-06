@@ -21,14 +21,7 @@ export type Chapter = {
   image: string | null;
 };
 
-export type CareerCard = {
-  kicker: string;
-  title: string;
-  body: string;
-  /** Highlighted metric line, or null. */
-  stat: string | null;
-  judgment: string;
-};
+export type Metric = { value: string; label: string };
 
 export type Principle = {
   title: string;
@@ -123,40 +116,24 @@ export const aboutPage = {
     eyebrow: "The work",
     title: "Building trusted AI at scale",
     lede: "I'm a product leader at Meta, building the AI and agentic systems that help decide what's safe for billions of people. The common thread: I don't ship the model. I build the trust around it.",
-    cards: [
+    metrics: [
       {
-        kicker: "LLM training, evaluation & deployment",
-        title: "The platform that let AI take over high-stakes review, safely",
-        body: "Integrity wanted to move enforcement from human reviewers to LLMs. The easy version is “train a better model.” I argued the real product was everything around it: governed ground truth instead of spreadsheets, staged graduation from shadow to production, and evidence gates before any human was removed.",
-        stat: "~27% cut in scaled human review across dozens of violation areas, reliability held flat.",
-        judgment:
-          "The judgment: knowing when AI is ready to act, when it still needs a human, and what evidence has to exist first.",
+        value: "~27%",
+        label: "less scaled human review, with enforcement quality held flat",
       },
       {
-        kicker: "Agentic AI · Multi-agent investigation",
-        title: "A multi-agent investigation platform people actually trust",
-        body: "Not a chatbot. It's an evidence-grounded layer where an investigator asks in plain language and gets case-specific reasoning, recommended actions, and the evidence behind them. I set a high trust bar: every answer grounded in a source of truth, human confirmation before consequential actions, safe failure.",
-        stat: "1,000+ weekly users · 7,000+ AI-led investigations a day · 94% accuracy, above human expert.",
-        judgment:
-          "The judgment: in high-stakes work, the product isn't the answer. It's the trust around the answer.",
+        value: "94%",
+        label: "investigation accuracy, above human expert",
       },
       {
-        kicker: "Workflow automation & triage",
-        title: "2,000 manual playbooks, turned into safe automated workflows",
-        body: "I framed it as encoding human playbooks into workflows that route work, auto-action the high-precision cases, and keep a human in the loop wherever risk lives, built on reusable primitives, not one-off scripts, so it scaled across 2,000+ escalation workflows spanning every harm type.",
-        stat: "Cut triage and investigation time 65% and freed ~300,000 human hours a year.",
-        judgment:
-          "The judgment: deciding where AI should act, where it should only recommend, and where it should stay out.",
+        value: "65%",
+        label: "faster triage, and roughly 300,000 human hours freed a year",
       },
       {
-        kicker: "Generalized benchmark & evaluation platform",
-        title: "The eval layer that made all of it safe to ship",
-        body: "None of it ships on demos and gut feel, so I built the evaluation underneath it, and pushed “evals” past final-answer accuracy to whole-system behavior: golden sets, benchmark versioning, partial-credit rubrics, AI-judge scoring, regression alerts, data freezing. I made evaluation a launch gate and a live monitor, not a one-time check.",
-        stat: null,
-        judgment:
-          "The judgment: evaluation isn't a step. It's the trust mechanism that lets anything graduate to production.",
+        value: "2,000+",
+        label: "escalation workflows automated safely",
       },
-    ] satisfies CareerCard[],
+    ] satisfies Metric[],
   },
 
   howIWork: {

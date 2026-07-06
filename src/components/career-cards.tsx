@@ -1,7 +1,10 @@
 import { aboutPage } from "@/content/about";
 import { SectionLabel } from "@/components/section-label";
 
-/** Career tab — "Building trusted AI at scale": trajectory chip + case cards. */
+/**
+ * Career highlights header plus an at-a-glance impact strip: the marquee
+ * outcomes up front, so the depth can live in the case studies below.
+ */
 export function CareerCards() {
   const c = aboutPage.career;
 
@@ -15,30 +18,18 @@ export function CareerCards() {
         {c.lede}
       </p>
 
-      <div className="mt-10 grid gap-4">
-        {c.cards.map((card) => (
-          <article
-            key={card.title}
-            className="rounded-xl border border-border bg-card p-6 shadow-sm sm:p-7"
-          >
-            <p className="font-mono text-[0.62rem] uppercase tracking-widest text-primary">
-              {card.kicker}
-            </p>
-            <h3 className="mt-3 font-display text-xl font-bold leading-snug tracking-tight">
-              {card.title}
-            </h3>
-            <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-              {card.body}
-            </p>
-            {card.stat && (
-              <p className="mt-3 font-medium text-foreground">{card.stat}</p>
-            )}
-            <p className="mt-4 border-t border-dashed border-border pt-4 text-pretty italic leading-relaxed text-muted-foreground">
-              {card.judgment}
-            </p>
-          </article>
+      <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+        {c.metrics.map((m) => (
+          <div key={m.value} className="bg-card p-5 sm:p-6">
+            <dt className="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+              {m.value}
+            </dt>
+            <dd className="mt-2 text-pretty text-sm leading-snug text-muted-foreground">
+              {m.label}
+            </dd>
+          </div>
         ))}
-      </div>
+      </dl>
     </div>
   );
 }

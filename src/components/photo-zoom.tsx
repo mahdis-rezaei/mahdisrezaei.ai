@@ -6,7 +6,17 @@ import { X, ZoomIn } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * A clickable photo thumbnail that opens a full-size lightbox.
+ * A clickable photo that opens a full-size lightbox.
+ *
+ * Presentation is deliberately uniform across the site: pass `ratio` to lock
+ * every photo to the same aspect-ratio frame (object-cover, with an optional
+ * per-image `objectPosition` focal point so no subject gets cropped out).
+ *
+ * `tone="mono"` renders a soft, faded black-and-white at rest that eases to
+ * full color on hover or keyboard focus, so the gallery reads as one calm
+ * editorial system while every memory still comes alive on interaction. The
+ * lightbox always opens in full color.
+ *
  * Closes on Escape, backdrop click, or the close button. Locks body scroll
  * while open. The dialog content is client-only (not needed for SEO).
  */
@@ -15,11 +25,21 @@ export function PhotoZoom({
   alt,
   caption,
   className,
+  ratio,
+  objectPosition,
+  tone = "color",
+  sizes = "(min-width: 640px) 18rem, 100vw",
 }: {
   image: StaticImageData;
   alt: string;
   caption?: string;
   className?: string;
+  /** e.g. "3 / 4". When set, the photo fills a fixed-ratio frame. */
+  ratio?: string;
+  /** e.g. "70% 50%" to keep an off-center subject in view when cropping. */
+  objectPosition?: string;
+  tone?: "color" | "mono";
+  sizes?: string;
 }) {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -38,14 +58,19 @@ export function PhotoZoom({
     };
   }, [open]);
 
+  const monoImg =
+    tone === "mono" &&
+    "grayscale-[0.85] contrast-[0.97] group-hover/photo:grayscale-0 group-focus-visible/photo:grayscale-0";
+
   return (
     <>
       <button
         type="button"
         onClick={() => setOpen(true)}
         aria-label={`Open photo: ${alt}`}
+        style={ratio ? { aspectRatio: ratio } : undefined}
         className={cn(
-          "group/photo relative block w-full cursor-zoom-in overflow-hidden rounded-xl border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+          "group/photo relative block w-full cursor-zoom-in overflow-hidden rounded-xl border border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
           className,
         )}
       >
@@ -53,8 +78,22 @@ export function PhotoZoom({
           src={image}
           alt={alt}
           placeholder="blur"
-          sizes="(min-width: 640px) 18rem, 100vw"
-          className="h-auto w-full transition-transform duration-300 group-hover/photo:scale-[1.03]"
+          sizes={sizes}
+          {...(ratio
+            ? { fill: true }
+            : { className: "h-auto w-full" })}
+          style={ratio && objectPosition ? { objectPosition } : undefined}
+          className={cn(
+            "transition-[filter,transform] duration-500 ease-out group-hover/photo:scale-[1.03]",
+            ratio && "object-cover",
+            !ratio && "h-auto w-full",
+            monoImg,
+          )}
+        />
+        {/* Subtle inner frame for a consistent, gallery-like edge. */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5"
         />
         {caption && (
           <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-2.5 pt-8 text-left">
@@ -65,9 +104,9 @@ export function PhotoZoom({
         )}
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover/photo:bg-black/25 group-hover/photo:opacity-100"
+          className="pointer-events-none absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover/photo:opacity-100"
         >
-          <ZoomIn className="h-6 w-6 text-white drop-shadow" />
+          <ZoomIn className="h-4 w-4" />
         </span>
       </button>
 

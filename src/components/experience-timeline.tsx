@@ -23,7 +23,13 @@ export function ExperienceTimeline() {
           >
             <div className="shrink-0 sm:w-72">
               {img ? (
-                <PhotoZoom image={img} alt={`${job.company}, ${job.role}`} />
+                <PhotoZoom
+                  image={img}
+                  alt={`${job.company}, ${job.role}`}
+                  ratio="4 / 3"
+                  tone="mono"
+                  sizes="(min-width: 640px) 18rem, 100vw"
+                />
               ) : (
                 <div
                   aria-hidden

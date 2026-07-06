@@ -4,8 +4,20 @@ import { SectionLabel } from "@/components/section-label";
 import { PhotoZoom } from "@/components/photo-zoom";
 
 /**
+ * Per-image focal points so the uniform 3/4 frame never crops a subject out:
+ * young Mahdis sits in the right of the Iran courtyard, and the LA sunset shot
+ * is framed to hold both her and the sun. Others read fine centered.
+ */
+const FOCUS: Record<string, string> = {
+  iran: "72% 50%",
+  "los-angeles": "42% 50%",
+  "new-york": "50% 40%",
+};
+
+/**
  * Personal tab — "Six countries, one through-line" timeline. Numbered nodes on
- * a spine, each chapter with a captioned photo, narrative, and a "thread" line.
+ * a spine, each chapter an editorial two-column row: a uniform faded B&W photo
+ * beside its narrative and the recurring "thread" line.
  */
 export function AboutTimeline() {
   const p = aboutPage.personal;
@@ -38,7 +50,7 @@ export function AboutTimeline() {
                 )}
               </div>
 
-              <div className="min-w-0 pb-12">
+              <div className="min-w-0 pb-14">
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   <h3 className="font-display text-xl font-bold tracking-tight sm:text-2xl">
                     {c.place}
@@ -48,32 +60,40 @@ export function AboutTimeline() {
                   </span>
                 </div>
 
-                {img && (
-                  <div className="mt-4 w-full max-w-sm">
-                    <PhotoZoom
-                      image={img}
-                      alt={c.place}
-                      caption={c.caption}
-                      className="shadow-lg shadow-black/5"
-                    />
+                <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:gap-7">
+                  {img && (
+                    <div className="w-full shrink-0 sm:w-56">
+                      <PhotoZoom
+                        image={img}
+                        alt={c.place}
+                        caption={c.caption}
+                        ratio="3 / 4"
+                        tone="mono"
+                        objectPosition={c.image ? FOCUS[c.image] : undefined}
+                        sizes="(min-width: 640px) 14rem, 100vw"
+                        className="shadow-lg shadow-black/5"
+                      />
+                    </div>
+                  )}
+
+                  <div className="min-w-0">
+                    <div className="space-y-3">
+                      {c.narrative.map((para, j) => (
+                        <p key={j} className="text-pretty leading-relaxed">
+                          {para}
+                        </p>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 flex gap-3 border-l-2 border-primary pl-4">
+                      <span className="shrink-0 pt-1 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-primary">
+                        the thread
+                      </span>
+                      <span className="text-pretty italic leading-relaxed">
+                        {c.thread}
+                      </span>
+                    </div>
                   </div>
-                )}
-
-                <div className="mt-4 space-y-3">
-                  {c.narrative.map((para, j) => (
-                    <p key={j} className="text-pretty leading-relaxed">
-                      {para}
-                    </p>
-                  ))}
-                </div>
-
-                <div className="mt-5 flex gap-3 border-l-2 border-primary pl-4">
-                  <span className="shrink-0 pt-1 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-primary">
-                    the thread
-                  </span>
-                  <span className="text-pretty italic leading-relaxed">
-                    {c.thread}
-                  </span>
                 </div>
               </div>
             </li>

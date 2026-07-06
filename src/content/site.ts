@@ -227,7 +227,7 @@ export const site: Site = {
     },
     {
       slug: "enterprise-identity",
-      title: "Managed Meta Accounts",
+      title: "Enterprise identity from scratch",
       outcome:
         "A 0→1 enterprise identity and trust platform: managed, admin-controlled access that replaced fragile personal-account logins for business tools.",
       tags: ["Platform", "Enterprise", "0→1"],

@@ -241,7 +241,7 @@ export const workStudies: Record<string, CaseStudy> = {
   },
 
   "enterprise-identity": {
-    title: "Managed Meta Accounts for Business Tools",
+    title: "Enterprise identity from scratch",
     tagline:
       "A 0 to 1 enterprise identity and trust platform: I took Managed Meta Accounts from ideation through Closed Beta launch and GA-readiness planning.",
     meta: [

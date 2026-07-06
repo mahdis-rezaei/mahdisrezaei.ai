@@ -15,16 +15,7 @@ export function CareerCards() {
         {c.lede}
       </p>
 
-      <div className="mt-6 inline-flex flex-wrap gap-x-4 gap-y-1 rounded-lg border border-border bg-secondary px-4 py-2.5 font-mono text-xs text-muted-foreground">
-        {c.trajectory.map((t, i) => (
-          <span key={i} className="flex items-center gap-4">
-            {i > 0 && <span aria-hidden className="text-border">·</span>}
-            {t}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-8 grid gap-4">
+      <div className="mt-10 grid gap-4">
         {c.cards.map((card) => (
           <article
             key={card.title}

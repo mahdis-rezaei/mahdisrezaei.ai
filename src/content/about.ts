@@ -122,12 +122,7 @@ export const aboutPage = {
   career: {
     eyebrow: "The work",
     title: "Building trusted AI at scale",
-    lede: "Today I'm a Staff PM in Meta's integrity organization, building the AI and agentic systems that help decide what's safe for billions of people. The common thread: I don't ship the model. I build the trust around it.",
-    trajectory: [
-      "Two consecutive “Exceeds”",
-      "Promoted to Staff",
-      "Previously Amazon, Blue Apron",
-    ],
+    lede: "I'm a product leader at Meta, building the AI and agentic systems that help decide what's safe for billions of people. The common thread: I don't ship the model. I build the trust around it.",
     cards: [
       {
         kicker: "LLM training, evaluation & deployment",

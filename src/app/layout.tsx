@@ -58,6 +58,8 @@ const personJsonLd = {
   name: site.name,
   jobTitle: site.role,
   url: site.seo.url,
+  ...(site.portrait ? { image: `${site.seo.url}${site.portrait}` } : {}),
+  worksFor: { "@type": "Organization", name: "Meta" },
   sameAs: site.links
     .filter((l) => l.href.startsWith("http"))
     .map((l) => l.href),

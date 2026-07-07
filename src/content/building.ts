@@ -39,7 +39,7 @@ export const apps: BuildApp[] = [
     slug: "yadegar",
     name: "Yadegar",
     category: "AI journaling companion",
-    platform: "Web · iOS",
+    platform: "Web · iOS · Android soon",
     status: "Live",
     icon: "notebook",
     iconImage: "yadegar",
@@ -48,13 +48,18 @@ export const apps: BuildApp[] = [
     links: [
       { label: "Read the case study", href: "/building/yadegar" },
       { label: "Visit Yadegar", href: "https://yadegarjournal.com", external: true },
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/yadegar/id6778475173",
+        external: true,
+      },
     ],
   },
   {
     slug: "hamzaban",
     name: "Hamzaban",
     category: "Farsi ↔ English translator",
-    platform: "iOS",
+    platform: "Web · iOS",
     status: "In progress",
     icon: "languages",
     iconImage: "hamzaban",
@@ -79,7 +84,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       {
         label: "Status",
         value:
-          "Live on web and the iOS App Store. Survived a rejection, fix, and approval; a subscription update in review.",
+          "Live on web and the iOS App Store, with Android coming soon. Survived a rejection, fix, and approval; a subscription update in review.",
       },
       {
         label: "Stack",
@@ -89,6 +94,11 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     links: [
       { label: "Visit Yadegar", href: "https://yadegarjournal.com", external: true },
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/yadegar/id6778475173",
+        external: true,
+      },
     ],
     blocks: [
       {
@@ -241,7 +251,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     meta: [
       { label: "Role", value: "Sole owner: product, design, and build." },
       { label: "Status", value: "In progress. Building the MVP." },
-      { label: "Platform", value: "iOS first, Expo and React Native." },
+      { label: "Platform", value: "Web and iOS, Expo and React Native." },
     ],
     links: [],
     blocks: [

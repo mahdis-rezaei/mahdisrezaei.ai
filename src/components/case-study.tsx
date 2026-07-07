@@ -6,13 +6,34 @@ import { buildImages } from "@/content/build-images";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-function renderBlock(block: Block, i: number) {
+/** Stable anchor id from a heading's text. */
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/** Ordered anchor slugs for each block (null unless it is an h2), deduped. */
+function headingSlugs(blocks: Block[]) {
+  const seen: Record<string, number> = {};
+  return blocks.map((b) => {
+    if (b.type !== "h2") return null;
+    let slug = slugify(b.text);
+    if (seen[slug]) slug = `${slug}-${++seen[slug]}`;
+    else seen[slug] = 1;
+    return slug;
+  });
+}
+
+function renderBlock(block: Block, i: number, slug: string | null) {
   switch (block.type) {
     case "h2":
       return (
         <h2
           key={i}
-          className="mt-14 font-display text-2xl font-bold tracking-tight sm:text-3xl"
+          id={slug ?? undefined}
+          className="mt-14 scroll-mt-24 font-display text-2xl font-bold tracking-tight sm:text-3xl"
         >
           {block.text}
         </h2>
@@ -63,6 +84,10 @@ export function CaseStudy({
   backLabel?: string;
 }) {
   const icon = study.iconImage ? buildImages[study.iconImage] : null;
+  const slugs = headingSlugs(study.blocks);
+  const toc = study.blocks
+    .map((b, i) => (b.type === "h2" ? { text: b.text, slug: slugs[i]! } : null))
+    .filter((x): x is { text: string; slug: string } => x !== null);
   return (
     <main className="flex-1">
       <article className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-24">
@@ -124,7 +149,35 @@ export function CaseStudy({
           </div>
         )}
 
-        <div className="mt-10">{study.blocks.map(renderBlock)}</div>
+        {toc.length >= 2 && (
+          <nav
+            aria-label="Contents"
+            className="mt-10 rounded-xl border border-border bg-card p-5 sm:p-6"
+          >
+            <p className="font-mono text-[0.62rem] uppercase tracking-widest text-muted-foreground">
+              Contents
+            </p>
+            <ol className="mt-3 space-y-2">
+              {toc.map((h, i) => (
+                <li key={h.slug} className="flex gap-3 leading-relaxed">
+                  <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <a
+                    href={`#${h.slug}`}
+                    className="text-pretty text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
+        <div className="mt-10">
+          {study.blocks.map((b, i) => renderBlock(b, i, slugs[i]))}
+        </div>
       </article>
     </main>
   );

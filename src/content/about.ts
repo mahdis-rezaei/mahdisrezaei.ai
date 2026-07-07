@@ -199,7 +199,7 @@ export const aboutPage = {
       },
       {
         title: "Journaling",
-        body: "Almost every morning since 2015. Not a diary, a conversation. I interview myself, argue with my own fear, and get to the actual question under the noise.",
+        body: "I've journaled since childhood, and almost every morning as an adult. Not a diary, a conversation. I interview myself, argue with my own fear, and get to the actual question under the noise.",
         why: "Same muscle as finding the real problem under what a user says they want.",
       },
       {

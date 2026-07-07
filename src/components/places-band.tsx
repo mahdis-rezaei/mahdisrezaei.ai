@@ -1,9 +1,11 @@
 import { ChevronDown } from "lucide-react";
 import type { Places } from "@/content/about";
+import { WorldMap } from "@/components/world-map";
 
 /**
- * A compact, expandable list of places visited, grouped by region. Collapsed to
- * a single summary row so it stays out of the way; expands to the full list.
+ * A compact, expandable list of places visited, grouped by region, above a
+ * minimal world map with a pin at each place. The list is collapsed to a single
+ * summary row so it stays out of the way; expanding reveals the full list.
  * Built on native <details> for no-JS accessibility, matching the poetry shelf.
  */
 export function PlacesBand({ places }: { places: Places }) {
@@ -12,6 +14,7 @@ export function PlacesBand({ places }: { places: Places }) {
       <p className="font-display text-sm font-semibold tracking-tight">
         {places.lead}
       </p>
+      <WorldMap />
       <details className="group mt-3 overflow-hidden rounded-xl border border-border bg-card open:bg-secondary">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3.5 [&::-webkit-details-marker]:hidden">
           <span className="min-w-0 truncate">

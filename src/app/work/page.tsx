@@ -75,13 +75,13 @@ export default function ProfessionalPage() {
     <main className="flex-1">
       <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:py-24">
         {site.portrait && (
-          <div className="group relative mb-7 h-24 w-24 overflow-hidden rounded-2xl border border-border shadow-lg shadow-primary/10">
+          <div className="relative mb-7 h-24 w-24 overflow-hidden rounded-2xl border border-border shadow-lg shadow-primary/10">
             <Image
               src={site.portrait}
               alt={`Portrait of ${site.name}`}
               fill
               sizes="96px"
-              className="object-cover grayscale-[0.85] contrast-[0.97] transition-[filter] duration-500 ease-out group-hover:grayscale-0"
+              className="object-cover"
             />
           </div>
         )}

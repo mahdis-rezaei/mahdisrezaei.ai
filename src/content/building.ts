@@ -27,6 +27,8 @@ export type Block =
 export type CaseStudy = {
   title: string;
   tagline: string;
+  /** Optional app-icon image key into buildImages, shown in the header. */
+  iconImage?: string;
   meta: { label: string; value: string }[];
   links: { label: string; href: string; external?: boolean }[];
   blocks: Block[];
@@ -67,6 +69,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Yadegar",
     tagline:
       "An AI journaling companion that knows when to stay silent.",
+    iconImage: "yadegar",
     meta: [
       {
         label: "Role",
@@ -234,6 +237,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     title: "Hamzaban",
     tagline:
       "A voice-first translator that lets a Farsi-speaking parent and an English speaker talk, face to face, with no one in the middle.",
+    iconImage: "hamzaban",
     meta: [
       { label: "Role", value: "Sole owner: product, design, and build." },
       { label: "Status", value: "In progress. Building the MVP." },

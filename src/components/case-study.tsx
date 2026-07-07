@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { Block, CaseStudy as CaseStudyType } from "@/content/building";
+import { buildImages } from "@/content/build-images";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -60,6 +62,7 @@ export function CaseStudy({
   backHref?: string;
   backLabel?: string;
 }) {
+  const icon = study.iconImage ? buildImages[study.iconImage] : null;
   return (
     <main className="flex-1">
       <article className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-24">
@@ -70,7 +73,22 @@ export function CaseStudy({
           <ArrowLeft className="h-4 w-4" /> {backLabel}
         </Link>
 
-        <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        {icon && (
+          <Image
+            src={icon}
+            alt={`${study.title} app icon`}
+            width={64}
+            height={64}
+            className="mt-8 h-16 w-16 rounded-2xl border border-border object-cover shadow-sm"
+          />
+        )}
+
+        <h1
+          className={cn(
+            "text-balance text-4xl font-bold tracking-tight sm:text-5xl",
+            icon ? "mt-5" : "mt-6",
+          )}
+        >
           {study.title}
         </h1>
         <p className="mt-4 text-pretty text-xl leading-relaxed text-muted-foreground">

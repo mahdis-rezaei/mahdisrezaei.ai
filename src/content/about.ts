@@ -61,6 +61,8 @@ export type Practice = {
   why: string;
   /** Optional link applied to a single word inside `why`. */
   whyLink?: { word: string; href: string };
+  /** Optional "listen" link (e.g. the music for a practice). */
+  listen?: { label: string; href: string };
   /** Optional expandable journaling excerpts (curated, names left out). */
   notebook?: { summary: string; entries: string[] };
   /** Optional photo key into practiceImages. */
@@ -237,6 +239,10 @@ export const aboutPage = {
         title: "Early mornings and long runs",
         body: "I run when I'm stressed and I run when I'm happy, and it does the same thing every time: clears the noise. It's my truest brainstorming, my reset, my way of becoming. I picked it up when I moved to New York, first along the Hudson, later the Pacific, and it has always felt like one motion: running from what I no longer want, toward the version of me I want to become.",
         why: "A surprising amount of my product thinking gets untangled mid-run, never at a desk.",
+        listen: {
+          label: "The music I run to",
+          href: "https://www.youtube.com/watch?v=jamjF8gxNIo&list=RDjamjF8gxNIo&start_radio=1",
+        },
         image: "running",
         imageCaption: "The Pacific, most mornings",
       },

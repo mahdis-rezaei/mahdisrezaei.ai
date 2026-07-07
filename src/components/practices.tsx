@@ -1,3 +1,4 @@
+import { Headphones, ArrowUpRight } from "lucide-react";
 import { aboutPage } from "@/content/about";
 import { practiceImages } from "@/content/practice-images";
 import { SectionLabel } from "@/components/section-label";
@@ -83,6 +84,18 @@ export function Practices() {
                   </span>
                   <span>{renderWhy(pr.why, pr.whyLink)}</span>
                 </p>
+                {pr.listen && (
+                  <a
+                    href={pr.listen.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 transition-colors hover:underline"
+                  >
+                    <Headphones aria-hidden className="h-4 w-4" />
+                    {pr.listen.label}
+                    <ArrowUpRight aria-hidden className="h-3.5 w-3.5" />
+                  </a>
+                )}
                 {pr.notebook && <JournalNotebook notebook={pr.notebook} />}
                 {pr.poems && pr.poems.length > 0 && (
                   <PoetryShelf poems={pr.poems} />

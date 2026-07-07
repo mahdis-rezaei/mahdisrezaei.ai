@@ -55,6 +55,7 @@ export const apps: BuildApp[] = [
     platform: "iOS",
     status: "In progress",
     icon: "languages",
+    iconImage: "hamzaban",
     blurb:
       "A voice-first, elder-friendly translator that lets a Farsi-speaking parent and an English speaker have a real conversation, face to face, with no one in the middle. I'm building it for my parents.",
     links: [{ label: "Read about it", href: "/building/hamzaban" }],

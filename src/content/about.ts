@@ -235,8 +235,10 @@ export const aboutPage = {
       },
       {
         title: "Early mornings and long runs",
-        body: "4:30 alarms, coffee in the dark, then the Hudson and later the Pacific. Motion is how I think.",
-        why: "The discipline that ships things is built before 9 a.m.",
+        body: "I run when I'm stressed and I run when I'm happy, and it does the same thing every time: clears the noise. It's my truest brainstorming, my reset, my way of becoming. I picked it up when I moved to New York, first along the Hudson, later the Pacific, and it has always felt like one motion: running from what I no longer want, toward the version of me I want to become.",
+        why: "A surprising amount of my product thinking gets untangled mid-run, never at a desk.",
+        image: "running",
+        imageCaption: "The Pacific, most mornings",
       },
       {
         title: "Poetry, in two languages",

@@ -63,6 +63,7 @@ export function Practices() {
                     alt={pr.imageCaption ?? pr.title}
                     caption={pr.imageCaption}
                     ratio="3 / 4"
+                    tone="mono"
                     sizes="(min-width: 640px) 16rem, 100vw"
                     className="shadow-xl shadow-black/20"
                   />

@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import stillness from "../../public/practices/stillness.jpg";
+import running from "../../public/practices/running.jpg";
 
 /**
  * Photos for the Off the clock practices, as static imports (intrinsic size +
@@ -7,4 +8,5 @@ import stillness from "../../public/practices/stillness.jpg";
  */
 export const practiceImages: Record<string, StaticImageData> = {
   stillness,
+  running,
 };

@@ -127,7 +127,7 @@ export const site: Site = {
     subhead:
       "Staff PM at Meta, working on AI and agentic systems for trust and safety. On the side, I designed, built, and shipped Yadegar, a private AI journaling app, end to end.",
     proofChips: [
-      "10+ years · Meta, Amazon",
+      "11 years · Meta, Amazon",
       "Shipped an AI product solo, web and iOS",
       "Works AI-native, every day",
     ],

@@ -1,5 +1,6 @@
 import { aboutPage } from "@/content/about";
 import { SectionLabel } from "@/components/section-label";
+import { PoetryShelf } from "@/components/poetry-shelf";
 
 /** Off the clock tab — long-held "practices", each with a why-it-matters line. */
 export function Practices() {
@@ -30,6 +31,9 @@ export function Practices() {
               </span>
               {pr.why}
             </p>
+            {pr.poems && pr.poems.length > 0 && (
+              <PoetryShelf poems={pr.poems} />
+            )}
           </div>
         ))}
       </div>

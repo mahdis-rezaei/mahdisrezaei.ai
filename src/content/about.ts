@@ -28,7 +28,29 @@ export type Principle = {
   body: string;
 };
 
-export type Practice = { title: string; body: string; why: string };
+/**
+ * A poem she keeps close. Only a short, attributed excerpt lives here; the
+ * full text stays at `href` on an authoritative source (the poems are under
+ * copyright, so we quote a few lines and link out rather than reproduce them).
+ */
+export type Poem = {
+  title: string;
+  poet: string;
+  /** A few lines, rendered as-is. Kept short on purpose. */
+  excerpt: string[];
+  /** Excerpt reading direction; defaults to English/LTR. */
+  lang?: "en" | "fa";
+  /** Where to read the whole poem. */
+  href: string;
+};
+
+export type Practice = {
+  title: string;
+  body: string;
+  why: string;
+  /** Optional expandable reading list (used by the poetry practice). */
+  poems?: Poem[];
+};
 
 export type Belief = { lead: string; rest: string };
 
@@ -189,6 +211,27 @@ export const aboutPage = {
         title: "Poetry, in two languages",
         body: "I collect poems and translate the ones that matter into Farsi. A poem isn't fully mine until it lives in both my languages.",
         why: "I learned English by listening for meaning under words; I've built products the same way ever since.",
+        poems: [
+          {
+            title: "Clearing",
+            poet: "Martha Postlethwaite",
+            excerpt: ["Do not try to save", "the whole world", "or do anything grandiose."],
+            href: "https://www.mindfulnessassociation.net/words-of-wonder/clearing-martha-postlethwaite/",
+          },
+          {
+            title: "صدای پای آب (The Sound of Water's Footsteps)",
+            poet: "Sohrab Sepehri",
+            excerpt: ["چشم‌ها را باید شست", "جور دیگر باید دید"],
+            lang: "fa",
+            href: "https://sohrabsepehri.org/poems/sedaye-paye-ab/",
+          },
+          {
+            title: "Start Close In",
+            poet: "David Whyte",
+            excerpt: ["Start close in,", "don't take the second step", "or the third,"],
+            href: "https://davidwhyte.substack.com/p/start-close-in-78b",
+          },
+        ],
       },
       {
         title: "Going where there's no map",

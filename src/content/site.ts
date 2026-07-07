@@ -143,7 +143,6 @@ export const site: Site = {
     { label: "Personal", href: "/about" },
     { label: "Professional", href: "/work" },
     { label: "Building", href: "/building" },
-    { label: "Contact", href: "/contact" },
   ],
 
   // Grouped, gallery-style portfolio (PRD §10). Chrome stays neutral; each

@@ -4,6 +4,7 @@ import { SectionLabel } from "@/components/section-label";
 import { PhotoZoom } from "@/components/photo-zoom";
 import { PoetryShelf } from "@/components/poetry-shelf";
 import { PlacesBand } from "@/components/places-band";
+import { JournalNotebook } from "@/components/journal-notebook";
 import { cn } from "@/lib/utils";
 
 /** Render `why`, linking a single word when a practice supplies one. */
@@ -81,6 +82,7 @@ export function Practices() {
                   </span>
                   <span>{renderWhy(pr.why, pr.whyLink)}</span>
                 </p>
+                {pr.notebook && <JournalNotebook notebook={pr.notebook} />}
                 {pr.poems && pr.poems.length > 0 && (
                   <PoetryShelf poems={pr.poems} />
                 )}

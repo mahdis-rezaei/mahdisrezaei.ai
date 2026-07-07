@@ -6,7 +6,7 @@ import { testimonials } from "@/content/testimonials";
 import { SectionLabel } from "@/components/section-label";
 import { cn } from "@/lib/utils";
 
-const ADVANCE_MS = 6500;
+const ADVANCE_MS = 5000;
 
 /**
  * "What others say" — a swappable carousel of real, role-anonymized peer
@@ -14,9 +14,9 @@ const ADVANCE_MS = 6500;
  * prev/next, keyboard arrows, a position counter, and a row of theme chips that
  * lets a reader jump straight to a strength.
  *
- * Gentle auto-advance: it moves on its own, but pauses on hover or keyboard
- * focus, offers an explicit pause/play control, and never auto-advances for
- * visitors who prefer reduced motion.
+ * Auto-advance runs on its own and is driven solely by the explicit play/pause
+ * control (the WCAG pause mechanism), so pressing play always resumes rotation.
+ * It never auto-advances for visitors who prefer reduced motion.
  */
 export function TestimonialCarousel() {
   const t = testimonials;
@@ -25,8 +25,6 @@ export function TestimonialCarousel() {
 
   const [i, setI] = useState(0);
   const [playing, setPlaying] = useState(true);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [reduced, setReduced] = useState(false);
 
   const go = (next: number) => setI((next + n) % n);
@@ -40,10 +38,10 @@ export function TestimonialCarousel() {
   }, []);
 
   useEffect(() => {
-    if (!playing || hovered || focused || reduced) return;
+    if (!playing || reduced) return;
     const id = setTimeout(() => setI((p) => (p + 1) % n), ADVANCE_MS);
     return () => clearTimeout(id);
-  }, [playing, hovered, focused, reduced, i, n]);
+  }, [playing, reduced, i, n]);
 
   const autoOn = !reduced;
 
@@ -65,14 +63,6 @@ export function TestimonialCarousel() {
         onKeyDown={(e) => {
           if (e.key === "ArrowLeft") go(i - 1);
           if (e.key === "ArrowRight") go(i + 1);
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onFocusCapture={() => setFocused(true)}
-        onBlurCapture={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-            setFocused(false);
-          }
         }}
         className="mt-10 rounded-2xl border border-border bg-secondary px-6 py-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-12 sm:py-12"
       >

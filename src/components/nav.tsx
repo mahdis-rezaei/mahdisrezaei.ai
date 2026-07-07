@@ -23,6 +23,7 @@ export function Nav() {
           onClick={() => setOpen(false)}
         >
           {site.name}
+          <span className="text-primary">.</span>
         </Link>
 
         {/* Desktop */}

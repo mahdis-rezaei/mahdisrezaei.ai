@@ -48,11 +48,6 @@ export const apps: BuildApp[] = [
     links: [
       { label: "Read the case study", href: "/building/yadegar" },
       { label: "Visit Yadegar", href: "https://yadegarjournal.com", external: true },
-      {
-        label: "App Store",
-        href: "https://apps.apple.com/us/app/yadegar/id6778475173",
-        external: true,
-      },
     ],
   },
   {
@@ -83,8 +78,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       },
       {
         label: "Status",
-        value:
-          "Live on web and the iOS App Store, with Android coming soon. Survived a rejection, fix, and approval; a subscription update in review.",
+        value: "Live on web and the iOS App Store, with Android coming soon.",
       },
       {
         label: "Stack",

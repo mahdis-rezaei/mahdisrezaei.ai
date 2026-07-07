@@ -105,8 +105,7 @@ export default function BuildingPage() {
           Things I&apos;ve built
         </h1>
         <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-          Products I designed, built, and shipped on my own, end to end. Not
-          managed. Built.
+          Products I designed, built, and shipped.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">

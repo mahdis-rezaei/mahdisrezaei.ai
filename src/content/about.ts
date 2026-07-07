@@ -59,6 +59,10 @@ export type Practice = {
   title: string;
   body: string;
   why: string;
+  /** Optional photo key into practiceImages. */
+  image?: string;
+  /** Overlay caption for the photo. */
+  imageCaption?: string;
   /** Optional expandable reading list (used by the poetry practice). */
   poems?: Poem[];
   /** Optional expandable places list (used by the travel practice). */
@@ -209,6 +213,8 @@ export const aboutPage = {
         title: "Stillness",
         body: "I've meditated for over ten years, skeptically, complaining the whole way through, and showing up anyway. A silent week at a Zen monastery with 3:50 a.m. wake-ups taught me more about my own mind than any book did.",
         why: "It's how I stay calm owning systems where a confident wrong answer is worse than no answer.",
+        image: "stillness",
+        imageCaption: "A silent week at a Zen monastery",
       },
       {
         title: "Journaling",

@@ -30,7 +30,7 @@ export function Tabs({ tabs, label }: { tabs: Tab[]; label: string }) {
       <div
         role="tablist"
         aria-label={label}
-        className="flex gap-1 border-b border-border"
+        className="inline-flex flex-wrap gap-1 rounded-xl border border-border bg-secondary p-1"
       >
         {tabs.map((t, i) => {
           const selected = active === t.id;
@@ -49,19 +49,13 @@ export function Tabs({ tabs, label }: { tabs: Tab[]; label: string }) {
               onClick={() => setActive(t.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
               className={cn(
-                "relative -mb-px px-4 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "rounded-lg px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-secondary",
                 selected
-                  ? "text-foreground"
+                  ? "bg-card text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground",
               )}
             >
               {t.label}
-              {selected && (
-                <span
-                  aria-hidden
-                  className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-primary"
-                />
-              )}
             </button>
           );
         })}

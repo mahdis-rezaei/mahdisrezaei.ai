@@ -53,15 +53,22 @@ export type WorkGroup = {
   intro: string;
 };
 
-export type ExperienceItem = {
-  company: string;
-  role: string;
+export type ExperienceRole = {
+  title: string;
   period: string;
   location: string;
   summary: string;
   highlights?: string[];
+};
+
+export type ExperienceItem = {
+  company: string;
+  /** Overall span shown in the company header. */
+  period: string;
   /** Key into careerImages, or null until a photo is added. */
   image: string | null;
+  /** One entry per role held at the company, most recent first. */
+  roles: ExperienceRole[];
 };
 
 export type Site = {
@@ -260,100 +267,128 @@ export const site: Site = {
   experience: [
     {
       company: "Meta",
-      role: "Staff Product Manager · Central Integrity AI Platforms",
-      period: "Jun 2024 to present",
-      location: "Los Angeles · Remote",
-      summary:
-        "I own Meta's AI platform portfolio for high-stakes integrity work: the systems that help decide when content, accounts, businesses, or behaviors need review, enforcement, escalation, or automation. I turned fragmented human review and manual investigation workflows into evaluated AI systems with clear boundaries for when models act, recommend, or stay out.",
-      highlights: [
-        "Own the end-to-end LLM evaluation and deployment lifecycle for integrity enforcement, from offline hill-climbing and shadow mode through reverse shadow and production graduation. Reduced scaled human review by ~27% while holding enforcement quality flat across dozens of violation areas.",
-        "Built and scaled a multi-agent investigation platform that turns a natural-language question into evidence-backed reasoning and recommended actions. Reached 94% accuracy, above human-expert performance, with 1,000+ weekly users and 7,000+ AI-led investigations a day.",
-        "Shipped an agentic workflow automation platform that encodes human playbooks into governed workflows across 2,000+ escalation types, auto-actioning high-precision cases while preserving human review for ambiguous, high-risk, or policy-sensitive decisions. Cut triage time by ~65%, freeing 300K human hours a year and scaling toward 1M+ hours.",
-        "Architected the centralized ground-truth platform underneath all of it, with versioning, staleness detection, reviewer-disagreement escalation, train/test/eval reuse controls, and health analytics, so models are judged against trustworthy, current, auditable data instead of spreadsheets.",
-      ],
+      period: "Jun 2022 to present",
       image: "meta",
-    },
-    {
-      company: "Meta",
-      role: "Senior Product Manager · Monetization and Advertiser Platforms",
-      period: "Jun 2022 to Jun 2024",
-      location: "Menlo Park · Remote",
-      summary:
-        "The work I was promoted to Staff on. I built the enterprise identity foundation behind Meta's ads business: the layer that lets large advertisers run their business securely instead of relying on personal Facebook logins shared across a company.",
-      highlights: [
-        "Took Meta's 0-to-1 enterprise SSO and identity platform from pre-beta to launch, reframing it from a login feature into enterprise trust as the product. Delivered $318M in advertiser revenue under protection, 165% over goal, and 11 gold- and platinum-tier advertisers onboarded, closing a real account-takeover gap.",
-        "Migrated a revenue-critical advertiser ecosystem onto the new account type without breaking the businesses that depended on the old way. The hard part was not the auth flow; it was the trust, migration, and cross-org alignment across many teams.",
-        "Drove the cross-app advertiser experience across Facebook, Instagram, WhatsApp, and Threads: a privacy-compliant re-architecture of how businesses link, manage, and consent to sharing accounts, standardized across 100+ entry points and 120+ teams.",
+      roles: [
+        {
+          title: "Staff Product Manager · Central Integrity AI Platforms",
+          period: "Jun 2024 to present",
+          location: "Los Angeles · Remote",
+          summary:
+            "I own Meta's AI platform portfolio for high-stakes integrity work: the systems that help decide when content, accounts, businesses, or behaviors need review, enforcement, escalation, or automation. I turned fragmented human review and manual investigation workflows into evaluated AI systems with clear boundaries for when models act, recommend, or stay out.",
+          highlights: [
+            "Own the end-to-end LLM evaluation and deployment lifecycle for integrity enforcement, from offline hill-climbing and shadow mode through reverse shadow and production graduation. Reduced scaled human review by ~27% while holding enforcement quality flat across dozens of violation areas.",
+            "Built and scaled a multi-agent investigation platform that turns a natural-language question into evidence-backed reasoning and recommended actions. Reached 94% accuracy, above human-expert performance, with 1,000+ weekly users and 7,000+ AI-led investigations a day.",
+            "Shipped an agentic workflow automation platform that encodes human playbooks into governed workflows across 2,000+ escalation types, auto-actioning high-precision cases while preserving human review for ambiguous, high-risk, or policy-sensitive decisions. Cut triage time by ~65%, freeing 300K human hours a year and scaling toward 1M+ hours.",
+            "Architected the centralized ground-truth platform underneath all of it, with versioning, staleness detection, reviewer-disagreement escalation, train/test/eval reuse controls, and health analytics, so models are judged against trustworthy, current, auditable data instead of spreadsheets.",
+          ],
+        },
+        {
+          title: "Senior Product Manager · Monetization and Advertiser Platforms",
+          period: "Jun 2022 to Jun 2024",
+          location: "Menlo Park · Remote",
+          summary:
+            "The work I was promoted to Staff on. I built the enterprise identity foundation behind Meta's ads business: the layer that lets large advertisers run their business securely instead of relying on personal Facebook logins shared across a company.",
+          highlights: [
+            "Took Meta's 0-to-1 enterprise SSO and identity platform from pre-beta to launch, reframing it from a login feature into enterprise trust as the product. Delivered $318M in advertiser revenue under protection, 165% over goal, and 11 gold- and platinum-tier advertisers onboarded, closing a real account-takeover gap.",
+            "Migrated a revenue-critical advertiser ecosystem onto the new account type without breaking the businesses that depended on the old way. The hard part was not the auth flow; it was the trust, migration, and cross-org alignment across many teams.",
+            "Drove the cross-app advertiser experience across Facebook, Instagram, WhatsApp, and Threads: a privacy-compliant re-architecture of how businesses link, manage, and consent to sharing accounts, standardized across 100+ entry points and 120+ teams.",
+          ],
+        },
       ],
-      image: "meta",
     },
     {
       company: "Amazon",
-      role: "Principal Technical Program Manager · Ring",
       period: "Oct 2019 to Jun 2022",
-      location: "Santa Monica",
-      summary:
-        "I owned Ring Protect, the subscription business behind the hardware. It was less a pricing page than a recurring-revenue platform spanning billing, tax, the Amazon sales channel, and a full portfolio of tiers. I held the P&L and roadmap for 14M+ customers across 20+ markets.",
-      highlights: [
-        "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first subscription on Amazon's own devices platform.",
-        "Led a global price increase worth +$49M in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
-        "Drove the first hardware-plus-subscription integration between Amazon Astro and Ring Protect as product lead across two organizations, including a credit-card-free trial that saved ~18 dev-months and made the Astro line more profitable.",
-        "Rebuilt subscription purchase and management flows to work across regions, currencies, and sales channels.",
-      ],
       image: "ring",
+      roles: [
+        {
+          title: "Principal Technical Program Manager · Ring",
+          period: "Oct 2019 to Jun 2022",
+          location: "Santa Monica",
+          summary:
+            "I owned Ring Protect, the subscription business behind the hardware. It was less a pricing page than a recurring-revenue platform spanning billing, tax, the Amazon sales channel, and a full portfolio of tiers. I held the P&L and roadmap for 14M+ customers across 20+ markets.",
+          highlights: [
+            "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first subscription on Amazon's own devices platform.",
+            "Led a global price increase worth +$49M in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
+            "Drove the first hardware-plus-subscription integration between Amazon Astro and Ring Protect as product lead across two organizations, including a credit-card-free trial that saved ~18 dev-months and made the Astro line more profitable.",
+            "Rebuilt subscription purchase and management flows to work across regions, currencies, and sales channels.",
+          ],
+        },
+      ],
     },
     {
       company: "GoodRx",
-      role: "Senior Technical Program Manager",
       period: "Apr 2019 to Oct 2019",
-      location: "Santa Monica",
-      summary:
-        "I owned the desktop price page, the most important page on a consumer healthcare marketplace with a 90+ NPS. It looked simple to users: a drug, a list of prices, a coupon. Underneath, it was a complex product system balancing user trust, conversion, SEO, drug taxonomy, pharmacy pricing, and edge-case behavior.",
-      highlights: [
-        "Turned the page from a pile of historically evolved special cases into a canonical product system: a clear taxonomy of drug and row types, documented behavior for each, and a QA matrix that became the foundation for simplifying the experience across platforms.",
-        "Framed decisions around the tension that actually mattered: user trust, conversion, and SEO crawlability, which pulled against each other more than you might expect.",
-      ],
       image: "goodrx",
+      roles: [
+        {
+          title: "Senior Technical Program Manager",
+          period: "Apr 2019 to Oct 2019",
+          location: "Santa Monica",
+          summary:
+            "I owned the desktop price page, the most important page on a consumer healthcare marketplace with a 90+ NPS. It looked simple to users: a drug, a list of prices, a coupon. Underneath, it was a complex product system balancing user trust, conversion, SEO, drug taxonomy, pharmacy pricing, and edge-case behavior.",
+          highlights: [
+            "Turned the page from a pile of historically evolved special cases into a canonical product system: a clear taxonomy of drug and row types, documented behavior for each, and a QA matrix that became the foundation for simplifying the experience across platforms.",
+            "Framed decisions around the tension that actually mattered: user trust, conversion, and SEO crawlability, which pulled against each other more than you might expect.",
+          ],
+        },
+      ],
     },
     {
       company: "GlobeTax",
-      role: "Senior Technical Program Manager",
       period: "Nov 2017 to Apr 2019",
-      location: "New York",
-      summary:
-        "I owned eCerts, a self-service tool in one of the most complex regulated domains I've worked in: international withholding tax, the rules that govern how cross-border investment income gets taxed and reclaimed. eCerts walked users through generating and managing IRS tax-certification forms, including W-8 and W-9 workflows that determine treaty benefits.",
-      highlights: [
-        "Took something dense and error-prone and made it something a person could actually complete correctly.",
-        "Moved from consumer products into regulated business software, which taught me a different way to think about feedback, testing, and trust. I learned to hold a genuinely complex product in my head and explain it plainly, which turned out to be one of the most portable skills I have.",
-      ],
       image: "globetax",
+      roles: [
+        {
+          title: "Senior Technical Program Manager",
+          period: "Nov 2017 to Apr 2019",
+          location: "New York",
+          summary:
+            "I owned eCerts, a self-service tool in one of the most complex regulated domains I've worked in: international withholding tax, the rules that govern how cross-border investment income gets taxed and reclaimed. eCerts walked users through generating and managing IRS tax-certification forms, including W-8 and W-9 workflows that determine treaty benefits.",
+          highlights: [
+            "Took something dense and error-prone and made it something a person could actually complete correctly.",
+            "Moved from consumer products into regulated business software, which taught me a different way to think about feedback, testing, and trust. I learned to hold a genuinely complex product in my head and explain it plainly, which turned out to be one of the most portable skills I have.",
+          ],
+        },
+      ],
     },
     {
       company: "Blue Apron",
-      role: "Technical Program Manager",
       period: "Feb 2017 to Nov 2017",
-      location: "New York",
-      summary:
-        "I ran delivery on the internal systems every department relied on, including marketing, sales, finance, and engineering, through the company's IPO. I joined at around a thousand people, right as Blue Apron prepared to go public, and it IPO'd that June while I was there.",
-      highlights: [
-        "Brought real Agile practice to a team that did not have it yet: made the case to leadership, reconfigured JIRA around how the team actually worked, and moved everyone across locations onto weekly sprints.",
-        "Rolled out a company-wide help-desk system and saw a high-growth consumer company scale through IPO from the inside.",
-      ],
       image: "blueapron",
+      roles: [
+        {
+          title: "Technical Program Manager",
+          period: "Feb 2017 to Nov 2017",
+          location: "New York",
+          summary:
+            "I ran delivery on the internal systems every department relied on, including marketing, sales, finance, and engineering, through the company's IPO. I joined at around a thousand people, right as Blue Apron prepared to go public, and it IPO'd that June while I was there.",
+          highlights: [
+            "Brought real Agile practice to a team that did not have it yet: made the case to leadership, reconfigured JIRA around how the team actually worked, and moved everyone across locations onto weekly sprints.",
+            "Rolled out a company-wide help-desk system and saw a high-growth consumer company scale through IPO from the inside.",
+          ],
+        },
+      ],
     },
     {
       company: "Imprivata (formerly GroundControl)",
-      role: "Technical Program Manager",
       period: "Feb 2015 to Feb 2017",
-      location: "New York",
-      summary:
-        "My first full-time role in the US was at a fifteen-person startup building deployment-automation software for fleets of shared Apple devices. Organizations were configuring tens of thousands of iPhones and iPads by hand. The product imaged, configured, backed up, restored, and wiped them automatically at scale. It lives on today inside Imprivata as Mobile Access Management.",
-      highlights: [
-        "Led in-house and offshore teams to build an enterprise provisioning and control product for iOS devices, improving deployment efficiency at scale.",
-        "Improved customer-issue resolution and release execution, contributing to stronger customer retention.",
-        "This is where I learned to ship, and where I learned that I am fast at it.",
-      ],
       image: "imprivata",
+      roles: [
+        {
+          title: "Technical Program Manager",
+          period: "Feb 2015 to Feb 2017",
+          location: "New York",
+          summary:
+            "My first full-time role in the US was at a fifteen-person startup building deployment-automation software for fleets of shared Apple devices. Organizations were configuring tens of thousands of iPhones and iPads by hand. The product imaged, configured, backed up, restored, and wiped them automatically at scale. It lives on today inside Imprivata as Mobile Access Management.",
+          highlights: [
+            "Led in-house and offshore teams to build an enterprise provisioning and control product for iOS devices, improving deployment efficiency at scale.",
+            "Improved customer-issue resolution and release execution, contributing to stronger customer retention.",
+            "This is where I learned to ship, and where I learned that I am fast at it.",
+          ],
+        },
+      ],
     },
   ],
 

@@ -25,7 +25,7 @@ export function ExperienceTimeline() {
               {img ? (
                 <PhotoZoom
                   image={img}
-                  alt={`${job.company}, ${job.role}`}
+                  alt={`${job.company}, ${job.roles[0].title}`}
                   ratio="4 / 3"
                   tone="mono"
                   sizes="(min-width: 640px) 18rem, 100vw"
@@ -40,7 +40,7 @@ export function ExperienceTimeline() {
               )}
             </div>
 
-            <div>
+            <div className="min-w-0">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h3 className="font-display text-lg font-semibold">
                   {job.company}
@@ -49,30 +49,50 @@ export function ExperienceTimeline() {
                   {job.period}
                 </span>
               </div>
-              <p className="mt-0.5 text-sm font-medium text-primary">
-                {job.role}
-              </p>
-              <p className="text-xs text-muted-foreground">{job.location}</p>
-              <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-                {job.summary}
-              </p>
 
-              {job.highlights && job.highlights.length > 0 && (
-                <ul className="mt-4 space-y-2">
-                  {job.highlights.map((h, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground"
+              <div className="mt-2 space-y-6">
+                {job.roles.map((r, ri) => {
+                  const multi = job.roles.length > 1;
+                  return (
+                    <div
+                      key={r.title}
+                      className={
+                        multi && ri > 0
+                          ? "border-t border-border pt-6"
+                          : undefined
+                      }
                     >
-                      <span
-                        aria-hidden
-                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
-                      />
-                      <span className="text-pretty">{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
+                      <p className="text-sm font-medium text-primary">
+                        {r.title}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {r.location}
+                        {multi ? ` · ${r.period}` : ""}
+                      </p>
+                      <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+                        {r.summary}
+                      </p>
+
+                      {r.highlights && r.highlights.length > 0 && (
+                        <ul className="mt-4 space-y-2">
+                          {r.highlights.map((h, i) => (
+                            <li
+                              key={i}
+                              className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground"
+                            >
+                              <span
+                                aria-hidden
+                                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
+                              />
+                              <span className="text-pretty">{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </article>
         );

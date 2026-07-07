@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Languages, NotebookPen, type LucideIcon } from "lucide-react";
 import { apps, type BuildApp } from "@/content/building";
+import { buildImages } from "@/content/build-images";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/section-label";
 import { cn } from "@/lib/utils";
@@ -20,12 +22,23 @@ const ICONS: Record<BuildApp["icon"], LucideIcon> = {
 
 function AppCard({ app }: { app: BuildApp }) {
   const Icon = ICONS[app.icon];
+  const iconImg = app.iconImage ? buildImages[app.iconImage] : null;
   return (
     <article className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 sm:p-8">
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-          <Icon className="h-7 w-7" strokeWidth={1.75} />
-        </span>
+        {iconImg ? (
+          <Image
+            src={iconImg}
+            alt={`${app.name} app icon`}
+            width={56}
+            height={56}
+            className="h-14 w-14 rounded-2xl border border-border object-cover"
+          />
+        ) : (
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <Icon className="h-7 w-7" strokeWidth={1.75} />
+          </span>
+        )}
         <span
           className={cn(
             "rounded-full border px-3 py-1 text-xs font-medium",

@@ -12,6 +12,8 @@ export type BuildApp = {
   platform: string;
   status: "Live" | "In progress";
   icon: "notebook" | "languages";
+  /** Optional app-icon image key into buildImages; overrides the glyph. */
+  iconImage?: string;
   blurb: string;
   links: { label: string; href: string; external?: boolean }[];
 };
@@ -38,6 +40,7 @@ export const apps: BuildApp[] = [
     platform: "Web · iOS",
     status: "Live",
     icon: "notebook",
+    iconImage: "yadegar",
     blurb:
       "Reads years of your private entries and hands back one page worth returning to, in your own words. It stays silent when nothing honest surfaces.",
     links: [

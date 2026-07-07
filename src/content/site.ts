@@ -182,7 +182,6 @@ export const site: Site = {
       platform: "Web · iOS",
       caseHref: "/building/yadegar",
       ctas: [{ label: "Visit Yadegar", href: "https://yadegarjournal.com" }],
-      featured: true,
     },
     {
       slug: "ai-investigation",
@@ -212,6 +211,7 @@ export const site: Site = {
       tags: ["Automation", "Platform", "Scale"],
       icon: "workflow",
       group: "at-meta",
+      featured: true,
     },
     {
       slug: "ai-eval-platform",

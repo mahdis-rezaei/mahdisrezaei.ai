@@ -401,8 +401,7 @@ export const site: Site = {
 
   contact: {
     heading: "Let's talk.",
-    blurb:
-      "Always happy to talk products, AI, or building. Reach me at mahdis.rezaei87@gmail.com.",
+    blurb: "Always happy to talk products, AI, or building.",
   },
 
   links: [

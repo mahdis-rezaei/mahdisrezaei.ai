@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Mahdis Rezaei. Open to senior product roles, and always happy to talk products, AI, or building.",
+    "Get in touch with Mahdis Rezaei. Always happy to talk products, AI, or building.",
   alternates: { canonical: "/contact" },
 };
 

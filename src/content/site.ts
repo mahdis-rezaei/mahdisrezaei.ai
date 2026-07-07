@@ -119,7 +119,7 @@ export const site: Site = {
   name: "Mahdis Rezaei",
   role: "Staff Product Manager",
   location: "Los Angeles · open to remote",
-  openToWork: true,
+  openToWork: false,
   portrait: "/photo.jpg",
 
   hero: {
@@ -400,9 +400,9 @@ export const site: Site = {
   },
 
   contact: {
-    heading: "Open to senior product roles.",
+    heading: "Let's talk.",
     blurb:
-      "And always happy to talk products, AI, or building. Reach me at mahdis.rezaei87@gmail.com.",
+      "Always happy to talk products, AI, or building. Reach me at mahdis.rezaei87@gmail.com.",
   },
 
   links: [

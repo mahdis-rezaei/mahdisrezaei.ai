@@ -44,12 +44,25 @@ export type Poem = {
   href: string;
 };
 
+/** An expandable, region-grouped list of places visited. */
+export type Places = {
+  /** Always-visible headline, e.g. "Four continents, one suitcase." */
+  lead: string;
+  /** Summary label on the collapsed row. */
+  summary: string;
+  /** Total place count shown beside the summary. */
+  count: number;
+  groups: { region: string; places: string[] }[];
+};
+
 export type Practice = {
   title: string;
   body: string;
   why: string;
   /** Optional expandable reading list (used by the poetry practice). */
   poems?: Poem[];
+  /** Optional expandable places list (used by the travel practice). */
+  places?: Places;
 };
 
 export type Belief = { lead: string; rest: string };
@@ -237,6 +250,50 @@ export const aboutPage = {
         title: "Going where there's no map",
         body: "Six countries, a year lived out of a single suitcase, and once a solo drive into the Mojave with no plan and no signal. I don't travel to see places. I travel to meet the next version of myself.",
         why: "I'm most at home in the unknown, which happens to be where 0→1 product work lives.",
+        places: {
+          lead: "Four continents, one suitcase.",
+          summary: "Where I've wandered",
+          count: 22,
+          groups: [
+            {
+              region: "Asia & Middle East",
+              places: [
+                "Iran",
+                "India",
+                "Malaysia",
+                "Thailand",
+                "Indonesia",
+                "Saudi Arabia",
+                "Dubai",
+                "Turkey",
+              ],
+            },
+            {
+              region: "Europe",
+              places: [
+                "Italy",
+                "Spain",
+                "France",
+                "Germany",
+                "Poland",
+                "Denmark",
+                "Scotland",
+                "England",
+              ],
+            },
+            {
+              region: "Americas",
+              places: [
+                "USA",
+                "Canada",
+                "Mexico",
+                "Costa Rica",
+                "Peru",
+                "Puerto Rico",
+              ],
+            },
+          ],
+        },
       },
     ] satisfies Practice[],
   },

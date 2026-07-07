@@ -1,7 +1,7 @@
 import { aboutPage } from "@/content/about";
 import { SectionLabel } from "@/components/section-label";
 
-/** "What I believe" — a plain section that closes the Off the clock tab. */
+/** "What I believe" — the personal-page tab of things Mahdis holds to be true. */
 export function Beliefs() {
   const b = aboutPage.beliefs;
 

@@ -42,18 +42,8 @@ export default function AboutPage() {
             label="About sections"
             tabs={[
               { id: "journey", label: "Journey", panel: <AboutTimeline /> },
-              {
-                id: "clock",
-                label: "Off the clock",
-                panel: (
-                  <>
-                    <Practices />
-                    <div className="mt-16 border-t border-border pt-14">
-                      <Beliefs />
-                    </div>
-                  </>
-                ),
-              },
+              { id: "beliefs", label: "What I believe", panel: <Beliefs /> },
+              { id: "clock", label: "Off the clock", panel: <Practices /> },
             ]}
           />
         </div>

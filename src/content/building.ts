@@ -59,7 +59,7 @@ export const apps: BuildApp[] = [
     slug: "hamzaban",
     name: "Hamzaban",
     category: "Farsi ↔ English translator",
-    platform: "Web · iOS",
+    platform: "Web · iOS · Android",
     status: "In progress",
     icon: "languages",
     iconImage: "hamzaban",
@@ -251,7 +251,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     meta: [
       { label: "Role", value: "Sole owner: product, design, and build." },
       { label: "Status", value: "In progress. Building the MVP." },
-      { label: "Platform", value: "Web and iOS, Expo and React Native." },
+      { label: "Platform", value: "Web, iOS, and Android, Expo and React Native." },
     ],
     links: [],
     blocks: [

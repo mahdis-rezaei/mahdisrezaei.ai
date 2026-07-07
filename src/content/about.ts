@@ -219,7 +219,7 @@ export const aboutPage = {
       {
         title: "Journaling",
         body: "I've journaled since childhood, and almost every morning as an adult. Not a diary, a conversation. I interview myself, argue with my own fear, and get to the actual question under the noise.",
-        why: "Same muscle as finding the real problem under what a user says they want.",
+        why: "Same muscle as finding the real problem under what a user says they want. It's also why Yadegar exists: I finally built the journaling tool I'd always wanted.",
       },
       {
         title: "Early mornings and long runs",

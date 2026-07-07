@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 import { workStudies } from "@/content/work-studies";
 import { CareerCards } from "@/components/career-cards";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import { Principles } from "@/components/principles";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { SectionLabel } from "@/components/section-label";
 import { Tabs } from "@/components/tabs";
@@ -126,6 +127,11 @@ export default function ProfessionalPage() {
                 id: "highlights",
                 label: "Career highlights",
                 panel: <CareerHighlights />,
+              },
+              {
+                id: "approach",
+                label: "How I work",
+                panel: <Principles />,
               },
               {
                 id: "feedback",

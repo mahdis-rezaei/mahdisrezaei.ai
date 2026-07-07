@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { site } from "@/content/site";
 import { AboutTimeline } from "@/components/about-timeline";
-import { Principles } from "@/components/principles";
 import { Practices } from "@/components/practices";
 import { Beliefs } from "@/components/beliefs";
 import { Tabs } from "@/components/tabs";
@@ -43,7 +42,6 @@ export default function AboutPage() {
             label="About sections"
             tabs={[
               { id: "journey", label: "Journey", panel: <AboutTimeline /> },
-              { id: "work", label: "How I work", panel: <Principles /> },
               {
                 id: "clock",
                 label: "Off the clock",

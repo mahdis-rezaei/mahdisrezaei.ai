@@ -23,11 +23,11 @@ function CareerHistory() {
     <div>
       <SectionLabel>Career history</SectionLabel>
       <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-        A decade, six companies
+        Eleven years, six companies
       </h2>
       <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
-        From program management into product, and toward the AI work I care most
-        about.
+        From a fifteen-person startup to the largest platforms in the world, and
+        from program management into the AI product work I care most about.
       </p>
       <div className="mt-10">
         <ExperienceTimeline />
@@ -87,13 +87,31 @@ export default function ProfessionalPage() {
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           Professional
         </h1>
-        <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-          I&apos;ve built for more than a decade across startups and some of the
-          largest platforms in the world: consumer, enterprise, and now AI. The
-          titles changed as I went, but the job never really did. Take something
-          ambiguous and high-stakes, and turn it into something real that people
-          can trust.
+        <p className="mt-5 max-w-2xl text-pretty text-xl leading-relaxed">
+          For eleven years, I&apos;ve built products where trust is the real
+          product requirement.
         </p>
+        <div className="mt-5 max-w-2xl space-y-4 text-pretty leading-relaxed text-muted-foreground">
+          <p>
+            My work has moved across startups, consumer marketplaces, enterprise
+            platforms, subscriptions, ads, identity, and now AI. The domains
+            changed, but the pattern got sharper: take ambiguous, high-stakes
+            judgment and turn it into systems that are evaluated, calibrated, and
+            trustworthy enough to scale.
+          </p>
+          <p>
+            Today, that work sits at the center of AI product leadership. I build
+            the infrastructure behind LLM enforcement, agentic investigation,
+            workflow automation, human oversight, evaluation, and production
+            launch gates.
+          </p>
+          <p>
+            The through-line is not just shipping products. It is knowing how to
+            make complex systems safe enough for people and businesses to rely
+            on: where AI should act, where it should recommend, where humans need
+            to stay accountable, and where the system should stop.
+          </p>
+        </div>
 
         <div className="mt-12">
           <Tabs

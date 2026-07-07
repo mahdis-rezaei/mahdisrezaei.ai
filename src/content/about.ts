@@ -59,6 +59,8 @@ export type Practice = {
   title: string;
   body: string;
   why: string;
+  /** Optional link applied to a single word inside `why`. */
+  whyLink?: { word: string; href: string };
   /** Optional photo key into practiceImages. */
   image?: string;
   /** Overlay caption for the photo. */
@@ -220,6 +222,7 @@ export const aboutPage = {
         title: "Journaling",
         body: "I've journaled since childhood, and almost every morning as an adult. Not a diary, a conversation. I interview myself, argue with my own fear, and get to the actual question under the noise.",
         why: "Same muscle as finding the real problem under what a user says they want. It's also why Yadegar exists: I finally built the journaling tool I'd always wanted.",
+        whyLink: { word: "Yadegar", href: "https://yadegarjournal.com/login" },
       },
       {
         title: "Early mornings and long runs",

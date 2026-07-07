@@ -6,6 +6,30 @@ import { PoetryShelf } from "@/components/poetry-shelf";
 import { PlacesBand } from "@/components/places-band";
 import { cn } from "@/lib/utils";
 
+/** Render `why`, linking a single word when a practice supplies one. */
+function renderWhy(
+  why: string,
+  link?: { word: string; href: string },
+) {
+  if (!link) return why;
+  const at = why.indexOf(link.word);
+  if (at === -1) return why;
+  return (
+    <>
+      {why.slice(0, at)}
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:decoration-primary"
+      >
+        {link.word}
+      </a>
+      {why.slice(at + link.word.length)}
+    </>
+  );
+}
+
 /** Off the clock tab — long-held "practices", each with a why-it-matters line. */
 export function Practices() {
   const o = aboutPage.offClock;
@@ -55,7 +79,7 @@ export function Practices() {
                   <span aria-hidden className="not-italic text-primary">
                     →
                   </span>
-                  {pr.why}
+                  <span>{renderWhy(pr.why, pr.whyLink)}</span>
                 </p>
                 {pr.poems && pr.poems.length > 0 && (
                   <PoetryShelf poems={pr.poems} />

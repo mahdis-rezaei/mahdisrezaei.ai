@@ -125,7 +125,7 @@ export const site: Site = {
   hero: {
     headline: "Product leader who builds.",
     subhead:
-      "Staff PM at Meta, working on AI and agentic systems for trust and safety. On the side, I designed, built, and shipped Yadegar, a private AI journaling app, end to end.",
+      "Staff PM at Meta, working on AI and agentic systems for trust and safety. On the side, I designed, built, and shipped Yadegar, a privacy-first AI journaling app, end to end.",
     proofChips: [
       "11 years · Meta, Amazon",
       "Shipped an AI product solo, web and iOS",
@@ -175,7 +175,7 @@ export const site: Site = {
     {
       title: "Yadegar",
       outcome:
-        "A private AI journaling app that hands you back one page worth returning to, in your own words: the thread that endured, not the noise of the day.",
+        "A privacy-first AI journaling app that hands you back one page worth returning to, in your own words: the thread that endured, not the noise of the day.",
       tags: ["AI", "0→1", "Founder"],
       icon: "notebook",
       group: "built-solo",
@@ -252,7 +252,7 @@ export const site: Site = {
   yadegar: {
     name: "Yadegar",
     oneLiner:
-      "A private AI journaling app that hands you back one page worth returning to, in your own words: the thread that endured, not the noise of the day.",
+      "A privacy-first AI journaling app that hands you back one page worth returning to, in your own words: the thread that endured, not the noise of the day.",
     meaning: "Yadegar means “keepsake” in Persian.",
     ctas: {
       primary: { label: "See how I built it", href: "/building/yadegar" },
@@ -309,7 +309,7 @@ export const site: Site = {
             "I owned Ring Protect, the subscription business behind the hardware. It was less a pricing page than a recurring-revenue platform spanning billing, tax, the Amazon sales channel, and a full portfolio of tiers. I held the P&L and roadmap for 14M+ customers across 20+ markets.",
           highlights: [
             "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first subscription on Amazon's own devices platform.",
-            "Led a global price increase across the device fleet, modeling installed-base economics and churn trade-offs to lift recurring revenue.",
+            "Led a global price increase worth +$49M in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
             "Drove the first hardware-plus-subscription integration between Amazon Astro and Ring Protect as product lead across two organizations, including a credit-card-free trial that saved ~18 dev-months and made the Astro line more profitable.",
             "Rebuilt subscription purchase and management flows to work across regions, currencies, and sales channels.",
           ],

@@ -309,7 +309,7 @@ export const site: Site = {
             "I owned Ring Protect, the subscription business behind the hardware. It was less a pricing page than a recurring-revenue platform spanning billing, tax, the Amazon sales channel, and a full portfolio of tiers. I held the P&L and roadmap for 14M+ customers across 20+ markets.",
           highlights: [
             "Launched Ring Protect Pro and Ring Protect Go across ring.com and Amazon, and shipped Ring's first subscription on Amazon's own devices platform.",
-            "Led a global price increase worth +$49M in annual revenue, modeling installed-base economics and churn trade-offs across the device fleet.",
+            "Led a global price increase across the device fleet, modeling installed-base economics and churn trade-offs to lift recurring revenue.",
             "Drove the first hardware-plus-subscription integration between Amazon Astro and Ring Protect as product lead across two organizations, including a credit-card-free trial that saved ~18 dev-months and made the Astro line more profitable.",
             "Rebuilt subscription purchase and management flows to work across regions, currencies, and sales channels.",
           ],

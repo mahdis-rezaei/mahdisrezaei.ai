@@ -47,7 +47,12 @@ export const apps: BuildApp[] = [
       "Reads years of your private entries and hands back one page worth returning to, in your own words. It stays silent when nothing honest surfaces.",
     links: [
       { label: "Read the case study", href: "/building/yadegar" },
-      { label: "Visit Yadegar", href: "https://yadegarjournal.com", external: true },
+      { label: "View live", href: "https://yadegarjournal.com", external: true },
+      {
+        label: "View code",
+        href: "https://github.com/mahdis-rezaei/yadegar",
+        external: true,
+      },
     ],
   },
   {
@@ -87,7 +92,12 @@ export const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     links: [
-      { label: "Visit Yadegar", href: "https://yadegarjournal.com", external: true },
+      { label: "View live", href: "https://yadegarjournal.com", external: true },
+      {
+        label: "View code",
+        href: "https://github.com/mahdis-rezaei/yadegar",
+        external: true,
+      },
       {
         label: "App Store",
         href: "https://apps.apple.com/us/app/yadegar/id6778475173",

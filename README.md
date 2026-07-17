@@ -1,43 +1,26 @@
 # mahdisrezaei.ai
 
-Personal site for **Mahdis Rezaei** — Staff Product Manager and builder.
-A fast, warm, editorial portfolio that positions her as a *product leader who builds*.
-
-Built against [`PRD.md`](./PRD.md); copy lives in [`website-content.md`](./website-content.md).
+Personal portfolio for Mahdis Rezaei, a Staff Product Manager at Meta who
+designs, builds, and ships AI products. A fast, editorial site that shows the
+work, the products she has shipped on her own, and how she operates.
 
 ## Stack
 
-- **Next.js 16** (App Router) + **TypeScript** — static generation for SEO
-- **Tailwind CSS v4** — CSS-first config, design tokens in `src/app/globals.css`
-- **shadcn/ui** foundation (`components.json`, `cn` util) — primitives added per phase
-- **next-themes** — light/dark, follows `prefers-color-scheme` + manual toggle
-- **MDX** (`@next/mdx`) — for long-form case studies (Phase 2)
-- **Fonts** via `next/font`: Space Grotesk (display) + Geist (body)
-- Deploys to **Vercel**
+- **Next.js 16** (App Router) + **TypeScript**, statically generated for SEO
+- **Tailwind CSS v4** (CSS-first tokens in `src/app/globals.css`)
+- **next-themes** for light/dark (`prefers-color-scheme` + manual toggle)
+- **next/font**: Space Grotesk (display), Geist (body), Geist Mono (labels)
+- Deployed on **Vercel**
 
 ## Content model
 
-All visitor-facing copy lives in data, never inline in components:
+All visitor-facing copy is data-driven, never inline in components:
 
-- `src/content/site.ts` — typed structured content (hero, nav, links, SEO)
-- `src/content/work/*.mdx` — case studies (Phase 2)
-
-## Design tokens (PRD §10 — a builder's gallery, deliberately NOT Yadegar)
-
-Neutral chrome + one energetic signature accent, so each project's own colors
-carry the personality and the site signals *range*:
-
-- Light base `#FAFAF8` · ink `#16161A` · muted `#6B6B70`
-- Dark base `#0E0E11` / cards `#141417` · text `#F4F4F2` · muted `#9A9AA2`
-- Signature accent: **electric indigo `#5A4BE3`** (used sparingly)
-- Display **Space Grotesk**, body **Geist** (General Sans's sanctioned alt)
-
-Tokens map to shadcn-style semantic CSS variables so future primitives inherit
-the system. `--indigo` is a single token if the exact accent hue is ever retuned.
-
-> Note: the spec names **General Sans** for body; it's a Fontshare font and
-> isn't reachable from this build environment, so Geist (the PRD's listed
-> alternate) is used. Swap in General Sans later by self-hosting its woff2.
+- `src/content/site.ts` — hero, nav, experience, links, SEO
+- `src/content/work-studies.ts` — the Meta case studies (`/work/[slug]`)
+- `src/content/building.ts` — independent products, Yadegar and Hamzaban
+- `src/content/about.ts` — the personal narrative, practices, beliefs
+- `src/content/testimonials.ts` — role-anonymized peer feedback
 
 ## Scripts
 
@@ -47,20 +30,3 @@ npm run build   # production build (static)
 npm run start   # serve the production build
 npm run lint    # ESLint
 ```
-
-## Build phases (PRD §16)
-
-- **Phase 0 — scaffold + tokens + hero** ✅
-- **Phase 1 — home sections, About page, contact, nav, theme toggle** ✅
-- Phase 2 — experience timeline, deep case studies (MDX), full /building page
-- Phase 3 — OG image, JSON-LD polish, sitemap/robots, analytics, a11y/perf pass
-
-Phase 1 leaves stubs for `/work/[slug]` and `/building` (filled in Phase 2), and
-the resume link is hidden until `public/resume.pdf` is added (`ready: false` in
-`site.ts`).
-
-## Inputs still needed
-
-- `public/resume.pdf` — the public resume
-- `public/photo.jpg` — a warm professional portrait
-- Confirm employment dates (`[confirm]` marks in `website-content.md`)
